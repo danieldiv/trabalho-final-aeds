@@ -2,7 +2,7 @@
 
 # Propostas
 
-- Proposta inicial, um sistema relacionado ao supermercado.
+- Sistema relacionado ao supermercado.
 
 ## Participantes
 
