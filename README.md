@@ -1,5 +1,9 @@
 # trabalho-final-aeds
 
+# Propostas
+
+- Proposta inicial, um sistema relacionado ao supermercado.
+
 ## Participantes
 
 > Daniel Alves Sanches
@@ -9,5 +13,3 @@
 > Leonardo de Oliveira Campos
 
 > Lucas de Souza Gontijo
-
-- Proposta inicial, um sistema relacionado ao supermercado.
