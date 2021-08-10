@@ -4,6 +4,8 @@
 
 - Sistema relacionado ao supermercado.
 
+- Sistema relacionado a biblioteca.
+
 ## Participantes
 
 > Daniel Alves Sanches
