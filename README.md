@@ -10,7 +10,7 @@
 
 > Daniel Alves Sanches
 
-> Julia Mello
+> Julia Mello Lopes Gonçalves
 
 > Leonardo de Oliveira Campos
 
