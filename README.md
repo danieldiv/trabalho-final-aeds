@@ -8,10 +8,10 @@
 
 ## Participantes
 
--- Daniel Alves Sanches
+  - Daniel Alves Sanches
 
--- Julia Mello Lopes Gonçalves
+  - Julia Mello Lopes Gonçalves
 
--- Leonardo de Oliveira Campos
+  - Leonardo de Oliveira Campos
 
--- Lucas de Souza Gontijo
+  - Lucas de Souza Gontijo
