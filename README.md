@@ -22,17 +22,19 @@
 
 > Arquivo inicial .txt para as categorias :warning:
 
-> Arquivo inicial .txt para as permissões :warning:
+> Arquivo inicial .txt para as permissões :x:
 
 > Arquivo inicial .txt para a(s) estante(s) :warning:
 
 > Arquivo inicial .txt para os livros com a categoria :warning:
 
-> Arquivo inicial .txt para os usuarios com sua permissão :warning:
+> Arquivo inicial .txt para os funcionarios :warning:
 
 > Criar uma lista para armazenar os livros :warning:
 
 > Criar uma pilha para livros retiros da lista (estante) :warning:
+
+> Criar uma fila para pessoas esperando para entrar na biblioteca :warning:
 
 > Controle da quantidade de pessoas dentro da biblioteca :warning:
 
@@ -44,7 +46,7 @@
 
 > CRUD dos livros :warning:
 
-> CRUD dos usuarios :warning:
+> CRUD dos funcionários :x:
 
 ### Informações
 
