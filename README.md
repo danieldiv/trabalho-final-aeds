@@ -34,6 +34,8 @@
 
 > Criar uma pilha para livros retiros da lista (estante) :warning:
 
+> Criar uma fila para pessoas esperando para entrar na biblioteca :warning:
+
 > Controle da quantidade de pessoas dentro da biblioteca :warning:
 
 > Controle da quantidade de livros :warning:
