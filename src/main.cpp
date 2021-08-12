@@ -3,9 +3,9 @@
 
 int main() {
 	int op;
-	json j;
-	ifstream file("j.json");
-	file >> j;
+	//json j;
+	//ifstream file("j.json");
+	//file >> j;
 	do {
 		system("cls || clear");
 		op = menu();
