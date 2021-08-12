@@ -1,36 +1,54 @@
-#include <iostream>
-
-using namespace std;
+#include "main.hpp"
 
 int main() {
-	int a;
-	cout << "-------Biblioteca Virtual-------" << endl;
-	cout<<endl;
-	cout<<"Alunos:"<<endl;
-	cout<<"Daniel Alves Sanches"<<endl;
-	cout<<"Julia Mello Lopes Gonçalves"<<endl;
-	cout<<"Leonardo de Oliveica Campos"<< endl;
-	cout<<"Lucas de Souza Gontijo"<<endl;
-	cout<<endl;
-	cout<<endl;
-	cout<<"MENU"<<endl;
-	cout<<endl;
-	cout<<"1-Sistema para Colaborador"<<endl;
-	cout<<"2-Sistema para Usuário"<<endl;
-	cin>>a;
-	switch (a)
-	{
-	case 1:
-		//caminho do sistema de colaboradores
-		cout<<""<<endl;
-		break;
-	case 2:
-		//caminho do sistema de usuário
-		cout<<""<<endl;
-		break;
-	default:
-		cout<<"Digite uma opção válida"<<endl;
-		break;
-	}
+	int op;
+
+	do {
+		system("cls || clear");
+		op = menu();
+
+		switch (op) {
+		case 1:
+			integrantes();
+			break;
+		case 0:
+			cout << "O sistema sera finalizado." << endl;
+			exit(0);
+		default:
+			cout << "Opcao invalida!!" << endl;
+		}
+
+		cout << endl;
+		system("pause");
+	} while (op != 0);
+
 	return 0;
+}
+
+int menu() {
+	int op;
+
+	cout << "======================" << endl;
+	cout << "  BIBLIOTECA VIRTUAL" << endl;
+	cout << "======================" << endl << endl;
+
+	cout << "1 - Integrantes" << endl;
+	cout << "0 - Sair" << endl << endl;
+
+	cout << "Escolha uma opcao: ";
+	cin >> op;
+
+	return op;
+}
+
+void integrantes() {
+	system("cls || clear");
+	cout << "=====================" << endl;
+	cout << "     INTEGRANTES     " << endl;
+	cout << "=====================" << endl << endl;
+
+	cout << "Daniel Alves Sanches" << endl;
+	cout << "Julia Mello Lopes Gonçalves" << endl;
+	cout << "Leonardo de Oliveica Campos" << endl;
+	cout << "Lucas de Souza Gontijo" << endl;
 }
