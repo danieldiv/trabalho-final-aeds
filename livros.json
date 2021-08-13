@@ -1,0 +1,52 @@
+{
+    "produto": [
+        {
+            "codigo": 1,
+            "nome": "arroz",
+            "quantidade": 300
+        },
+        {
+            "codigo": 2,
+            "nome": "feijao",
+            "quantidade": 400
+        }
+    ],
+    "mercados": [
+        {
+            "codMercados": 1,
+            "produtos": [
+                1,
+                2
+            ]
+        },
+        {
+            "codMercados": 2,
+            "produtos": [
+                1,
+                2
+            ]
+        }
+    ],
+    "precos": [
+        {
+            "codMercados": 1,
+            "codProduto": 1,
+            "preco": 30
+        },
+        {
+            "codMercados": 1,
+            "codProduto": 2,
+            "preco": 20
+        },
+        {
+            "codMercados": 2,
+            "codProduto": 1,
+            "preco": 10
+        },
+        {
+            "codMercados": 2,
+            "codProduto": 2,
+            "preco": 30
+        }
+    ]
+}
