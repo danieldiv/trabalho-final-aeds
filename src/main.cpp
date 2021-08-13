@@ -1,4 +1,5 @@
 #include "main.hpp"
+<<<<<<< HEAD
 #include "Lista.hpp"
 #include "json.hpp"
 
@@ -43,6 +44,33 @@ int main() {
 	// 	cout << endl;
 	// 	system("pause");
 	// } while (op != 0);
+=======
+#include "json.hpp"
+
+int main() {
+	int op;
+	//json j;
+	//ifstream file("j.json");
+	//file >> j;
+	do {
+		system("cls || clear");
+		op = menu();
+
+		switch (op) {
+		case 1:
+			integrantes();
+			break;
+		case 0:
+			cout << "O sistema sera finalizado." << endl;
+			exit(0);
+		default:
+			cout << "Opcao invalida!!" << endl;
+		}
+
+		cout << endl;
+		system("pause");
+	} while (op != 0);
+>>>>>>> d6e2ebd085fcf9f8f0f46462e36c5a533f802ee1
 
 	return 0;
 }
