@@ -1,12 +1,16 @@
-#include "main.hpp"
-#include "Lista.hpp"
-#include "json.hpp"
+#include "estruturas/Lista.hpp"
+#include "lib/json.hpp"
 
 #include <string>
 #include <fstream>
+#include <iostream>
 
 using namespace std;
 using json = nlohmann::json;
+
+int menu();
+void integrantes();
+void readJson();
 
 struct produto {
 	int cod;
@@ -18,7 +22,6 @@ struct produto {
 		: cod(codB), nome(nomeB), quant(quantB) {}
 };
 
-void readJson();
 
 int main() {
 	// int op;
