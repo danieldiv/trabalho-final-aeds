@@ -64,7 +64,7 @@
 
 > CRUD dos livros :warning:
 
-> CRUD dos funcionários :x:
+> CRUD dos funcionários :warning:
 
 ### Informações
 
