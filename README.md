@@ -26,7 +26,7 @@
 
 - falar sobre a biblioteca importada para o tratamento do json (um breve resumo sobre o que ela ajuda a fazer, não precisa detalhar como ela faz)
 
-- custo computacional, (precisa ter). Alguns lugar não será possivel fazer este custo, como a biblioteca do json
+- custo computacional, (precisa ter). Alguns lugares não será possivel fazer este custo, como a biblioteca do json
 
 - falar sobre uma struct auxiliar para armazenar os valores dos livros, que posteriormente serão ordenados (eu falo sobre uma struct auxiliar por que a lista dos livros marca onde o livro esta fisicamente, a lista auxiliar é para utilizar na pesquisa)
 
