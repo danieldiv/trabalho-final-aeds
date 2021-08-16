@@ -20,9 +20,9 @@
 
 - exemplificar o cenario, (são os topicos que devemos programar), detalhando cada um. Como a leitura do json, que é utilizado em conjunto com listas dinamicas com orientação a objeto com a linguagem c++. (DS)
 
-- detalhar o por que de usar as listas, pilhas ou filas(Leonardo) (LG)
+- detalhar o por que de usar as listas, pilhas ou filas(LG)
 
-- detalhar o por que do json, (que pode ser por sua simplicidade na visualizacao e tratamentos)
+- detalhar o por que do json, (que pode ser por sua simplicidade na visualizacao e tratamentos)(Leonardo)
 
 - falar sobre a biblioteca importada para o tratamento do json (um breve resumo sobre o que ela ajuda a fazer, não precisa detalhar como ela faz)
 
