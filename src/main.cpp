@@ -1,6 +1,7 @@
-// #include "estruturas/Lista.hpp"
+#include "estruturas/Lista.hpp"
 #include "lib/json.hpp"
 #include "livro.hpp"
+#include "funcionario.hpp"
 
 #include <string>
 #include <fstream>
@@ -19,39 +20,45 @@ int main() {
 	Livro L;
 
 	readJson(&L);
+	system("pause");
 
-	// do {
-	// 	system("cls || clear");
-	// 	op = menu();
+	do {
+		system("cls || clear");
+		op = menu();
 
-	// 	switch (op) {
-	// 	case 1:
-	// 		integrantes();
-	// 		break;
-	// 	case 0:
-	// 		cout << "O sistema sera finalizado." << endl;
-	// 		exit(0);
-	// 	default:
-	// 		cout << "Opcao invalida!!" << endl;
-	// 	}
+		switch (op) {
+		case 1:
+			integrantes();
+			break;
+		case 0:
+			cout << "O sistema sera finalizado." << endl;
+			exit(0);
+		default:
+			cout << "Opcao invalida!!" << endl;
+		}
 
-	// 	cout << endl;
-	// 	system("pause");
-	// } while (op != 0);
+		cout << endl;
+		system("pause");
+	} while (op != 0);
 	return 0;
 }
 
 void readJson(Livro* L) {
 	FLVazia(L);
 	ItemLivro item;
+
+	List<funcionario> LF;
+	node<funcionario>* pLF;
+
 	string str;
 	char* nome;
+	int i;
 
 	json js;
 	ifstream file("arquivo.json");
 	file >> js;
 
-	for (int i = 0; i < js["livro"].size(); i++) {
+	for (i = 0; i < js["livro"].size(); i++) {
 		json aux = js["livro"][i];
 
 		item.id = aux["id"];
@@ -63,6 +70,19 @@ void readJson(Livro* L) {
 		quanLivro++;
 	}
 	LImprimeLivro(L);
+
+	for (i = 0; i < js["funcionario"].size(); i++) {
+		json aux = js["funcionario"][i];
+
+		LF.push({ aux["id"], aux["nome"], aux["usuario"], aux["senha"] });
+	}
+
+	pLF = LF.HEAD;
+	for (i = 0; i < LF.size();i++) {
+		cout << pLF->dado.id << " " <<  pLF->dado.nome << " " << pLF->dado.usuario << " " << pLF->dado.senha << endl;
+
+		pLF = pLF->prox;
+	}
 }
 
 int menu() {

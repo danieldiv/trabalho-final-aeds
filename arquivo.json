@@ -52,5 +52,19 @@
             "nome": "Arquitetura do silencio",
             "quantidade": 2
         }
+    ],
+    "funcionario": [
+        {
+            "id": 1,
+            "nome": "Funcionario A",
+            "usuario": "usuA",
+            "senha": "senha123"
+        },
+        {
+            "id": 2,
+            "nome": "Funcionario B",
+            "usuario": "usuB",
+            "senha": "senha456"
+        }
     ]
 }
