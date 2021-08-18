@@ -21,10 +21,13 @@ template <typename T> class List{
 	public:
 	  node<T> *TAIL;
 	  node<T> *HEAD;
+
 	  virtual void push(const T dado);
 	  virtual void pop();
+
 	  int size() const noexcept;
 	  bool isEmpty()const noexcept;
+
 	  List();
 	  ~List();
 };

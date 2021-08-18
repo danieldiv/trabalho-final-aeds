@@ -1,32 +1,24 @@
-#include "estruturas/Lista.hpp"
+// #include "estruturas/Lista.hpp"
 #include "lib/json.hpp"
+#include "livro.hpp"
 
 #include <string>
 #include <fstream>
 #include <iostream>
 
-using namespace std;
 using json = nlohmann::json;
 
 int menu();
 void integrantes();
-void readJson();
-
-struct produto {
-	int cod;
-	string nome;
-	int quant;
-
-	produto() = default;
-	produto(int codB, string nomeB, int quantB)
-		: cod(codB), nome(nomeB), quant(quantB) {}
-};
-
+void readJson(Livro* L);
+void imprimeJson(ItemLivro item);
 
 int main() {
-	// int op;
+	int op;
 
-	readJson();
+	Livro L;
+
+	readJson(&L);
 
 	// do {
 	// 	system("cls || clear");
@@ -49,28 +41,28 @@ int main() {
 	return 0;
 }
 
-void readJson() {
-	int i;
-	List<produto> L1;
-	node<produto>* pL1;
+void readJson(Livro* L) {
+	FLVazia(L);
+	ItemLivro item;
+	string str;
+	char* nome;
 
-	json j;
-	ifstream file("livros.json");
-	file >> j;
+	json js;
+	ifstream file("arquivo.json");
+	file >> js;
 
-	for (i = 0; i < j["produto"].size(); i++) {
-		json aux = j["produto"][i];
-		L1.push({ aux["codigo"], aux["nome"], aux["quantidade"] });
+	for (int i = 0; i < js["livro"].size(); i++) {
+		json aux = js["livro"][i];
+
+		item.id = aux["id"];
+		item.id_categoria = aux["categoria"];
+		item.str = aux["nome"];
+		item.quantidade = aux["quantidade"];
+
+		LInsert(L, item);
+		quanLivro++;
 	}
-
-	pL1 = L1.HEAD;
-	for(i = 0; i < L1.size(); i++){
-		cout << pL1->dado.cod << " - ";
-		cout << pL1->dado.nome << " - ";
-		cout << pL1->dado.quant << endl;
-
-		pL1 = pL1->prox;
-	}
+	LImprimeLivro(L);
 }
 
 int menu() {
@@ -81,6 +73,7 @@ int menu() {
 	cout << "======================" << endl << endl;
 
 	cout << "1 - Integrantes" << endl;
+	// cout << "2 - Exibir json" << endl;
 	cout << "0 - Sair" << endl << endl;
 
 	cout << "Escolha uma opcao: ";

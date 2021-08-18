@@ -1,0 +1,56 @@
+{
+    "categoria": [
+        {
+            "id": 1,
+            "nome": "Ficcao Cientifica"
+        },
+        {
+            "id": 2,
+            "nome": "Folclore"
+        },
+        {
+            "id": 3,
+            "nome": "Humor"
+        },
+        {
+            "id": 4,
+            "nome": "Poesia"
+        },
+        {
+            "id": 5,
+            "nome": "Contos"
+        }
+    ],
+    "livro": [
+        {
+            "id": 1,
+            "categoria": 1,
+            "nome": "Harry Poter e a Pedra Filosofal",
+            "quantidade": 3
+        },
+        {
+            "id": 2,
+            "categoria": 1,
+            "nome": "Harry Poter e a camara secreta",
+            "quantidade": 3
+        },
+        {
+            "id": 3,
+            "categoria": 1,
+            "nome": "Harry Poter e a Pedra Filosofal",
+            "quantidade": 3
+        },
+        {
+            "id": 4,
+            "categoria": 1,
+            "nome": "Harry Poter e camara secreta",
+            "quantidade": 1
+        },
+        {
+            "id": 5,
+            "categoria": 4,
+            "nome": "Arquitetura do silencio",
+            "quantidade": 2
+        }
+    ]
+}
