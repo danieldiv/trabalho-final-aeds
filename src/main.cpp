@@ -1,5 +1,5 @@
-#include "estruturas/Lista.hpp"
-#include "lib/json.hpp"
+#include "Lista.hpp"
+#include "json.hpp"
 #include "livro.hpp"
 #include "funcionario.hpp"
 
@@ -21,8 +21,6 @@ int main() {
 	cout << "teste" << endl;
 	cout << (int) 'A' << endl;
 	cout << (int) 'Z' << endl;
-
-	// return 0;
 
 	Livro L;
 
