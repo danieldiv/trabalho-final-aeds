@@ -5,8 +5,11 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+// #include <stdbool.h>
 
 int menu();
+void login(funcionario* func, List<funcionario>* LF);
+bool realizarLogin(funcionario* func, string usuario, string senha, List<funcionario> *LF);
 void integrantes();
 
 void readJsonCategoria();//receber parametro adequado
