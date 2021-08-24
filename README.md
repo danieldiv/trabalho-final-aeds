@@ -34,33 +34,35 @@
 
 ## Tasks
 
-> Login do sistema :warning:
+> Login do sistema :warning: 🔴
 
-> Menu de navegação :warning:
+> Menu de navegação :warning: 🟡
 
-> Arquivo inicial .txt para as categorias :warning:
+> Arquivo inicial .txt para as categorias :warning: 🔴
 
 > Arquivo inicial .txt para as permissões :x:
 
-> Arquivo inicial .txt para a(s) estante(s) :warning:
+> Arquivo inicial .txt para a(s) estante(s) :warning: 🟢
 
-> Arquivo inicial .txt para os livros com a categoria :warning:
+> Arquivo inicial .txt para os livros com a categoria :warning: 🔴
 
-> Arquivo inicial .txt para os funcionarios :warning:
+> Arquivo inicial .txt para os funcionarios :warning: 🔴
 
-> Criar uma lista para armazenar os livros :warning:
+> Criar uma lista para armazenar os livros :warning: 🟡
 
-> Criar uma pilha para livros retiros da lista (estante) :warning:
+> Criar uma lista para armazenar os categorias :warning: 🔴
 
-> Criar uma fila para pessoas esperando para entrar na biblioteca :warning:
+> Criar uma pilha para livros retirados da lista (estante) :warning: 🟡
 
-> Controle da quantidade de pessoas dentro da biblioteca :warning:
+> Criar uma fila para pessoas esperando para entrar na biblioteca :warning: 🟢
 
-> Controle da quantidade de livros :warning:
+> Controle da quantidade de pessoas dentro da biblioteca :warning: 🟢
 
-> Controle de livros retirados e livros devolvidos (LR e LD) :warning:
+> Controle da quantidade de livros :warning: 🟡
 
-> Caso tenha tempo: ordernação dos livros em ordem alfabetica :warning:
+> Controle de livros retirados e livros devolvidos (LR e LD) :warning: 🟢
+
+> Caso tenha tempo: ordernação dos livros em ordem alfabetica :warning: 🟢
 
 > CRUD dos livros :warning:
 
@@ -70,3 +72,7 @@
 
 - CRUD
   - Create (Cadastrar), Read (Buscar), Update (Atualizar), Delete (Deletar)
+
+- 🔴 Prioridade alta
+- 🟡 Prioridade media
+- 🟢 Prioridade baixa
