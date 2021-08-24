@@ -15,7 +15,7 @@
 - Lucas de Souza Gontijo
 
 ## AEDS - Documentacao
- 
+
 - area de conhecimento, e em qual segmento da area a gente vai tratar: (introducao, resumo, objetivo ...) (JM)
 
 - exemplificar o cenario, (são os topicos que devemos programar), detalhando cada um. Como a leitura do json, que é utilizado em conjunto com listas dinamicas com orientação a objeto com a linguagem c++. (DS)

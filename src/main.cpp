@@ -13,9 +13,16 @@ int menu();
 void integrantes();
 void readJson(Livro* L);
 void imprimeJson(ItemLivro item);
+void teste(Livro* L, List<funcionario>* LF);
 
 int main() {
 	int op;
+
+	cout << "teste" << endl;
+	cout << (int) 'A' << endl;
+	cout << (int) 'Z' << endl;
+
+	// return 0;
 
 	Livro L;
 
@@ -41,6 +48,17 @@ int main() {
 		system("pause");
 	} while (op != 0);
 	return 0;
+}
+
+void teste(Livro* L, List<funcionario>* LF) {
+	node<funcionario>* pLF;
+	cout << "teste"<<endl;
+	pLF = LF->HEAD;
+	for (int i = 0; i < LF->size();i++) {
+		cout << pLF->dado.id << " " << pLF->dado.nome << " " << pLF->dado.usuario << " " << pLF->dado.senha << endl;
+
+		pLF = pLF->prox;
+	}
 }
 
 void readJson(Livro* L) {
@@ -78,11 +96,7 @@ void readJson(Livro* L) {
 	}
 
 	pLF = LF.HEAD;
-	for (i = 0; i < LF.size();i++) {
-		cout << pLF->dado.id << " " <<  pLF->dado.nome << " " << pLF->dado.usuario << " " << pLF->dado.senha << endl;
-
-		pLF = pLF->prox;
-	}
+	teste(L, &LF);
 }
 
 int menu() {

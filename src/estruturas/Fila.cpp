@@ -15,6 +15,8 @@ template <typename T> void Fila<T>::pop(){
 	pNode = NULL;
 	this->TAM--;
 }
+
+
 #endif
 
 

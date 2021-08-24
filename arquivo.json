@@ -38,19 +38,14 @@
             "id": 3,
             "categoria": 1,
             "nome": "Harry Poter e a Pedra Filosofal",
-            "quantidade": 3
+            "quantidade": 3,
+            "controle": "teste"
         },
         {
             "id": 4,
-            "categoria": 1,
-            "nome": "Harry Poter e camara secreta",
-            "quantidade": 1
-        },
-        {
-            "id": 5,
             "categoria": 4,
             "nome": "Arquitetura do silencio",
-            "quantidade": 2
+            "quantidade": 0
         }
     ],
     "funcionario": [
@@ -66,5 +61,12 @@
             "usuario": "usuB",
             "senha": "senha456"
         }
+    ],
+    "usuario": [
+        {
+            "id": 1,
+            "nome": "nome"
+        }
     ]
+
 }
