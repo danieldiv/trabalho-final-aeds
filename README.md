@@ -34,7 +34,7 @@
 
 ## Tasks
 
-> Login do sistema :warning: 🔴
+> Login do sistema :heavy_check_mark: 🔴
 
 > Menu de navegação :warning: 🟡
 
