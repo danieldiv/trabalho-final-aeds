@@ -24,7 +24,7 @@
 
 - detalhar o por que do json, (que pode ser por sua simplicidade na visualizacao e tratamentos)(Leonardo)
 
-- falar sobre a biblioteca importada para o tratamento do json (um breve resumo sobre o que ela ajuda a fazer, não precisa detalhar como ela faz)
+- falar sobre a biblioteca importada para o tratamento do json (um breve resumo sobre o que ela ajuda a fazer, não precisa detalhar como ela faz)(Leonardo)
 
 - custo computacional, (precisa ter). Alguns lugares não será possivel fazer este custo, como a biblioteca do json (JM)
 
