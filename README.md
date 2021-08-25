@@ -46,7 +46,7 @@
 
 > Arquivo inicial .txt para os livros com a categoria :warning: 🔴 
 
-> Arquivo inicial .txt para os funcionarios :warning: 🔴 
+> Arquivo inicial .txt para os funcionarios :warning: 🔴 (Leo)
 
 > Criar uma lista para armazenar os livros :warning: 🟡
 
