@@ -44,13 +44,13 @@
 
 > Arquivo inicial .txt para a(s) estante(s) :warning: 🟢
 
-> Arquivo inicial .txt para os livros com a categoria :warning: 🔴 (JM)
+> Arquivo inicial .txt para os livros com a categoria :warning: 🔴 
 
-> Arquivo inicial .txt para os funcionarios :warning: 🔴 (JM)
+> Arquivo inicial .txt para os funcionarios :warning: 🔴 
 
 > Criar uma lista para armazenar os livros :warning: 🟡
 
-> Criar uma lista para armazenar os categorias :warning: 🔴
+> Criar uma lista para armazenar os categorias :warning: 🔴 (JM)
 
 > Criar uma pilha para livros retirados da lista (estante) :warning: 🟡
 
