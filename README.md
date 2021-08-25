@@ -38,15 +38,15 @@
 
 > Menu de navegação :warning: 🟡
 
-> Arquivo inicial .txt para as categorias :warning: 🔴
+> Arquivo inicial .txt para as categorias :warning: 🔴 (JM)
 
-> Arquivo inicial .txt para as permissões :x:
+> Arquivo inicial .txt para as permissões :x: 
 
 > Arquivo inicial .txt para a(s) estante(s) :warning: 🟢
 
-> Arquivo inicial .txt para os livros com a categoria :warning: 🔴
+> Arquivo inicial .txt para os livros com a categoria :warning: 🔴 (JM)
 
-> Arquivo inicial .txt para os funcionarios :warning: 🔴
+> Arquivo inicial .txt para os funcionarios :warning: 🔴 (JM)
 
 > Criar uma lista para armazenar os livros :warning: 🟡
 
