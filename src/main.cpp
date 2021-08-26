@@ -1,5 +1,7 @@
 #include "main.hpp"
 
+using json = nlohmann::json;
+
 int main() {
 	int op;
 
@@ -35,6 +37,20 @@ int main() {
 		system("pause");
 	} while (op != 0);
 	return 0;
+}
+
+void readJsonCategoria() {
+
+	List<categorias>L;
+	node<categorias> *pL = L->HEAD;
+	json j;
+  	ifstream file("j.json");
+  	file >> j;
+	
+	for(long unsigned int i = 0; i <j["categorias"].size(); i++){
+		json aux = j["categoias"][i];
+		L.push({aux["id"], aux["nome"]});
+	}
 }
 
 void printAll(Livro* L, List<funcionario>* LF) {
