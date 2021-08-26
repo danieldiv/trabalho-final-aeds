@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <h1 align="center">TRABALHO FINAL DE AED</h1>
 
 # Proposta
@@ -78,5 +77,4 @@
 - 🟡 Prioridade media
 - 🟢 Prioridade baixa
 =======
-<h1 align="center">TRABALHO FINAL DE AED</h1>
 
