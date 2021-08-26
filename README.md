@@ -39,7 +39,7 @@
 
 > Menu de navegação :warning: 🟡
 
-> Arquivo inicial .txt para as categorias :warning: 🔴 (JM)
+> Arquivo inicial .txt para as categorias : 🔴 (JM)
 
 > Arquivo inicial .txt para as permissões :x: 
 
