@@ -5,13 +5,15 @@ using json = nlohmann::json;
 int main() {
 	int op;
 
-	Livro L;
-	List<funcionario> LF;
 	funcionario func;
+	Livro L;
+
+	List<funcionario> LF;
+	List<categorias> LC;
 
 	readJsonLivro(&L);
 	readJsonFuncionario(&LF);
-	readJsonCategoria();
+	readJsonCategoria(&LC);
 
 	login(&func, &LF);
 
@@ -40,19 +42,19 @@ int main() {
 	return 0;
 }
 
-void readJsonCategoria() {
+// void readJsonCategoria() {
 
-	List<categorias>L;
-	node<categorias> *pL = L->HEAD;
-	json j;
-  	ifstream file("j.json");
-  	file >> j;
-	
-	for(long unsigned int i = 0; i <j["categorias"].size(); i++){
-		json aux = j["categoias"][i];
-		L.push({aux["id"], aux["nome"]});
-	}
-}
+// 	List<categorias> L;
+// 	node<categorias> *pL = L->HEAD;
+// 	json j;
+//   	ifstream file("j.json");
+//   	file >> j;
+
+// 	for(long unsigned int i = 0; i <j["categorias"].size(); i++){
+// 		json aux = j["categoias"][i];
+// 		L.push({aux["id"], aux["nome"]});
+// 	}
+// }
 
 void printAll(Livro* L, List<funcionario>* LF) {
 	LImprimeLivro(L);
@@ -99,6 +101,7 @@ bool realizarLogin(funcionario* func, string usuario, string senha, List<funcion
 	pLF = LF->HEAD;
 	for (int i = 0; i < LF->size();i++) {
 		if (pLF->dado.usuario.compare(usuario) == 0) {
+			// validar senha tambem
 			func->id = pLF->dado.id;
 			func->nome = pLF->dado.nome;
 			return true;

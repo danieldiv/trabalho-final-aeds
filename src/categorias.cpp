@@ -1,5 +1,5 @@
 #include "categorias.hpp"
 
-void funcionario::imprime() {
+void categorias::imprime() {
 	cout << "[" << id << "]:\t" << nome << endl;
 }
