@@ -38,7 +38,7 @@
 
 > Menu de navegação :warning: 🟡
 
-> Arquivo inicial .txt para as categorias : 🔴 (JM)
+> Arquivo inicial .txt para as categorias  🔴 (JM)
 
 > Arquivo inicial .txt para as permissões :x: 
 
@@ -50,7 +50,7 @@
 
 > Criar uma lista para armazenar os livros :warning: 🟡
 
-> Criar uma lista para armazenar os categorias :warning: 🔴 (JM)
+> Criar uma lista para armazenar os categorias  🔴 (JM)
 
 > Criar uma pilha para livros retirados da lista (estante) :warning: 🟡
 
