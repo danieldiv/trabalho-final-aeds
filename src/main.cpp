@@ -11,6 +11,7 @@ int main() {
 
 	readJsonLivro(&L);
 	readJsonFuncionario(&LF);
+	readJsonCategoria();
 
 	login(&func, &LF);
 
