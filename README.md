@@ -76,5 +76,4 @@
 - 🔴 Prioridade alta
 - 🟡 Prioridade media
 - 🟢 Prioridade baixa
-=======
 
