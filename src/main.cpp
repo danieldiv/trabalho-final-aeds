@@ -1,6 +1,6 @@
 #include "main.hpp"
 
-using json = nlohmann::json;
+// using json = nlohmann::json;
 
 int main() {
 	int op;
@@ -10,10 +10,12 @@ int main() {
 
 	List<funcionario> LF;
 	List<categorias> LC;
+	List<estante> LE;
 
 	readJsonLivro(&L);
 	readJsonFuncionario(&LF);
 	readJsonCategoria(&LC);
+	readJsonEstante(&LE);
 
 	login(&func, &LF);
 
@@ -27,7 +29,7 @@ int main() {
 			integrantes();
 			break;
 		case 2:
-			printAll(&L, &LF);
+			printAll(&L, &LF, &LC, &LE);
 			break;
 		case 0:
 			cout << "O sistema sera finalizado." << endl;
@@ -56,10 +58,12 @@ int main() {
 // 	}
 // }
 
-void printAll(Livro* L, List<funcionario>* LF) {
+void printAll(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE) {
 	LImprimeLivro(L);
 
 	node<funcionario>* pLF;
+	node<categorias>* pLC;
+	node<estante>* pLE;
 
 	cout << endl << "FUNCIONARIOS" << endl << endl;
 
@@ -68,10 +72,26 @@ void printAll(Livro* L, List<funcionario>* LF) {
 		pLF->dado.imprime();
 		pLF = pLF->prox;
 	}
+
+	cout << endl << "CATEGORIAS" << endl << endl;
+
+	pLC = LC->HEAD;
+	for (int i = 0; i < LC->size();i++) {
+		pLC->dado.imprime();
+		pLC = pLC->prox;
+	}
+
+	cout << endl << "ESTANTES" << endl << endl;
+
+	pLE = LE->HEAD;
+	for (int i = 0; i < LE->size();i++) {
+		pLE->dado.imprime();
+		pLE = pLE->prox;
+	}
 }
 
 void login(funcionario* func, List<funcionario>* LF) {
-	string usuario, senha;
+	string usuario, senha, op;
 	bool aux;
 
 	do {
@@ -87,9 +107,14 @@ void login(funcionario* func, List<funcionario>* LF) {
 
 		aux = realizarLogin(func, usuario, senha, LF);
 
-		if (!aux)
+		if (!aux) {
 			cout << "Usuario ou senha invalida!!" << endl << endl;
-		else
+			cout << "Tentar novamente? (S / N): ";
+			cin >> op;
+
+			if (op.compare("N") == 0)
+				exit(0);
+		} else
 			return;
 		system("pause");
 	} while (!aux);
@@ -101,10 +126,12 @@ bool realizarLogin(funcionario* func, string usuario, string senha, List<funcion
 	pLF = LF->HEAD;
 	for (int i = 0; i < LF->size();i++) {
 		if (pLF->dado.usuario.compare(usuario) == 0) {
-			// validar senha tambem
-			func->id = pLF->dado.id;
-			func->nome = pLF->dado.nome;
-			return true;
+			if (pLF->dado.senha.compare(senha) == 0) {
+				func->id = pLF->dado.id;
+				func->nome = pLF->dado.nome;
+
+				return true;
+			}
 		}
 		pLF = pLF->prox;
 	}

@@ -65,3 +65,16 @@ void LImprimeLivro(Livro* l) {
 		aux = aux->prox;
 	}
 }
+
+void LImprimeLivroEstante(Livro *l) {
+	BlockLivro* aux;
+
+	cout << endl << "LIVROS" << endl << endl;
+	cout << "ID\t" << "NOME" << endl << endl;
+
+	aux = l->first->prox;
+	while (aux != NULL) {
+		cout << "[" << aux->data.id << "]:\t" << aux->data.nome << endl;
+		aux = aux->prox;
+	}
+}

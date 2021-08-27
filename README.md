@@ -32,6 +32,10 @@
 
 - descrever sulução parecidas com a nosso, e tentar mostrar o que o nosso faz de diferente
 
+### Login
+
+- Para realizar o login, utilize um dos usuarios abaixo:
+
 ## Tasks
 
 > Login do sistema :heavy_check_mark: 🔴
@@ -40,13 +44,13 @@
 
 > Arquivo inicial .txt para as categorias  🔴 (JM)
 
-> Arquivo inicial .txt para as permissões :x: 
+> Arquivo inicial .txt para as permissões :x:
 
 > Arquivo inicial .txt para a(s) estante(s) :warning: 🟢
 
-> Arquivo inicial .txt para os livros com a categoria :warning: 🔴 
+> Arquivo inicial .txt para os livros com a categoria :warning: 🔴
 
-> Arquivo inicial .txt para os funcionarios :warning: 🔴 
+> Arquivo inicial .txt para os funcionarios :warning: 🔴
 
 > Criar uma lista para armazenar os livros :warning: 🟡
 

@@ -6,7 +6,7 @@
         },
         {
             "id": 2,
-            "nome": "Ação"
+            "nome": "Acao"
         },
         {
             "id": 3,
@@ -42,7 +42,7 @@
         },
         {
             "id": 11,
-            "nome": "Coleções"
+            "nome": "Colecoes"
         },
         {
             "id": 12,
@@ -84,20 +84,60 @@
             "quantidade": 0
         }
     ],
+
     "funcionario": [
         {
             "id": 1,
-            "nome": "Funcionario A",
+            "nome": "Daniel Sanches",
             "usuario": "usuA",
             "senha": "senha123"
         },
         {
             "id": 2,
-            "nome": "Funcionario B",
+            "nome": "Julia Mello",
             "usuario": "usuB",
             "senha": "senha456"
+        },
+        {
+            "id": 1,
+            "nome": "Leonardo Campos",
+            "usuario": "usuC",
+            "senha": "senha789"
+        },
+        {
+            "id": 2,
+            "nome": "Lucas Gontijo",
+            "usuario": "usuD",
+            "senha": "senhaLG"
         }
     ],
+
+    "estante": [
+        {
+            "id": 1,
+            "livro": [
+                {
+                    "id": 2
+                },
+                {
+                    "id": 1
+                },
+                {
+                    "id": 1
+                },
+                {
+                    "id": 6
+                },
+                {
+                    "id": 6
+                },
+                {
+                    "id": 6
+                }
+            ]
+        }
+    ],
+
     "usuario": [
         {
             "id": 1,

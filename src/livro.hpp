@@ -35,5 +35,6 @@ void LInsert(Livro *l, ItemLivro item);
 void LRemove(Livro *l, ItemLivro item);
 void Swap(BlockLivro *a, BlockLivro *b);
 void LImprimeLivro(Livro *l);
+void LImprimeLivroEstante(Livro *l);
 
 #endif
