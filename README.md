@@ -38,19 +38,19 @@
 
 > Menu de navegação :warning: 🟡
 
-> Arquivo inicial .txt para as categorias  🔴 (JM)
+> Arquivo inicial .txt para as categorias :heavy_check_mark: 🔴 (JM)
 
 > Arquivo inicial .txt para as permissões :x: 
 
-> Arquivo inicial .txt para a(s) estante(s) :warning: 🟢
+> Arquivo inicial .txt para a(s) estante(s) :heavy_check_mark: 🟢
 
-> Arquivo inicial .txt para os livros com a categoria :warning: 🔴 
+> Arquivo inicial .txt para os livros com a categoria :heavy_check_mark: 🔴 
 
-> Arquivo inicial .txt para os funcionarios :warning: 🔴 
+> Arquivo inicial .txt para os funcionarios :heavy_check_mark: 🔴 
 
-> Criar uma lista para armazenar os livros :warning: 🟡
+> Criar uma lista para armazenar os livros :heavy_check_mark: 🟡
 
-> Criar uma lista para armazenar os categorias  🔴 (JM)
+> Criar uma lista para armazenar os categorias :heavy_check_mark: 🔴 (JM)
 
 > Criar uma pilha para livros retirados da lista (estante) :warning: 🟡
 
@@ -64,7 +64,11 @@
 
 > Caso tenha tempo: ordernação dos livros em ordem alfabetica :warning: 🟢
 
-> CRUD dos livros :warning:
+> CRUD da categoria :warning:
+
+> CRUD do livro :warning:
+
+> CRUD da estante :warning:
 
 > CRUD dos funcionários :warning:
 
