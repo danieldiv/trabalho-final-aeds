@@ -86,6 +86,7 @@ void printAll(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estant
 	pLE = LE->HEAD;
 	for (int i = 0; i < LE->size();i++) {
 		pLE->dado.imprime();
+		cout << endl << "===============================" << endl << endl;
 		pLE = pLE->prox;
 	}
 }
