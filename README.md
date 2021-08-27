@@ -35,6 +35,13 @@
 ### Login
 
 - Para realizar o login, utilize um dos usuarios abaixo:
+  - usuario: usuA | senha: senha123
+
+  - usuario: usuB | senha: senha456
+
+  - usuario: usuC | senha: senha789
+
+  - usuario: usuD | senha: senhaLG
 
 ## Tasks
 
