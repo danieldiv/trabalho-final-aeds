@@ -63,7 +63,7 @@
 
 > Criar uma lista para armazenar os categorias :heavy_check_mark: 🔴 (JM)
 
-> Criar uma pilha para livros retirados da lista (estante) :warning: 🟡
+> Criar uma pilha para livros retirados da lista (estante) :warning: 🟡 (Leonardo)
 
 > Criar uma fila para pessoas esperando para entrar na biblioteca :warning: 🟢
 
