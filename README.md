@@ -42,15 +42,15 @@
 
 > Menu de navegação :warning: 🟡
 
-> Arquivo inicial .txt para as categorias :heavy_check_mark: 🔴 (JM)
+> Valor inicial dentro do arquivo.json  para as categorias :heavy_check_mark: 🔴 (JM)
 
-> Arquivo inicial .txt para as permissões :x:
+> Valor inicial dentro do arquivo.json  para as permissões :x:
 
-> Arquivo inicial .txt para a(s) estante(s) :heavy_check_mark: 🟢
+> Valor inicial dentro do arquivo.json  para a(s) estante(s) :heavy_check_mark: 🟢
 
-> Arquivo inicial .txt para os livros com a categoria :heavy_check_mark: 🔴
+> Valor inicial dentro do arquivo.json  para os livros com a categoria :heavy_check_mark: 🔴
 
-> Arquivo inicial .txt para os funcionarios :heavy_check_mark: 🔴
+> Valor inicial dentro do arquivo.json  para os funcionarios :heavy_check_mark: 🔴
 
 > Criar uma lista para armazenar os livros :heavy_check_mark: 🟡
 
