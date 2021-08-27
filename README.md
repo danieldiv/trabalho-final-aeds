@@ -48,15 +48,9 @@
 
 > Arquivo inicial .txt para a(s) estante(s) :heavy_check_mark: 🟢
 
-<<<<<<< HEAD
-> Arquivo inicial .txt para os livros com a categoria :warning: 🔴
+> Arquivo inicial .txt para os livros com a categoria :heavy_check_mark: 🔴
 
-> Arquivo inicial .txt para os funcionarios :warning: 🔴
-=======
-> Arquivo inicial .txt para os livros com a categoria :heavy_check_mark: 🔴 
-
-> Arquivo inicial .txt para os funcionarios :heavy_check_mark: 🔴 
->>>>>>> 9abe5641f76020b2ce473ad6ea4f66a3f5198851
+> Arquivo inicial .txt para os funcionarios :heavy_check_mark: 🔴
 
 > Criar uma lista para armazenar os livros :heavy_check_mark: 🟡
 
