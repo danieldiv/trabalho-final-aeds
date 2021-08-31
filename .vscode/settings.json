@@ -7,6 +7,7 @@
 		"xlocale": "cpp",
 		"xlocnum": "cpp",
 		"iosfwd": "cpp",
-		"utility": "cpp"
+		"utility": "cpp",
+		"*.tcc": "cpp"
 	}
 }

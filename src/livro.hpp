@@ -2,6 +2,7 @@
 #define LIVRO_HPP
 
 #include <iostream>
+#include <string.h>
 #include <string>
 
 static int quanLivro = 0;

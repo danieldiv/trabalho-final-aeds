@@ -12,8 +12,6 @@ void LInsert(Livro* l, ItemLivro item) {
 	l->last->prox->ant = l->last;
 	l->last = l->last->prox;
 
-	// l->last->data = item;
-
 	l->last->data.id = item.id;
 	l->last->data.id_categoria = item.id_categoria;
 	l->last->data.quantidade = item.quantidade;
