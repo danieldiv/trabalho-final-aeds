@@ -47,7 +47,7 @@
 
 > Login do sistema :heavy_check_mark: 🔴
 
-> Menu de navegação :warning: 🟡
+> Menu de navegação :warning: 🟡 (Lucas)
 
 > Valor inicial dentro do arquivo.json  para as categorias :heavy_check_mark: 🔴 (JM)
 
