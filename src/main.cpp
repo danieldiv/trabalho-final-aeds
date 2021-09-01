@@ -77,13 +77,15 @@ int main() {
 	}
 
 //inicializa a biblioteca cheia
+	void InicializarBiblioteca(){
 		List<int>IdPessoas;
 		node<int> *pId = L->HEAD;
 
 		for(int i = 0; i < 10; i++){
 			IdPessoas.push(i);
 		}
-
+	}
+		
 //função que inicializa com a biblioteca cheia e vai se modificando a medida que alguem sai
 	void pessoasNaBiBlioteca(){
 		int cont = IdPessoas.size();
