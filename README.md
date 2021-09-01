@@ -65,9 +65,9 @@
 
 > Criar uma pilha para livros retirados da lista (estante) :warning: 🟡 (Leonardo)
 
-> Criar uma fila para pessoas esperando para entrar na biblioteca :warning: 🟢
+> Criar uma fila para pessoas esperando para entrar na biblioteca :warning: 🟢 (JM)
 
-> Controle da quantidade de pessoas dentro da biblioteca :warning: 🟢
+> Controle da quantidade de pessoas dentro da biblioteca :warning: 🟢 (JM)
 
 > Controle da quantidade de livros :warning: (DS) 🟡
 
