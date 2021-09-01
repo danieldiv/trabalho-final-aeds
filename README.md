@@ -65,7 +65,7 @@
 
 > Criar uma pilha para livros retirados da lista (estante) :warning: 🟡 (Leonardo)
 
-> Controle da quantidade de pessoas dentro da biblioteca :warning: 🟢 (JM)
+> Controle da quantidade de pessoas dentro da biblioteca :heavy_check_mark: 🟢 (JM)
 
 > Controle da quantidade de livros :warning: (DS) 🟡
 
