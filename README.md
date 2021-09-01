@@ -69,9 +69,9 @@
 
 > Controle da quantidade de pessoas dentro da biblioteca :warning: 🟢
 
-> Controle da quantidade de livros :warning: 🟡
+> Controle da quantidade de livros :warning: (DS) 🟡
 
-> Controle de livros retirados e livros devolvidos (LR e LD) :warning: (DS) 🟢
+> Controle de livros retirados e livros devolvidos (LR e LD) :warning: 🟢
 
 > Caso tenha tempo: ordernação dos livros em ordem alfabetica :warning: 🟢
 
