@@ -15,6 +15,7 @@ int main() {
 	readJsonFuncionario(&LF);
 	readJsonCategoria(&LC);
 	readJsonEstante(&LE);
+	//pessoasNaBibioteca();
 
 	do {
         system("cls || clear");
@@ -60,3 +61,17 @@ int main() {
 // 		L.push({aux["id"], aux["nome"]});
 // 	}
 // }
+
+/*
+//função que ira permitir ou não a imlementação da pilha de pessoas na biblioteca
+	void pessoasNaBiblioteca(){
+		int cont = 0;
+		if(cont <= 10){
+			//add na pilha
+			cont++;
+		}else{
+			cout << "\tBIBLIOTECA LOTADA!" << endl;
+			cout << "Por favor espere lá fora ate alguem sair!"  << endl;
+		}
+	}
+*/
