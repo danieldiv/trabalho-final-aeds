@@ -67,7 +67,7 @@
 
 > Controle da quantidade de pessoas dentro da biblioteca :heavy_check_mark: 🟢 (JM)
 
-> Controle da quantidade de livros :warning: (DS) 🟡
+> Controle da quantidade de livros :heavy_check_mark: (DS) 🟡
 
 > Controle de livros retirados e livros devolvidos (LR e LD) :warning: 🟢
 
