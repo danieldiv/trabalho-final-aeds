@@ -8,5 +8,6 @@ void printAutores();
 bool realizarLogin(funcionario* func, List<funcionario>* LF);
 void printAll(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE);
 
+void cadastrarLivro(Livro *L, List<categorias>* LC);
 
 #endif

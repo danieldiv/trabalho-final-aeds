@@ -5,7 +5,7 @@
 #include <string.h>
 #include <string>
 
-static int quanLivro = 0;
+// static int quanLivro = 0;
 using namespace std;
 
 typedef struct ItemLivro ItemLivro;
@@ -37,5 +37,7 @@ void LRemove(Livro *l, ItemLivro item);
 void Swap(BlockLivro *a, BlockLivro *b);
 void LImprimeLivro(Livro *l);
 void LImprimeLivroEstante(Livro *l);
+
+int sizeLivro(Livro *l);
 
 #endif

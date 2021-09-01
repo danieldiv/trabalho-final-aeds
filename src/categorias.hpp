@@ -12,6 +12,9 @@ struct categorias{
     string nome;
 
     void imprime();
+    bool buscarCat(int idCat);
+
+    int getId();
 
     categorias() = default;
     categorias(int id, string nome) : id(id), nome(nome) {}
