@@ -32,6 +32,7 @@ void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<
 			break;
 		case 3:
 			// remover livro
+			//removerLivro();
 			break;
 		case 4:
 			// pesquisar livro
@@ -81,11 +82,14 @@ void cadastrarLivro(Livro* L, List<categorias>* LC) {
 
 	cout << "Informe o nome do livro: ";
 	fflush(stdin);
-	getline(cin, nome);
+	//getline(cin, nome);
+	cin >> nome;
 
+	system("pause");
 	cout << "Informe a quantidade do livro: ";
 	cin >> quantidade;
 
+	system("pause");
 	cout << "CATEGORIAS" << endl << endl;
 
 	pLC = LC->HEAD;
@@ -109,6 +113,7 @@ void cadastrarLivro(Livro* L, List<categorias>* LC) {
 
 		if (!aux)
 			cout << "Categoria nao encontrada!!" << endl;
+
 	} while (!aux);
 
 	item.id_categoria = categoria;
