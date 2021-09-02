@@ -73,7 +73,7 @@ void pessoasNaBiblioteca() {
 
 // inicializa a biblioteca cheia/
 void InicializarBiblioteca() {
-	List<pessoa>IdPessoas;
+	Fila<pessoa>IdPessoas;
 
 	for (int i = 0; i < 10; i++) {
 		IdPessoas.push(i + 1);
@@ -91,7 +91,7 @@ void InicializarBiblioteca() {
 }
 >>>>>>> dff92395b6a369affb1f4d36cae63de0ae27810b
 
-void imprimeLeitor(List<pessoa>* leitor) {
+void imprimeLeitor(Fila<pessoa>* leitor) {
 	node<pessoa>* pId;
 
 	pId = leitor->HEAD;
@@ -113,17 +113,6 @@ void pessoasNaBiBlioteca(List<pessoa>* IdPessoas) {
 		*/
 }
 
-// void saidaDePessoas(int id) {
-// 	int aux;
-// 	for (int i = 0; i < IdPessoas.size(); i++) {
-// 		x = IdPessoas->dado;
-// 		pId = pId->prox;
-// 		if (x == id) {
-// 			IdPessoas.pop();
-// 		}
-// 	}
-// }
-
 void saidaDePessoas(int id, List<pessoa>* IdPessoas) {
 	int x;
 	node<pessoa>* pId;
@@ -142,7 +131,6 @@ void saidaDePessoas(int id, List<pessoa>* IdPessoas) {
 	void saidaDePessoas(int id){
 		IdPessoas.pop();
 	}	
-*/
 =======
 }
 >>>>>>> dff92395b6a369affb1f4d36cae63de0ae27810b
