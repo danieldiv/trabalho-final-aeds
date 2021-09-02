@@ -74,8 +74,7 @@
             "id": 3,
             "categoria": 1,
             "nome": "Harry Poter e a Pedra Filosofal",
-            "quantidade": 3,
-            "controle": "teste"
+            "quantidade": 3
         },
         {
             "id": 4,

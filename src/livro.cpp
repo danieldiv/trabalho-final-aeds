@@ -76,3 +76,15 @@ void LImprimeLivroEstante(Livro *l) {
 		aux = aux->prox;
 	}
 }
+
+int sizeLivro(Livro *l) {
+	BlockLivro* aux;
+	int quant;
+
+	aux = l->first->prox;
+	while (aux != NULL) {
+		quant++;
+		aux = aux->prox;
+	}
+	return quant;
+}

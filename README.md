@@ -49,7 +49,7 @@
 
 > Menu de navegação :warning: 🟡 (Lucas)
 
-> Valor inicial dentro do arquivo.json  para as categorias :heavy_check_mark: 🔴 (JM)
+> Valor inicial dentro do arquivo.json  para as categorias :heavy_check_mark: 🔴
 
 > Valor inicial dentro do arquivo.json  para as permissões :x:
 
@@ -61,13 +61,13 @@
 
 > Criar uma lista para armazenar os livros :heavy_check_mark: 🟡
 
-> Criar uma lista para armazenar os categorias :heavy_check_mark: 🔴 (JM)
+> Criar uma lista para armazenar os categorias :heavy_check_mark: 🔴
 
 > Criar uma pilha para livros retirados da lista (estante) :warning: 🟡 (Leonardo)
 
-> Controle da quantidade de pessoas dentro da biblioteca :heavy_check_mark: 🟢 (JM)
+> Controle da quantidade de pessoas dentro da biblioteca :heavy_check_mark: 🟢
 
-> Controle da quantidade de livros :warning: (DS) 🟡
+> Controle da quantidade de livros :heavy_check_mark: 🟡
 
 > Controle de livros retirados e livros devolvidos (LR e LD) :warning: 🟢
 

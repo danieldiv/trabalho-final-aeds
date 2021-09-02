@@ -1,8 +1,11 @@
 #include "Lista.hpp"
+#include "Fila.hpp"
+
 #include "livro.hpp"
 #include "funcionario.hpp"
 #include "categorias.hpp"
 #include "estante.hpp"
+#include "pessoa.hpp"
 #include "json.hpp"
 
 #include <string>
@@ -20,3 +23,8 @@ void readJsonEstante(List<estante> *LE);
 void readJsonUsuario();//receber parametro adequado
 
 void printAll(Livro* L, List<funcionario>* LF, List<categorias> *LC, List<estante> *LE);
+
+void InicializarBiblioteca();
+void imprimeLeitor(List<pessoa> *leitor);
+void saidaDePessoas(int id, List<pessoa>* IdPessoas);
+void pessoasNaBiBlioteca();
