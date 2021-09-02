@@ -8,6 +8,15 @@
 		"xlocnum": "cpp",
 		"iosfwd": "cpp",
 		"utility": "cpp",
-		"*.tcc": "cpp"
+		"*.tcc": "cpp",
+		"array": "cpp",
+		"initializer_list": "cpp",
+		"list": "cpp",
+		"type_traits": "cpp",
+		"valarray": "cpp",
+		"vector": "cpp",
+		"xhash": "cpp",
+		"xtree": "cpp",
+		"xutility": "cpp"
 	}
 }

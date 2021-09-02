@@ -16,6 +16,10 @@ int main() {
 	readJsonFuncionario(&LF);
 	readJsonCategoria(&LC);
 	readJsonEstante(&LE);
+
+	InicializarBiblioteca();
+
+	// return 0;
 	//pessoasNaBibioteca();
 	//saidaDePessoas(int id);
 
@@ -67,17 +71,31 @@ void pessoasNaBiblioteca() {
 	}
 }
 
-//inicializa a biblioteca cheia
-// void InicializarBiblioteca() {
-// 	List<int>IdPessoas;
-// 	node<int>* pId = L->HEAD;
+// inicializa a biblioteca cheia/
+void InicializarBiblioteca() {
+	List<pessoa>IdPessoas;
 
-// 	for (int i = 0; i < 10; i++) {
-// 		IdPessoas.push(i);
-// 	}
-// }
+	for (int i = 0; i < 10; i++) {
+		IdPessoas.push(i + 1);
+	}
 
-// //função que inicializa com a biblioteca cheia e vai se modificando a medida que alguem sai
+	// imprimeLeitor(&IdPessoas);
+	// saidaDePessoas(4, &IdPessoas);
+	// imprimeLeitor(&IdPessoas);
+}
+
+void imprimeLeitor(List<pessoa>* leitor) {
+	node<pessoa>* pId;
+
+	pId = leitor->HEAD;
+	for (int i = 0; i < leitor->size(); i++) {
+		pId->dado.imprime();
+		pId = pId->prox;
+	}
+	cout << endl;
+}
+
+//função que inicializa com a biblioteca cheia e vai se modificando a medida que alguem sai
 // void pessoasNaBiBlioteca() {
 // 	int cont = IdPessoas.size();
 // 	if (cont <= 10) {
@@ -89,6 +107,17 @@ void pessoasNaBiblioteca() {
 // 		cout << "Por favor espere lá fora ate alguem sair!" << endl;
 // 	}
 // }
+void pessoasNaBiBlioteca(List<pessoa>* IdPessoas) {
+		IdPessoas->push(IdPessoas->size() + 1);
+		/*
+			nao vai ter como ter limite, a nao ser que a remocao seja feita da forma statica, ou seja, exclui o ultimo que entrou
+			utilizando a funcao do ist
+
+			para excluir pessoas aleatorias, nao e possivel utilizar a funcao do List, e tambem nao foi possivel excluir trocando
+			o endereco do prox, logo, para excluir, o id sera colocado em 0, nao sendo excluido realmente
+		*/
+}
+
 // void saidaDePessoas(int id) {
 // 	int aux;
 // 	for (int i = 0; i < IdPessoas.size(); i++) {
@@ -100,3 +129,18 @@ void pessoasNaBiblioteca() {
 // 	}
 // }
 
+void saidaDePessoas(int id, List<pessoa>* IdPessoas) {
+	int x;
+	node<pessoa>* pId;
+
+	pId = IdPessoas->HEAD;
+	for (int i = 0; i < IdPessoas->size(); i++) {
+		x = pId->dado.id;
+
+		if (x == id) {
+			pId->dado.pop();
+		}
+
+		pId = pId->prox;
+	}
+}
