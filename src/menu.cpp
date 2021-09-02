@@ -1,5 +1,13 @@
 #include "menu.hpp"
 
+struct stackNode {
+    int data;
+    struct stackNode *nextPtr;
+};
+
+typedef struct stackNode stackNode;
+typedef stackNode *StackNodePtr;
+
 void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, List<pessoa>* LP) {
 	int option;
 	do {
@@ -32,7 +40,7 @@ void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<
 			break;
 		case 3:
 			// remover livro
-			//removerLivro();
+			removerLivro(L, LC);
 			break;
 		case 4:
 			// pesquisar livro
@@ -241,3 +249,53 @@ void saidaDePessoas(List<pessoa>* IdPessoas) {
 }
 
 
+// REMOVE O LIVRO DA ESTANTE E O INCLUI NA PILHA
+
+void removerLivro(Livro* L, List<categorias>* LC){
+	//String nomeLivro;
+
+	StackNodePtr stackPtr = NULL; 
+
+    printf("Digite o nome do Livro: ", *sizeLivro);
+    cin >> sizeLivro;
+    push(&stackPtr, sizeLivro);
+    printStack(stackPtr);
+}
+
+void push(StackNodePtr *topPtr, int info){
+    StackNodePtr newPtr;//ponteiro para novo nó
+    
+    //insere o nó no topo da pilha 
+    if(newPtr != NULL){
+        newPtr->data = info;
+        newPtr->nextPtr = *topPtr;
+        *topPtr = newPtr;
+    }
+    else { // se não tiver espaço disponível
+        printf("%d não inserido. Nenhuma memória disponível.\n", info);
+    }
+}
+
+void printStack(StackNodePtr currentPtr){
+    
+    //se a pilha estiver vazia
+    if(currentPtr == NULL){
+        printf("A pilha está vazia.\n\n");
+    }
+    else{
+        printf("A pilha é: \n");
+        
+        //enquanto não chega ao final da pilha
+        while(currentPtr != NULL){
+            printf("%d ---> ", currentPtr->data);
+            currentPtr=currentPtr->nextPtr;
+        }
+        
+        printf("NULL\n\n");
+    }
+}
+
+int isEmpty(StackNodePtr topPtr)
+{
+    return topPtr == NULL;
+}
