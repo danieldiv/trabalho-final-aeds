@@ -19,7 +19,7 @@ int main() {
 	readJsonEstante(&LE);
 
 	do {
-		system("cls || clear");
+		// system("cls || clear");
 		cout << "======================" << endl;
 		cout << "      BIBLIOTECA" << endl;
 		cout << "======================" << endl << endl;
@@ -55,7 +55,7 @@ int main() {
 }
 
 void printAutores() {
-	system("cls || clear");
+	// system("cls || clear");
 	cout << "=====================" << endl;
 	cout << "     INTEGRANTES     " << endl;
 	cout << "=====================" << endl << endl;
