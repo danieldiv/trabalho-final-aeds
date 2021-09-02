@@ -19,7 +19,6 @@ int main() {
 
 	InicializarBiblioteca();
 
-	// return 0;
 	//pessoasNaBibioteca();
 	//saidaDePessoas(int id);
 
@@ -103,14 +102,12 @@ void imprimeLeitor(Fila<pessoa>* leitor) {
 }
 
 void pessoasNaBiBlioteca(List<pessoa>* IdPessoas) {
+	if(IdPessoas->size() == 10){
 		IdPessoas->push(IdPessoas->size() + 1);
-		/*
-			nao vai ter como ter limite, a nao ser que a remocao seja feita da forma statica, ou seja, exclui o ultimo que entrou
-			utilizando a funcao do ist
-
-			para excluir pessoas aleatorias, nao e possivel utilizar a funcao do List, e tambem nao foi possivel excluir trocando
-			o endereco do prox, logo, para excluir, o id sera colocado em 0, nao sendo excluido realmente
-		*/
+	}else{
+		cout << "\tBIBLIOTECA LOTADA!!"<< endl;
+		cout << "Espere no lado de fora!";
+	}	
 }
 
 void saidaDePessoas(int id, List<pessoa>* IdPessoas) {
