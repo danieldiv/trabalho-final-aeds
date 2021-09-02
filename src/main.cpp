@@ -78,7 +78,7 @@ int main() {
 
 //inicializa a biblioteca cheia
 	void InicializarBiblioteca(){
-		List<int>IdPessoas;
+		Fila<int>IdPessoas;
 		node<int> *pId = L->HEAD;
 
 		for(int i = 0; i < 10; i++){
@@ -98,13 +98,6 @@ int main() {
 		}
 	}
 	void saidaDePessoas(int id){
-		int aux;
-		for(int i = 0; i < IdPessoas.size(); i++){
-			x = IdPessoas->dado;
-			pId = pId->prox;
-			if(x == id){
-				IdPessoas.pop();
-			}
-		}
+		IdPessoas.pop();
 	}	
 */
