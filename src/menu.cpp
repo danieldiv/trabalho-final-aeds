@@ -1,20 +1,24 @@
 #include "menu.hpp"
 
-void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE) {
+void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, List<pessoa>* LP) {
 	int option;
 	do {
 		system("clear || cls");
 		cout << "======================" << endl;
 		cout << "    MENU BIBLIOTECA" << endl;
 		cout << "======================" << endl << endl;
-		cout << "1 - Cadastrar Livro" << endl;
-		cout << "2 - Editar    Livro" << endl;
-		cout << "3 - Remover   Livro" << endl;
-		cout << "4 - Pesquisar Livro" << endl;
-		cout << "5 - Pesquisar Categoria" << endl;
-		cout << "6 - Exibir Funcionarios" << endl;
-		cout << "7 - Acessar Estante" << endl;
-		cout << "8 - Imprimir Tudo" << endl;
+		cout << "1  - Cadastrar Livro" << endl;
+		cout << "2  - Editar    Livro" << endl;
+		cout << "3  - Remover   Livro" << endl;
+		cout << "4  - Pesquisar Livro" << endl;
+		cout << "5  - Pesquisar Categoria" << endl;
+		cout << "6  - Exibir Funcionarios" << endl;
+		cout << "7  - Acessar Estante" << endl;
+		cout << "8  - Imprimir Tudo" << endl << endl;
+
+		cout << "9  - Simular entrada de pessoa" << endl;
+		cout << "10 - Simular saida de pessoa" << endl << endl;
+
 		// implementar adição a fila; adição a biblioteca e remoção da biblioteca
 		cout << "0 - Voltar" << endl;
 		cout << endl << "Opcao: ";
@@ -23,39 +27,36 @@ void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<
 		case 1:
 			cadastrarLivro(L, LC);
 			break;
-
 		case 2:
 			// editar livro
 			break;
-
 		case 3:
 			// remover livro
 			break;
-
 		case 4:
 			// pesquisar livro
 			break;
-
 		case 5:
 			// pesquisar categoria
 			break;
-
 		case 6:
 			// exibir funcionarios
 			break;
-
 		case 7:
 			// acessar estante
 			break;
-
 		case 8:
-			printAll(L, LF, LC, LE);
+			printAll(L, LF, LC, LE, LP);
 			break;
-
+		case 9:
+			pessoasNaBiBlioteca(LP);
+			break;
+		case 10:
+			saidaDePessoas(LP);
+			break;
 		case 0:
 			cout << "Voltando..." << endl << endl;
-			break;
-
+			return;
 		default:
 			cout << "Opcao invalida!" << endl << endl;
 			break;
@@ -147,49 +148,91 @@ bool realizarLogin(funcionario* func, List<funcionario>* LF) {
 	return false;
 }
 
-void printAll(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE) {
-	LImprimeLivro(L);
+void printAll(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, List<pessoa>* LP) {
+	printLivro(L);
+	printFuncionario(LF);
+	printCategoria(LC);
+	printEstante(LE);
+	printPessoa(LP);
+}
 
+void InicializarBiblioteca(List<pessoa>* IdPessoas) {
+	for (int i = 0; i < 10; i++) {
+		IdPessoas->push(i + 1);
+	}
+}
+
+void printPessoa(List<pessoa>* IdPessoas) {
+	cout << "PESSOAS" << endl << endl;
+
+	if (IdPessoas->size() == 0) {
+		cout << "Nao possui leitores na biblioteca" << endl << endl;
+		return;
+	}
+
+	node<pessoa>* pId;
+	pId = IdPessoas->HEAD;
+
+	for (int i = 0; i < IdPessoas->size(); i++) {
+		pId->dado.imprime();
+		pId = pId->prox;
+	}
+	cout << endl << endl;
+}
+
+void printFuncionario(List<funcionario>* LF) {
 	node<funcionario>* pLF;
-	node<categorias>* pLC;
-	node<estante>* pLE;
-
-	int i;
-
 	cout << endl << "FUNCIONARIOS" << endl << endl;
 
 	pLF = LF->HEAD;
-	for (i = 0; i < LF->size();i++) {
+	for (int i = 0; i < LF->size();i++) {
 		pLF->dado.imprime();
 		pLF = pLF->prox;
 	}
+}
 
+void printCategoria(List<categorias>* LC) {
 	cout << endl << "CATEGORIAS" << endl << endl;
 
+	node<categorias>* pLC;
 	pLC = LC->HEAD;
-	for (i = 0; i < LC->size();i++) {
+	for (int i = 0; i < LC->size();i++) {
 		pLC->dado.imprime();
 		pLC = pLC->prox;
 	}
+}
 
+void printEstante(List<estante>* LE) {
 	cout << endl << "ESTANTES" << endl << endl;
 
+	node<estante>* pLE;
 	pLE = LE->HEAD;
-	for (i = 0; i < LE->size();i++) {
+
+	for (int i = 0; i < LE->size();i++) {
 		pLE->dado.imprime(sizeLivro(&pLE->dado.l));
 		cout << endl << "===============================" << endl << endl;
 		pLE = pLE->prox;
 	}
 }
 
-void printAutores() {
-	system("cls || clear");
-	cout << "=====================" << endl;
-	cout << "     INTEGRANTES     " << endl;
-	cout << "=====================" << endl << endl;
-
-	cout << "Daniel Alves Sanches         (3P - Comp.)" << endl;
-	cout << "Julia Mello Lopes Goncalves  (3P - Comp.)" << endl;
-	cout << "Leonardo de Oliveira Campos  (3P - Comp.)" << endl;
-	cout << "Lucas de Souza Gontijo       (3P - Comp.)" << endl << endl;
+void pessoasNaBiBlioteca(List<pessoa>* IdPessoas) {
+	if (IdPessoas->size() < 10) {
+		IdPessoas->push((IdPessoas->size() != 0) ? (IdPessoas->TAIL->dado.id + 1) : 1);
+		cout << "Uma pessoa entrou na biblioteca!!" << endl << endl;
+	}
+	else {
+		cout << endl << "BIBLIOTECA LOTADA!!" << endl;
+		cout << "Espere no lado de fora!" << endl << endl;
+	}
 }
+
+void saidaDePessoas(List<pessoa>* IdPessoas) {
+	if (IdPessoas->size() == 0)
+		cout << "Nao possui leitores na biblioteca" << endl << endl;
+	else {
+		IdPessoas->pop();
+		cout << "Uma pessoa saiu da biblioteca!!" << endl << endl;
+	}
+}
+
+

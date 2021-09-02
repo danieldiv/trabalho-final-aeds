@@ -51,7 +51,7 @@ void Swap(BlockLivro* a, BlockLivro* b) {
 	b->data = aux;
 }
 
-void LImprimeLivro(Livro* l) {
+void printLivro(Livro* l) {
 	BlockLivro* aux;
 
 	cout << endl << "LIVROS" << endl << endl;

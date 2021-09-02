@@ -15,16 +15,13 @@
 
 int menu();
 
-// void readJsonCategoria();//receber parametro adequado
-void readJsonCategoria(List<categorias> *L);//receber parametro adequado
+void readJsonCategoria(List<categorias> *L);
 void readJsonFuncionario(List<funcionario>* LF);
 void readJsonLivro(Livro* L);
 void readJsonEstante(List<estante> *LE);
-void readJsonUsuario();//receber parametro adequado
+void readJsonUsuario();
 
-void printAll(Livro* L, List<funcionario>* LF, List<categorias> *LC, List<estante> *LE);
-
-void InicializarBiblioteca();
-void imprimeLeitor(List<pessoa> *leitor);
-void saidaDePessoas(int id, List<pessoa>* IdPessoas);
-void pessoasNaBiBlioteca();
+void InicializarBiblioteca(List<pessoa> *IdPessoas);
+void saidaDePessoas(List<pessoa>* IdPessoas);
+void pessoasNaBiBlioteca(List<pessoa>* IdPessoas);
+void printAutores();

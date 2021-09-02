@@ -11,22 +11,12 @@ int main() {
 	List<funcionario> LF;
 	List<categorias> LC;
 	List<estante> LE;
+	Fila<pessoa> LP;
 
 	readJsonLivro(&L);
 	readJsonFuncionario(&LF);
 	readJsonCategoria(&LC);
 	readJsonEstante(&LE);
-
-	InicializarBiblioteca();
-
-	// return 0;
-	//pessoasNaBibioteca();
-	//saidaDePessoas(int id);
-
-	// cout << "quant livro: " << sizeLivro(&L) << endl;
-	// cout << "quant livro estantes: " << LE.size() << endl;
-
-	// system("pause");
 
 	do {
 		system("cls || clear");
@@ -41,8 +31,10 @@ int main() {
 		cin >> option;
 		switch (option) {
 		case 1:
-			if (realizarLogin(&func, &LF) == true)
-				menuBiblioteca(&L, &LF, &LC, &LE);
+			if (realizarLogin(&func, &LF) == true) {
+				InicializarBiblioteca(&LP);
+				menuBiblioteca(&L, &LF, &LC, &LE, &LP);
+			}
 			else
 				cout << "Usuario ou senha invalida!!" << endl << endl;
 			break;
@@ -62,56 +54,29 @@ int main() {
 	return 0;
 }
 
-//função que ira permitir ou não a imlementação da pilha de pessoas na biblioteca
-void pessoasNaBiblioteca() {
-	int cont = 0;
-	if (cont <= 10) {
-		//add na pilha
-		cont++;
-	}
+void printAutores() {
+	system("cls || clear");
+	cout << "=====================" << endl;
+	cout << "     INTEGRANTES     " << endl;
+	cout << "=====================" << endl << endl;
+
+	cout << "Daniel Alves Sanches         (3P - Comp.)" << endl;
+	cout << "Julia Mello Lopes Goncalves  (3P - Comp.)" << endl;
+	cout << "Leonardo de Oliveira Campos  (3P - Comp.)" << endl;
+	cout << "Lucas de Souza Gontijo       (3P - Comp.)" << endl << endl;
 }
+
+//função que ira permitir ou não a imlementação da pilha de pessoas na biblioteca
+
 
 // inicializa a biblioteca cheia/
-void InicializarBiblioteca() {
-	List<pessoa>IdPessoas;
 
-	for (int i = 0; i < 10; i++) {
-		IdPessoas.push(i + 1);
-	}
 
-<<<<<<< HEAD
 //inicializa a biblioteca cheia
-	void InicializarBiblioteca(){
-		Fila<int>IdPessoas;
-		node<int> *pId = L->HEAD;
-=======
-	// imprimeLeitor(&IdPessoas);
-	// saidaDePessoas(4, &IdPessoas);
-	// imprimeLeitor(&IdPessoas);
-}
->>>>>>> dff92395b6a369affb1f4d36cae63de0ae27810b
-
-void imprimeLeitor(List<pessoa>* leitor) {
-	node<pessoa>* pId;
-
-	pId = leitor->HEAD;
-	for (int i = 0; i < leitor->size(); i++) {
-		pId->dado.imprime();
-		pId = pId->prox;
-	}
-	cout << endl;
-}
-
-void pessoasNaBiBlioteca(List<pessoa>* IdPessoas) {
-		IdPessoas->push(IdPessoas->size() + 1);
-		/*
-			nao vai ter como ter limite, a nao ser que a remocao seja feita da forma statica, ou seja, exclui o ultimo que entrou
-			utilizando a funcao do ist
-
-			para excluir pessoas aleatorias, nao e possivel utilizar a funcao do List, e tambem nao foi possivel excluir trocando
-			o endereco do prox, logo, para excluir, o id sera colocado em 0, nao sendo excluido realmente
-		*/
-}
+// void InicializarBiblioteca() {
+// 	Fila<int>IdPessoas;
+// 	// node<int>* pId = L->HEAD;
+// }
 
 // void saidaDePessoas(int id) {
 // 	int aux;
@@ -124,25 +89,20 @@ void pessoasNaBiBlioteca(List<pessoa>* IdPessoas) {
 // 	}
 // }
 
-void saidaDePessoas(int id, List<pessoa>* IdPessoas) {
-	int x;
-	node<pessoa>* pId;
+// void saidaDePessoas(int id, List<pessoa>* IdPessoas) {
+// 	int x;
+// 	node<pessoa>* pId;
 
-	pId = IdPessoas->HEAD;
-	for (int i = 0; i < IdPessoas->size(); i++) {
-		x = pId->dado.id;
+// 	pId = IdPessoas->HEAD;
+// 	for (int i = 0; i < IdPessoas->size(); i++) {
+// 		x = pId->dado.id;
 
-		if (x == id) {
-			pId->dado.pop();
-		}
+// 		if (x == id) {
+// 			pId->dado.pop();
+// 		}
 
-		pId = pId->prox;
-	}
-<<<<<<< HEAD
-	void saidaDePessoas(int id){
-		IdPessoas.pop();
-	}	
-*/
-=======
-}
->>>>>>> dff92395b6a369affb1f4d36cae63de0ae27810b
+// 		pId = pId->prox;
+// 	}
+// }
+
+

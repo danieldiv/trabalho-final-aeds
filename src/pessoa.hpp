@@ -12,8 +12,6 @@ struct pessoa {
 	int id;
 
 	void imprime();
-	void pop();
-	int getQuant();
 
 	pessoa() = default;
 	pessoa(int id) : id(id) {}
