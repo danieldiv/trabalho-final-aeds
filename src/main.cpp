@@ -110,7 +110,7 @@ void pessoasNaBiBlioteca(List<pessoa>* IdPessoas) {
 	}	
 }
 
-void saidaDePessoas(int id, List<pessoa>* IdPessoas) {
+void saidaDePessoas(int id, Fila<pessoa>* IdPessoas) {
 	int x;
 	node<pessoa>* pId;
 
