@@ -83,7 +83,7 @@ void cadastrarLivro(Livro* L, List<categorias>* LC) {
 	ItemLivro item;
 	node<categorias>* pLC;
 
-	system("cls || clear");
+	// system("cls || clear");
 	cout << "=====================" << endl;
 	cout << "    CADASTRO LIVRO" << endl;
 	cout << "=====================" << endl << endl;
@@ -136,7 +136,7 @@ bool realizarLogin(funcionario* func, List<funcionario>* LF) {
 	string usuario, senha;
 	node<funcionario>* pLF;
 
-	system("cls || clear");
+	// system("cls || clear");
 	cout << "=====================" << endl;
 	cout << "        LOGIN" << endl;
 	cout << "=====================" << endl << endl;
