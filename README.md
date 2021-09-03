@@ -52,7 +52,7 @@
 
 > Login do sistema :heavy_check_mark: 🔴
 
-> Menu de navegação :warning: 🟡 (Lucas)
+> Menu de navegação (principal => submenus devem ser feitos com as funções) :heavy_check_mark: 🟡 (Lucas)
 
 > Valor inicial dentro do arquivo.json  para as categorias :heavy_check_mark: 🔴
 
@@ -72,7 +72,7 @@
 
 > Controle da quantidade de pessoas dentro da biblioteca :heavy_check_mark: 🟢
 
-> Controle da quantidade de livros :heavy_check_mark: 🟡
+> Controle da quantidade de livros :heavy_check_mark: 🟡 (Lucas)
 
 > Controle de livros retirados e livros devolvidos (LR e LD) :warning: 🟢
 
@@ -80,7 +80,7 @@
 
 > CRUD da categoria :warning:
 
-> CRUD do livro :warning:
+> CRUD do livro :warning: 
 
 > CRUD da estante :warning:
 
