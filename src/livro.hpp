@@ -15,9 +15,10 @@ typedef struct Livro Livro;
 struct ItemLivro {
 	int id;
 	int id_categoria;
-	int quantidade;
+	// int quantidade;
 	string str;
 	char *nome;
+	bool controle;
 };
 
 struct BlockLivro {

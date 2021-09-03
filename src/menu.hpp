@@ -24,6 +24,8 @@ void printPessoa(List<pessoa> *IdPessoas);
 void cadastrarLivro(Livro *L, List<categorias>* LC);
 void removerLivro(Livro* L, List<categorias>* LC);
 
+void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* IdPessoas);
+
 int isEmpty(StackNodePtr topPtr);
 void printStack(StackNodePtr currentPtr);
 void push(StackNodePtr *topPtr, int info);

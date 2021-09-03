@@ -45,7 +45,7 @@ void readJsonLivro(Livro* L) {
 		item.id = aux["id"];
 		item.id_categoria = aux["categoria"];
 		item.str = aux["nome"];
-		item.quantidade = aux["quantidade"];
+		// item.quantidade = aux["quantidade"];
 
 		LInsert(L, item);
 	}

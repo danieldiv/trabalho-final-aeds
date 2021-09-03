@@ -14,7 +14,8 @@ void LInsert(Livro* l, ItemLivro item) {
 
 	l->last->data.id = item.id;
 	l->last->data.id_categoria = item.id_categoria;
-	l->last->data.quantidade = item.quantidade;
+	l->last->data.controle = false;
+	// l->last->data.quantidade = item.quantidade;
 
 	l->last->data.nome = new char[item.str.length() + 1];
 	memcpy(l->last->data.nome, item.str.c_str(), item.str.length() + 1);
@@ -55,11 +56,12 @@ void printLivro(Livro* l) {
 	BlockLivro* aux;
 
 	cout << endl << "LIVROS" << endl << endl;
-	cout << "ID\t" << "CAT.\t" << "QUANT.\t" << "NOME" << endl << endl;
+	cout << "ID\t" << "CAT.\t" << "NOME" << endl << endl;
 
 	aux = l->first->prox;
 	while (aux != NULL) {
-		cout << "[" << aux->data.id << "]:\t[" << aux->data.id_categoria << "]\t[" << aux->data.quantidade << "]\t" <<aux->data.nome << endl;
+		cout << "[" << aux->data.id << "]:\t[" << aux->data.id_categoria << "]\t" << aux->data.nome << endl;
+		// cout << "[" << aux->data.id << "]:\t[" << aux->data.id_categoria << "]\t[" << aux->data.quantidade << "]\t" <<aux->data.nome << endl;
 		aux = aux->prox;
 	}
 }

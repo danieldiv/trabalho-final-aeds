@@ -61,26 +61,22 @@
         {
             "id": 1,
             "categoria": 1,
-            "nome": "Harry Poter e a Pedra Filosofal",
-            "quantidade": 3
+            "nome": "Harry Poter e a Pedra Filosofal"
         },
         {
             "id": 2,
             "categoria": 1,
-            "nome": "Harry Poter e a camara secreta",
-            "quantidade": 3
+            "nome": "Harry Poter e a camara secreta"
         },
         {
             "id": 3,
             "categoria": 1,
-            "nome": "Harry Poter e a Pedra Filosofal",
-            "quantidade": 3
+            "nome": "Harry Poter e a Pedra Filosofal"
         },
         {
             "id": 4,
             "categoria": 4,
-            "nome": "Arquitetura do silencio",
-            "quantidade": 0
+            "nome": "Arquitetura do silencio"
         }
     ],
 

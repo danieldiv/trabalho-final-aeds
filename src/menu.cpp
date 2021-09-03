@@ -1,17 +1,17 @@
 #include "menu.hpp"
 
-struct stackNode {
-    int data;
-    struct stackNode *nextPtr;
-};
+// struct stackNode {
+//     int data;
+//     struct stackNode *nextPtr;
+// };
 
-typedef struct stackNode stackNode;
-typedef stackNode *StackNodePtr;
+// typedef struct stackNode stackNode;
+// typedef stackNode *StackNodePtr;
 
 void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, List<pessoa>* LP) {
 	int option;
 	do {
-		system("clear || cls");
+		//system("clear || cls");
 		cout << "======================" << endl;
 		cout << "    MENU BIBLIOTECA" << endl;
 		cout << "======================" << endl << endl;
@@ -40,7 +40,7 @@ void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<
 			break;
 		case 3:
 			// remover livro
-			removerLivro(L, LC);
+			// removerLivro(L, LC);
 			break;
 		case 4:
 			// pesquisar livro
@@ -76,7 +76,7 @@ void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<
 
 void cadastrarLivro(Livro* L, List<categorias>* LC) {
 	string nome;
-	int quantidade;
+	// int quantidade;
 	int categoria;
 	bool aux = false;
 
@@ -94,8 +94,8 @@ void cadastrarLivro(Livro* L, List<categorias>* LC) {
 	cin >> nome;
 
 	system("pause");
-	cout << "Informe a quantidade do livro: ";
-	cin >> quantidade;
+	// cout << "Informe a quantidade do livro: ";
+	// cin >> quantidade;
 
 	system("pause");
 	cout << "CATEGORIAS" << endl << endl;
@@ -127,7 +127,7 @@ void cadastrarLivro(Livro* L, List<categorias>* LC) {
 	item.id_categoria = categoria;
 	item.id = sizeLivro(L) + 1;
 	item.str = nome;
-	item.quantidade = quantidade;
+	// item.quantidade = quantidade;
 
 	LInsert(L, item);
 }
@@ -167,6 +167,8 @@ void printAll(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estant
 	printCategoria(LC);
 	printEstante(LE);
 	printPessoa(LP);
+
+	adicionarLivroPessoa(LE, LP);
 }
 
 void InicializarBiblioteca(List<pessoa>* IdPessoas) {
@@ -248,54 +250,57 @@ void saidaDePessoas(List<pessoa>* IdPessoas) {
 	}
 }
 
+void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* LP) {
+	cout << "head: " << LP->HEAD->dado.id << endl;
+}
 
 // REMOVE O LIVRO DA ESTANTE E O INCLUI NA PILHA
 
-void removerLivro(Livro* L, List<categorias>* LC){
-	//String nomeLivro;
+// void removerLivro(Livro* L, List<categorias>* LC){
+// 	//String nomeLivro;
 
-	StackNodePtr stackPtr = NULL; 
+// 	StackNodePtr stackPtr = NULL;
 
-    printf("Digite o nome do Livro: ", *sizeLivro);
-    cin >> sizeLivro;
-    push(&stackPtr, sizeLivro);
-    printStack(stackPtr);
-}
+//     printf("Digite o nome do Livro: ", *sizeLivro);
+//     cin >> sizeLivro;
+//     push(&stackPtr, sizeLivro);
+//     printStack(stackPtr);
+// }
 
-void push(StackNodePtr *topPtr, int info){
-    StackNodePtr newPtr;//ponteiro para novo nó
-    
-    //insere o nó no topo da pilha 
-    if(newPtr != NULL){
-        newPtr->data = info;
-        newPtr->nextPtr = *topPtr;
-        *topPtr = newPtr;
-    }
-    else { // se não tiver espaço disponível
-        printf("%d não inserido. Nenhuma memória disponível.\n", info);
-    }
-}
+// void push(StackNodePtr *topPtr, int info){
+//     StackNodePtr newPtr;//ponteiro para novo nó
 
-void printStack(StackNodePtr currentPtr){
-    
-    //se a pilha estiver vazia
-    if(currentPtr == NULL){
-        printf("A pilha está vazia.\n\n");
-    }
-    else{
-        printf("A pilha é: \n");
-        
-        //enquanto não chega ao final da pilha
-        while(currentPtr != NULL){
-            printf("%d ---> ", currentPtr->data);
-            currentPtr=currentPtr->nextPtr;
-        }
-        
-        printf("NULL\n\n");
-    }
-}
+//     //insere o nó no topo da pilha
+//     if(newPtr != NULL){
+//         newPtr->data = info;
+//         newPtr->nextPtr = *topPtr;
+//         *topPtr = newPtr;
+//     }
+//     else { // se não tiver espaço disponível
+//         printf("%d não inserido. Nenhuma memória disponível.\n", info);
+//     }
+// }
 
-int isEmpty(StackNodePtr topPtr)
-{
-    return topPtr == NULL;
-}
+// void printStack(StackNodePtr currentPtr){
+
+//     //se a pilha estiver vazia
+//     if(currentPtr == NULL){
+//         printf("A pilha está vazia.\n\n");
+//     }
+//     else{
+//         printf("A pilha é: \n");
+
+//         //enquanto não chega ao final da pilha
+//         while(currentPtr != NULL){
+//             printf("%d ---> ", currentPtr->data);
+//             currentPtr=currentPtr->nextPtr;
+//         }
+
+//         printf("NULL\n\n");
+//     }
+// }
+
+// int isEmpty(StackNodePtr topPtr)
+// {
+//     return topPtr == NULL;
+// }
