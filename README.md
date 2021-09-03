@@ -72,7 +72,7 @@
 
 > Controle da quantidade de pessoas dentro da biblioteca :heavy_check_mark: 🟢
 
-> Controle da quantidade de livros :heavy_check_mark: 🟡 (Lucas)
+> Controle da quantidade de livros :heavy_check_mark: 🟡
 
 > Controle de livros retirados e livros devolvidos (LR e LD) :warning: 🟢
 
@@ -80,7 +80,7 @@
 
 > CRUD da categoria :warning:
 
-> CRUD do livro :warning: 
+> CRUD do livro :warning: (Lucas)
 
 > CRUD da estante :warning:
 
