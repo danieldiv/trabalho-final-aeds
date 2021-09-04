@@ -22,6 +22,7 @@ void printEstante(List<estante>* LE);
 void printPessoa(List<pessoa> *IdPessoas);
 
 void cadastrarLivro(Livro *L, List<categorias>* LC);
+void editarLivro(Livro* L, List<categorias>* LC);
 void removerLivro(Livro* L, List<categorias>* LC);
 
 void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* IdPessoas);
