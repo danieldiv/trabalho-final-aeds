@@ -137,7 +137,7 @@ void editarLivro(Livro* L, List<categorias>* LC) {
 	cout << "=====================" << endl;
 	cout << "    EDITAR LIVRO" << endl;
 	cout << "=====================" << endl;
-	
+
 	printLivro(L);
 
 	cout << endl << endl << "Escolha o ID do que livro deseja editar: ";
@@ -156,7 +156,7 @@ void editarLivro(Livro* L, List<categorias>* LC) {
 		temp = temp->prox;
 	}
 
-	if (!found) 
+	if (!found)
 		cout << endl << "Livro nao encontrado!!" << endl << endl;
 	else {
 		cout << endl << "Livro escolhido: " << temp->data.nome << endl << endl;
@@ -169,9 +169,9 @@ void editarLivro(Livro* L, List<categorias>* LC) {
 			cout << "0 - Voltar" << endl << endl;
 			cout << "Opcao: ";
 			cin >> option;
-			
+
 			system("cls || clear");
-			
+
 			switch (option) {
 			case 1:
 				cout << endl << "Nome atual: " << temp->data.nome << endl;
@@ -201,7 +201,7 @@ void editarLivro(Livro* L, List<categorias>* LC) {
 					if (found) {
 						temp->data.id_categoria = id_categoria;
 						cout << "Categoria alterada!" << endl;
-						cout << "Nova categoria -> " << pLC->dado.nome << endl << endl;					
+						cout << "Nova categoria -> " << pLC->dado.nome << endl << endl;
 						break;
 					}
 					pLC = pLC->prox;
