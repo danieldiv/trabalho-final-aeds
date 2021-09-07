@@ -1,13 +1,5 @@
 #include "menu.hpp"
 
-// struct stackNode {
-//     int data;
-//     struct stackNode *nextPtr;
-// };
-
-// typedef struct stackNode stackNode;
-// typedef stackNode *StackNodePtr;
-
 void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, List<pessoa>* LP) {
 	int option;
 	do {
@@ -40,7 +32,7 @@ void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<
 			break;
 		case 3:
 			// remover livro
-			// removerLivro(L, LC);
+			adicionarLivroPessoa(LE, LP);
 			break;
 		case 4:
 			// pesquisar livro
@@ -169,6 +161,7 @@ void printAll(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estant
 	printPessoa(LP);
 
 	adicionarLivroPessoa(LE, LP);
+	//removerLivro();
 }
 
 void InicializarBiblioteca(List<pessoa>* IdPessoas) {
@@ -251,56 +244,30 @@ void saidaDePessoas(List<pessoa>* IdPessoas) {
 }
 
 void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* LP) {
+	string nomelivro;
+	int cat;
+
 	cout << "head: " << LP->HEAD->dado.id << endl;
+	cout << endl << endl;
+	cout << "======= BIBLIOTECA ========" << endl << endl;
+	cout << "Categorias"<<endl;
+	cout<<"[1]:	 Ficcao Cientifica"<<endl;
+	cout<<"[2]:	 Acao"<<endl;
+	cout<<"[3]:	 Aventura"<<endl;
+	cout<<"[4]:	 Poesia"<<endl;
+	cout<<"[5]:	 Contos"<<endl;
+	cout<<"[6]:	 Romance"<<endl;
+	cout<<"[7]:	 Biografias"<<endl;
+	cout<<"[8]:	 Literatura Basileira"<<endl;
+	cout<<"[9]:	 Literatura Estrangeira"<<endl;
+	cout<<"[10]: Jornais"<<endl;
+	cout<<"[11]: Colecoes"<<endl;
+	cout<<"[12]: Humor"<<endl;
+	cout<<"[13]: Genealogia"<<endl;
+	cout<<"[14]: Manuscritos"<<endl;
+	cout << endl<< endl;
+	cout << "Digite o id da categoria desejada: " << endl;
+	cin >> cat;
+	cout << "Digite o nome do livro que deseja: " << endl;
+	cin >> nomelivro;
 }
-
-// REMOVE O LIVRO DA ESTANTE E O INCLUI NA PILHA
-
-// void removerLivro(Livro* L, List<categorias>* LC){
-// 	//String nomeLivro;
-
-// 	StackNodePtr stackPtr = NULL;
-
-//     printf("Digite o nome do Livro: ", *sizeLivro);
-//     cin >> sizeLivro;
-//     push(&stackPtr, sizeLivro);
-//     printStack(stackPtr);
-// }
-
-// void push(StackNodePtr *topPtr, int info){
-//     StackNodePtr newPtr;//ponteiro para novo nó
-
-//     //insere o nó no topo da pilha
-//     if(newPtr != NULL){
-//         newPtr->data = info;
-//         newPtr->nextPtr = *topPtr;
-//         *topPtr = newPtr;
-//     }
-//     else { // se não tiver espaço disponível
-//         printf("%d não inserido. Nenhuma memória disponível.\n", info);
-//     }
-// }
-
-// void printStack(StackNodePtr currentPtr){
-
-//     //se a pilha estiver vazia
-//     if(currentPtr == NULL){
-//         printf("A pilha está vazia.\n\n");
-//     }
-//     else{
-//         printf("A pilha é: \n");
-
-//         //enquanto não chega ao final da pilha
-//         while(currentPtr != NULL){
-//             printf("%d ---> ", currentPtr->data);
-//             currentPtr=currentPtr->nextPtr;
-//         }
-
-//         printf("NULL\n\n");
-//     }
-// }
-
-// int isEmpty(StackNodePtr topPtr)
-// {
-//     return topPtr == NULL;
-// }
