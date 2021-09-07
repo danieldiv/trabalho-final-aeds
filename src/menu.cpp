@@ -374,4 +374,5 @@ void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* LP) {
 	cin >> cat;
 	cout << "Digite o nome do livro que deseja: " << endl;
 	cin >> nomelivro;
+	//adicionar livro À pessoa aqui ...
 }
