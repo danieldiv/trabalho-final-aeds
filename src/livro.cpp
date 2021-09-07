@@ -15,7 +15,6 @@ void LInsert(Livro* l, ItemLivro item) {
 	l->last->data.id = item.id;
 	l->last->data.id_categoria = item.id_categoria;
 	l->last->data.controle = false;
-	// l->last->data.quantidade = item.quantidade;
 
 	l->last->data.nome = new char[item.str.length() + 1];
 	memcpy(l->last->data.nome, item.str.c_str(), item.str.length() + 1);
@@ -81,7 +80,7 @@ void LImprimeLivroEstante(Livro *l) {
 
 int sizeLivro(Livro *l) {
 	BlockLivro* aux;
-	int quant;
+	int quant = 0;
 
 	aux = l->first->prox;
 	while (aux != NULL) {

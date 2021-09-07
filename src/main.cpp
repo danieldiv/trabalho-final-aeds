@@ -35,8 +35,10 @@ int main() {
 				InicializarBiblioteca(&LP);
 				menuBiblioteca(&L, &LF, &LC, &LE, &LP);
 			}
-			else
+			else {
 				cout << "Usuario ou senha invalida!!" << endl << endl;
+				system("pause");
+			}
 			break;
 		case 2:
 			printAutores();
@@ -48,7 +50,8 @@ int main() {
 			cout << "Opcao invalida!!" << endl << endl;
 			break;
 		}
-		system("pause");
+		if (option != 1)
+			system("pause");
 	} while (option != 0);
 
 	return 0;

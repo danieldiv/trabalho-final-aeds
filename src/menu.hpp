@@ -1,3 +1,4 @@
+ 34 lines (24 sloc) 1012 Bytes
 #ifndef MENUS_HPP
 #define MENUS_HPP
 
@@ -22,8 +23,15 @@ void printEstante(List<estante>* LE);
 void printPessoa(List<pessoa> *IdPessoas);
 
 void cadastrarLivro(Livro *L, List<categorias>* LC);
-//void removerLivro();
+void editarLivro(Livro* L, List<categorias>* LC);
+void removerLivro(Livro* L, List<categorias>* LC);
 
 void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* IdPessoas);
+
+int isEmpty(StackNodePtr topPtr);
+void printStack(StackNodePtr currentPtr);
+void push(StackNodePtr *topPtr, int info);
+
+void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* LP);
 
 #endif
