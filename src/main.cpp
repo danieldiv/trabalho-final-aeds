@@ -11,12 +11,12 @@ int main() {
 	List<funcionario> LF;
 	List<categorias> LC;
 	List<estante> LE;
-	Fila<pessoa> LP;
+	List<pessoa> LP;
 
 	readJsonLivro(&L);
 	readJsonFuncionario(&LF);
 	readJsonCategoria(&LC);
-	readJsonEstante(&LE);
+	readJsonEstante(&LE, &L);
 
 	do {
 		// system("cls || clear");

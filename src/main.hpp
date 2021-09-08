@@ -1,12 +1,12 @@
-#include "Lista.hpp"
-#include "Fila.hpp"
+#include "estrutura/Lista.hpp"
+#include "estrutura/Fila.hpp"
+#include "biblioteca/json.hpp"
 
 #include "livro.hpp"
 #include "funcionario.hpp"
 #include "categorias.hpp"
 #include "estante.hpp"
 #include "pessoa.hpp"
-#include "json.hpp"
 
 #include <string>
 #include <fstream>
@@ -18,7 +18,7 @@ int menu();
 void readJsonCategoria(List<categorias> *L);
 void readJsonFuncionario(List<funcionario>* LF);
 void readJsonLivro(Livro* L);
-void readJsonEstante(List<estante> *LE);
+void readJsonEstante(List<estante>* LE, Livro *L);
 void readJsonUsuario();
 
 void InicializarBiblioteca(List<pessoa> *IdPessoas);

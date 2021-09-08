@@ -9,7 +9,7 @@ void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<
 		cout << "======================" << endl << endl;
 		cout << "1  - Cadastrar Livro" << endl;
 		cout << "2  - Editar    Livro" << endl;
-		cout << "3  - Remover   Livro" << endl;
+		cout << "3  - " << endl;
 		cout << "4  - Pesquisar Livro" << endl;
 		cout << "5  - Pesquisar Categoria" << endl;
 		cout << "6  - Exibir Funcionarios" << endl;
@@ -68,7 +68,6 @@ void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<
 
 void cadastrarLivro(Livro* L, List<categorias>* LC) {
 	string nome;
-	// int quantidade;
 	int categoria;
 	bool aux = false;
 
@@ -81,8 +80,9 @@ void cadastrarLivro(Livro* L, List<categorias>* LC) {
 	cout << "=====================" << endl << endl;
 
 	cout << "Informe o nome do livro: ";
-	fflush(stdin);
-	cin >> nome;
+	cin.ignore();
+    getline(cin, nome);
+	cout << "nome "<< nome << endl;
 
 	pLC = LC->HEAD;
 	for (int i = 0; i < LC->size(); i++) {
@@ -119,7 +119,6 @@ void cadastrarLivro(Livro* L, List<categorias>* LC) {
 void editarLivro(Livro* L, List<categorias>* LC) {
 	int idLivro;
 	int option;
-	char excluir;
 	bool found = false;
 	int counter = 0;
 	BlockLivro *temp;
@@ -127,7 +126,7 @@ void editarLivro(Livro* L, List<categorias>* LC) {
 	// dados que serao trazidos do livro procurado
 	int id;
 	int id_categoria;
-	char *nome;
+	string nome;
 	// ======================
 
 	ItemLivro item;
@@ -141,9 +140,10 @@ void editarLivro(Livro* L, List<categorias>* LC) {
 	printLivro(L);
 
 	cout << endl << endl << "Escolha o ID do que livro deseja editar: ";
+	fflush(stdin);
 	cin >> idLivro;
 	system("cls || clear");
-
+	
 	temp = L->first->prox;
 	while (temp != NULL) {
 		if (temp->data.id == idLivro) {
@@ -176,9 +176,16 @@ void editarLivro(Livro* L, List<categorias>* LC) {
 			case 1:
 				cout << endl << "Nome atual: " << temp->data.nome << endl;
 				cout << "Digite um novo nome: ";
-				cin >> nome;
-				temp->data.nome = nome;
+
+				cin.ignore();
+				getline(cin, nome);
+				item.str = nome;
+
+				temp->data.nome = new char[item.str.length() + 1];
+				memcpy(temp->data.nome, item.str.c_str(), item.str.length() + 1);
+				
 				cout << "Nome alterado!" << endl << endl;
+				// temp->data.nome = nome;
 				break;
 
 			case 2:
@@ -210,7 +217,7 @@ void editarLivro(Livro* L, List<categorias>* LC) {
 				break;
 
 			case 3:
-				LRemove(L, temp->data);
+				// LRemove(L, temp->data);
 				cout << "Livro removido";
 				break;
 
@@ -263,8 +270,6 @@ void printAll(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estant
 	printCategoria(LC);
 	printEstante(LE);
 	printPessoa(LP);
-
-	adicionarLivroPessoa(LE, LP);
 	//removerLivro();
 }
 
@@ -350,29 +355,25 @@ void saidaDePessoas(List<pessoa>* IdPessoas) {
 void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* LP) {
 	string nomelivro;
 	int cat;
+	ItemPilha d;
+	
+	node<pessoa>* pId;
+	pId = LP->HEAD;
+	
+	printEstante(LE);
 
-	cout << "head: " << LP->HEAD->dado.id << endl;
-	cout << endl << endl;
-	cout << "======= BIBLIOTECA ========" << endl << endl;
-	cout << "Categorias"<<endl;
-	cout<<"[1]:	 Ficcao Cientifica"<<endl;
-	cout<<"[2]:	 Acao"<<endl;
-	cout<<"[3]:	 Aventura"<<endl;
-	cout<<"[4]:	 Poesia"<<endl;
-	cout<<"[5]:	 Contos"<<endl;
-	cout<<"[6]:	 Romance"<<endl;
-	cout<<"[7]:	 Biografias"<<endl;
-	cout<<"[8]:	 Literatura Basileira"<<endl;
-	cout<<"[9]:	 Literatura Estrangeira"<<endl;
-	cout<<"[10]: Jornais"<<endl;
-	cout<<"[11]: Colecoes"<<endl;
-	cout<<"[12]: Humor"<<endl;
-	cout<<"[13]: Genealogia"<<endl;
-	cout<<"[14]: Manuscritos"<<endl;
-	cout << endl<< endl;
-	cout << "Digite o id da categoria desejada: " << endl;
-	cin >> cat;
-	cout << "Digite o nome do livro que deseja: " << endl;
-	cin >> nomelivro;
-	//adicionar livro À pessoa aqui ...
+	cout << "livros" << endl;
+	FPVazia(&pId->dado.livros);
+	for (int i = 0; i < 5; i++) {
+		d.val = 3 + i;
+		Push(&pId->dado.livros, d);
+	}
+	Pimprime(&pId->dado.livros);
+	
+	// cout << endl<< endl;
+	// cout << "Digite o id da categoria desejada: " << endl;
+	// cin >> cat;
+	// cout << "Digite o nome do livro que deseja: " << endl;
+	// cin >> nomelivro;
+	// adicionar livro À pessoa aqui ...
 }

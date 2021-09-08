@@ -15,7 +15,6 @@ typedef struct Livro Livro;
 struct ItemLivro {
 	int id;
 	int id_categoria;
-	// int quantidade;
 	string str;
 	char *nome;
 	bool controle;
@@ -38,6 +37,7 @@ void LRemove(Livro *l, ItemLivro item);
 void Swap(BlockLivro *a, BlockLivro *b);
 void printLivro(Livro *l);
 void LImprimeLivroEstante(Livro *l);
+ItemLivro LBusca(Livro *L, int idLivro);
 
 int sizeLivro(Livro *l);
 

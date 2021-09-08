@@ -6,10 +6,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-struct stackNode;
+// struct stackNode;
 
-typedef struct stackNode stackNode;
-typedef stackNode *StackNodePtr;
+// typedef struct stackNode stackNode;
+// typedef stackNode *StackNodePtr;
 
 void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, List<pessoa>* LP);
 
@@ -27,9 +27,9 @@ void removerLivro(Livro* L, List<categorias>* LC);
 
 void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* IdPessoas);
 
-int isEmpty(StackNodePtr topPtr);
-void printStack(StackNodePtr currentPtr);
-void push(StackNodePtr *topPtr, int info);
+// int isEmpty(StackNodePtr topPtr);
+// void printStack(StackNodePtr currentPtr);
+// void push(StackNodePtr *topPtr, int info);
 
 void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* LP);
 

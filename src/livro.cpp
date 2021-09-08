@@ -11,13 +11,18 @@ void LInsert(Livro* l, ItemLivro item) {
 	l->last->prox = (BlockLivro*)malloc(sizeof(BlockLivro));
 	l->last->prox->ant = l->last;
 	l->last = l->last->prox;
+	
+	if (item.str.length() == 0)
+		l->last->data.nome = item.nome;
+
+	else {
+		l->last->data.nome = new char[item.str.length() + 1];
+		memcpy(l->last->data.nome, item.str.c_str(), item.str.length() + 1);
+	}
 
 	l->last->data.id = item.id;
 	l->last->data.id_categoria = item.id_categoria;
 	l->last->data.controle = false;
-
-	l->last->data.nome = new char[item.str.length() + 1];
-	memcpy(l->last->data.nome, item.str.c_str(), item.str.length() + 1);
 
 	l->last->prox = NULL;
 }
@@ -88,4 +93,22 @@ int sizeLivro(Livro *l) {
 		aux = aux->prox;
 	}
 	return quant;
+}
+
+ItemLivro LBusca(Livro *L, int idLivro) {
+	BlockLivro *temp;
+	ItemLivro result;
+
+	temp = L->first->prox;
+	while (temp != NULL) {
+		if (temp->data.id == idLivro) {
+			result.id = idLivro;
+			result.nome = temp->data.nome;
+			return result;
+		}
+		temp = temp->prox;
+	}
+
+	result.id = -1;
+	return result;
 }

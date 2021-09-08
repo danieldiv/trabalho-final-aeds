@@ -1,6 +1,6 @@
 #include "main.hpp"
 
-#include "json.hpp"
+#include "biblioteca/json.hpp"
 using json = nlohmann::json;
 
 void readJsonFuncionario(List<funcionario>* LF) {
@@ -51,7 +51,7 @@ void readJsonLivro(Livro* L) {
 	}
 }
 
-void readJsonEstante(List<estante>* LE) {
+void readJsonEstante(List<estante>* LE, Livro *L) {
 	json js;
 	ifstream file("arquivo.json");
 	file >> js;
@@ -59,7 +59,7 @@ void readJsonEstante(List<estante>* LE) {
 	int i, j;
 
 	estante est;
-	ItemLivro item;
+	ItemLivro item, temp;
 
 	for (i = 0; i < js["estante"].size(); i++) {
 		json aux = js["estante"][i];
@@ -70,8 +70,12 @@ void readJsonEstante(List<estante>* LE) {
 			json livros = aux["livro"][j];
 
 			item.id = livros["id"];
-			item.str = "nome";
-			LInsert(&est.l, item);
+			temp = LBusca(L, item.id);
+			if (temp.id != -1) {
+				item.nome = temp.nome;
+				LInsert(&est.l, item);
+			}
+			else cout << "O livro com ID:["<< item.id <<"] nao foi encontrado" << endl;			
 		}
 		LE->push(est);
 	}
