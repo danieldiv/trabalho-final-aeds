@@ -13,11 +13,12 @@ void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<
 		cout << "4  - Pesquisar Livro" << endl;
 		cout << "5  - Pesquisar Categoria" << endl;
 		cout << "6  - Exibir Funcionarios" << endl;
-		cout << "7  - Acessar Estante" << endl;
-		cout << "8  - Imprimir Tudo" << endl << endl;
+		cout << "7  - Inserir na Estante" << endl;
+		cout << "8  - Acessar Estante" << endl;
+		cout << "9  - Imprimir Tudo" << endl << endl;
 
-		cout << "9  - Simular entrada de pessoa" << endl;
-		cout << "10 - Simular saida de pessoa" << endl << endl;
+		cout << "10 - Simular entrada de pessoa" << endl;
+		cout << "11 - Simular saida de pessoa" << endl << endl;
 
 		// implementar adição a fila; adição a biblioteca e remoção da biblioteca
 		cout << "0 - Voltar" << endl;
@@ -28,7 +29,7 @@ void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<
 			cadastrarLivro(L, LC);
 			break;
 		case 2:
-			editarLivro(L, LC);
+			editarLivro(L, LC, LE);
 			break;
 		case 3:
 			// remover livro
@@ -116,12 +117,12 @@ void cadastrarLivro(Livro* L, List<categorias>* LC) {
 	LInsert(L, item);
 }
 
-void editarLivro(Livro* L, List<categorias>* LC) {
+void editarLivro(Livro* L, List<categorias>* LC, List<estante> *LE) {
 	int idLivro;
 	int option;
 	bool found = false;
 	int counter = 0;
-	BlockLivro *temp;
+	BlockLivro *temp, *aux;
 
 	// dados que serao trazidos do livro procurado
 	int id;
@@ -183,14 +184,33 @@ void editarLivro(Livro* L, List<categorias>* LC) {
 
 				temp->data.nome = new char[item.str.length() + 1];
 				memcpy(temp->data.nome, item.str.c_str(), item.str.length() + 1);
+
+				// ==============================================================
+
+				node<estante>* pLE;
+				pLE = LE->HEAD;
+
+				for (int i = 0; i < LE->size();i++) {
+					aux = pLE->dado.l.first->prox;
+					while (aux != NULL) {
+						if (aux->data.id == idLivro) {
+							cout << "Encontrei o id" << endl;
+							
+							aux->data.nome = new char[item.str.length() + 1];
+							memcpy(aux->data.nome, item.str.c_str(), item.str.length() + 1);
+						}
+						aux = aux->prox;
+					}
+					pLE = pLE->prox;
+				}
 				
+				// ==============================================================
+
 				cout << "Nome alterado!" << endl << endl;
-				// temp->data.nome = nome;
 				break;
 
 			case 2:
 				cout << endl << "Categoria atual: [" << temp->data.id_categoria << "]" << endl;
-
 				cout << endl << "Categorias disponiveis:" << endl << endl;
 				pLC = LC->HEAD;
 				for (int i = 0; i < LC->size(); i++) {
