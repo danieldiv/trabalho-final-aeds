@@ -77,6 +77,16 @@
             "id": 4,
             "categoria": 4,
             "nome": "Arquitetura do silencio"
+        },
+        {
+            "id": 5,
+            "categoria": 5,
+            "nome": "Os tres porquinhos"
+        },
+        {
+            "id": 6,
+            "categoria": 5,
+            "nome": "Chapeuzinho Vermelho"
         }
     ],
 

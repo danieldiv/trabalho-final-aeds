@@ -1,7 +1,15 @@
 #include "menu.hpp"
 
 int main() {
+	string teste = "Daniel";
 
+	if (teste.find("lucas") != string::npos) {
+	 	cout << "found";
+	}
+
+	else cout << "not found";
+	return 0;
+	
 	int option;
 	string* usuario, * senha;
 
@@ -19,7 +27,7 @@ int main() {
 	readJsonEstante(&LE, &L);
 
 	do {
-		// system("cls || clear");
+		system("cls || clear");
 		cout << "======================" << endl;
 		cout << "      BIBLIOTECA" << endl;
 		cout << "======================" << endl << endl;
@@ -58,7 +66,7 @@ int main() {
 }
 
 void printAutores() {
-	// system("cls || clear");
+	system("cls || clear");
 	cout << "=====================" << endl;
 	cout << "     INTEGRANTES     " << endl;
 	cout << "=====================" << endl << endl;

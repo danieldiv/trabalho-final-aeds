@@ -22,7 +22,7 @@ void LInsert(Livro* l, ItemLivro item) {
 
 	l->last->data.id = item.id;
 	l->last->data.id_categoria = item.id_categoria;
-	l->last->data.controle = false;
+	l->last->data.controle = item.controle;
 
 	l->last->prox = NULL;
 }
@@ -59,7 +59,7 @@ void Swap(BlockLivro* a, BlockLivro* b) {
 void printLivro(Livro* l) {
 	BlockLivro* aux;
 
-	cout << endl << "LIVROS" << endl << endl;
+	cout << endl << "LIVROS CADASTRADOS NO SISTEMA" << endl << endl;
 	cout << "ID\t" << "CAT.\t" << "NOME" << endl << endl;
 
 	aux = l->first->prox;
@@ -74,11 +74,11 @@ void LImprimeLivroEstante(Livro *l) {
 	BlockLivro* aux;
 
 	cout << endl << "LIVROS" << endl << endl;
-	cout << "ID\t" << "NOME" << endl << endl;
+	cout << "ID\t" << "CTRL.\t" << "NOME" << endl << endl;
 
 	aux = l->first->prox;
 	while (aux != NULL) {
-		cout << "[" << aux->data.id << "]:\t" << aux->data.nome << endl;
+		cout << "[" << aux->data.id << "]:\t" << aux->data.controle << "\t" << aux->data.nome << endl;
 		aux = aux->prox;
 	}
 }

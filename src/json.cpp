@@ -51,7 +51,7 @@ void readJsonLivro(Livro* L) {
 	}
 }
 
-void readJsonEstante(List<estante>* LE, Livro *L) {
+void readJsonEstante(List<estante>* LE, Livro* L) {
 	json js;
 	ifstream file("arquivo.json");
 	file >> js;
@@ -70,12 +70,25 @@ void readJsonEstante(List<estante>* LE, Livro *L) {
 			json livros = aux["livro"][j];
 
 			item.id = livros["id"];
-			temp = LBusca(L, item.id);
-			if (temp.id != -1) {
-				item.nome = temp.nome;
-				LInsert(&est.l, item);
+
+			if (sizeLivro(&est.l) < 30) {
+
+				temp = LBusca(L, item.id);
+
+				if (temp.id != -1) {
+					item.nome = temp.nome;
+					item.controle = true;
+					LInsert(&est.l, item);
+				}
+				else
+					cout << "O livro com ID:[" << item.id << "] nao foi encontrado" << endl;
 			}
-			else cout << "O livro com ID:["<< item.id <<"] nao foi encontrado" << endl;			
+			else {
+				cout << "Estante lotada" << endl;
+				system("pause");
+				break;
+			}
+
 		}
 		LE->push(est);
 	}

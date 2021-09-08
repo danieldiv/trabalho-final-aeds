@@ -11,7 +11,7 @@ struct estante {
     int id;
 	Livro l;
 
-    void imprime(int quant);
+    void imprime(int quant, bool aux);
 	// void insereLivro(Livro l);
 
     estante() = default;

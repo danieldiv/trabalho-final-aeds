@@ -3,22 +3,21 @@
 void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, List<pessoa>* LP) {
 	int option;
 	do {
-		//system("clear || cls");
+		system("clear || cls");
 		cout << "======================" << endl;
 		cout << "    MENU BIBLIOTECA" << endl;
 		cout << "======================" << endl << endl;
-		cout << "1  - Cadastrar Livro" << endl;
-		cout << "2  - Editar    Livro" << endl;
+		cout << "1  - Cadastrar Livro no Sistema" << endl;
+		cout << "2  - Editar    Livro Sistema/Estante" << endl;
 		cout << "3  - " << endl;
-		cout << "4  - Pesquisar Livro" << endl;
+		cout << "4  - Pesquisar Livro na Estante" << endl;
 		cout << "5  - Pesquisar Categoria" << endl;
-		cout << "6  - Exibir Funcionarios" << endl;
-		cout << "7  - Inserir na Estante" << endl;
-		cout << "8  - Acessar Estante" << endl;
-		cout << "9  - Imprimir Tudo" << endl << endl;
+		cout << "6  - Inserir na Estante" << endl;
+		cout << "7  - Acessar Estante" << endl;
+		cout << "8  - Imprimir Tudo" << endl << endl;
 
-		cout << "10 - Simular entrada de pessoa" << endl;
-		cout << "11 - Simular saida de pessoa" << endl << endl;
+		cout << "9  - Simular entrada de pessoa" << endl;
+		cout << "10 - Simular saida de pessoa" << endl << endl;
 
 		// implementar adição a fila; adição a biblioteca e remoção da biblioteca
 		cout << "0 - Voltar" << endl;
@@ -42,7 +41,7 @@ void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<
 			// pesquisar categoria
 			break;
 		case 6:
-			// exibir funcionarios
+			inserirNaEstante(L, LE);
 			break;
 		case 7:
 			// acessar estante
@@ -75,15 +74,15 @@ void cadastrarLivro(Livro* L, List<categorias>* LC) {
 	ItemLivro item;
 	node<categorias>* pLC;
 
-	// system("cls || clear");
+	system("cls || clear");
 	cout << "=====================" << endl;
 	cout << "    CADASTRO LIVRO" << endl;
 	cout << "=====================" << endl << endl;
 
 	cout << "Informe o nome do livro: ";
 	cin.ignore();
-    getline(cin, nome);
-	cout << "nome "<< nome << endl;
+	getline(cin, nome);
+	cout << "Nome: " << nome << endl << endl;
 
 	pLC = LC->HEAD;
 	for (int i = 0; i < LC->size(); i++) {
@@ -117,12 +116,12 @@ void cadastrarLivro(Livro* L, List<categorias>* LC) {
 	LInsert(L, item);
 }
 
-void editarLivro(Livro* L, List<categorias>* LC, List<estante> *LE) {
+void editarLivro(Livro* L, List<categorias>* LC, List<estante>* LE) {
 	int idLivro;
 	int option;
 	bool found = false;
 	int counter = 0;
-	BlockLivro *temp, *aux;
+	BlockLivro* temp, * aux;
 
 	// dados que serao trazidos do livro procurado
 	int id;
@@ -140,11 +139,15 @@ void editarLivro(Livro* L, List<categorias>* LC, List<estante> *LE) {
 
 	printLivro(L);
 
-	cout << endl << endl << "Escolha o ID do que livro deseja editar: ";
+	cout << endl << endl << "Escolha o ID do livro que deseja editar ou '0' para sair: ";
 	fflush(stdin);
 	cin >> idLivro;
+
 	system("cls || clear");
-	
+
+	if (idLivro == 0)
+		return;
+
 	temp = L->first->prox;
 	while (temp != NULL) {
 		if (temp->data.id == idLivro) {
@@ -195,7 +198,7 @@ void editarLivro(Livro* L, List<categorias>* LC, List<estante> *LE) {
 					while (aux != NULL) {
 						if (aux->data.id == idLivro) {
 							cout << "Encontrei o id" << endl;
-							
+
 							aux->data.nome = new char[item.str.length() + 1];
 							memcpy(aux->data.nome, item.str.c_str(), item.str.length() + 1);
 						}
@@ -203,7 +206,7 @@ void editarLivro(Livro* L, List<categorias>* LC, List<estante> *LE) {
 					}
 					pLE = pLE->prox;
 				}
-				
+
 				// ==============================================================
 
 				cout << "Nome alterado!" << endl << endl;
@@ -255,11 +258,84 @@ void editarLivro(Livro* L, List<categorias>* LC, List<estante> *LE) {
 	}
 }
 
+void inserirNaEstante(Livro* L, List<estante>* LE) {
+	int idLivro, numEstante;
+	bool found = false;
+	BlockLivro* temp;
+	node<estante>* pLE;
+
+	system("cls || clear");
+	cout << "=======================" << endl;
+	cout << " INSERIR LIVRO ESTANTE" << endl;
+	cout << "=======================" << endl;
+
+	printEstante(LE, false);
+
+	do {
+		cout << endl << "Selecione a estante ou '0' para sair: ";
+		cin >> numEstante;
+
+		if (numEstante == 0)
+			return;
+
+		pLE = LE->HEAD;
+		for (int i = 0; i < LE->size();i++) {
+			if (numEstante == pLE->dado.id) {
+				found = true;
+				break;
+			}
+			pLE = pLE->prox;
+		}
+		if (!found)
+			cout << "Estante nao encontrada!" << endl;
+	} while (!found);
+
+	system("cls || clear");
+	found = false;
+
+	cout << endl << "Estante " << numEstante << " selecionada!" << endl;
+	printLivro(L);
+
+	do {
+		cout << endl << "Escolha o ID do livro que deseja inserir ou '0' para sair: ";
+		fflush(stdin);
+		cin >> idLivro;
+
+		if (idLivro == 0)
+			return;
+
+		temp = L->first->prox;
+		while (temp != NULL) {
+			if (temp->data.id == idLivro) {
+				found = true;
+				temp->data.controle = true;
+				break;
+			}
+			temp = temp->prox;
+		}
+
+		if (!found)
+			cout << "Livro nao encontrado!" << endl;
+		else {
+			ItemLivro item;
+			
+			item.id = temp->data.id;
+			item.nome = temp->data.nome;
+			item.id_categoria = temp->data.id_categoria;
+			item.controle = temp->data.controle;
+
+			LInsert(&pLE->dado.l, item);
+			cout << "Livro inserido!" << endl;
+		}
+	} while (!found);
+	system("pause");
+}
+
 bool realizarLogin(funcionario* func, List<funcionario>* LF) {
 	string usuario, senha;
 	node<funcionario>* pLF;
 
-	// system("cls || clear");
+	system("cls || clear");
 	cout << "=====================" << endl;
 	cout << "        LOGIN" << endl;
 	cout << "=====================" << endl << endl;
@@ -288,7 +364,7 @@ void printAll(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estant
 	printLivro(L);
 	printFuncionario(LF);
 	printCategoria(LC);
-	printEstante(LE);
+	printEstante(LE, true);
 	printPessoa(LP);
 	//removerLivro();
 }
@@ -339,14 +415,14 @@ void printCategoria(List<categorias>* LC) {
 	}
 }
 
-void printEstante(List<estante>* LE) {
+void printEstante(List<estante>* LE, bool aux) {
 	cout << endl << "ESTANTES" << endl << endl;
 
 	node<estante>* pLE;
 	pLE = LE->HEAD;
 
 	for (int i = 0; i < LE->size();i++) {
-		pLE->dado.imprime(sizeLivro(&pLE->dado.l));
+		pLE->dado.imprime(sizeLivro(&pLE->dado.l), aux);
 		cout << endl << "===============================" << endl << endl;
 		pLE = pLE->prox;
 	}
@@ -376,11 +452,11 @@ void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* LP) {
 	string nomelivro;
 	int cat;
 	ItemPilha d;
-	
+
 	node<pessoa>* pId;
 	pId = LP->HEAD;
-	
-	printEstante(LE);
+
+	// printEstante(LE, true);
 
 	cout << "livros" << endl;
 	FPVazia(&pId->dado.livros);
@@ -389,7 +465,7 @@ void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* LP) {
 		Push(&pId->dado.livros, d);
 	}
 	Pimprime(&pId->dado.livros);
-	
+
 	// cout << endl<< endl;
 	// cout << "Digite o id da categoria desejada: " << endl;
 	// cin >> cat;
