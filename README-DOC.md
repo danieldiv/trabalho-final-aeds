@@ -146,18 +146,18 @@ Em JSON, os dados são apresentados desta forma:
 
   No nosso código, o JSON foi aplicado com função de suprir o arquivamento de dados, visto que apresenta maior versatilidade do que o uso de arquivo.text.
 
-#Softwares semelhantes
+### Softwares semelhantes
 
   Em seguida será apresentado alguns softwares semelhantes, sendo eles: Philos \citep{philosSophia} e Pergamum. O software Philos possui uma interface simples, que facilita a navegação dentro do sistema, também é possivel fazer a leitura para registros ISBN \citep{clubedeautoresISBN} atravéz de codigo de barras ou inserção manual, e também, realiza a busca do registro bibliográfico de uma obra.
 
   O Pergamum é um software para gestão de bibliotecas, com o intuito de "consultar no Brasil o acervo de várias instituições por meio de um único site" \citep{pergamum2021}, facilitando a busca para os seus usuarios. Uma das suas funcionalidades seria o controle de arquivos e museus.
   
-#Custo Computacional
+### Custo Computacional
 
   A análise de um algoritmo é necessária para saber seu tempo de execução e o espaço de memória utilizado para desenvolvê-lo, como também saber qual algoritmo é mais adequado para resolver um problema.
 
   Em nosso trabalho irá ser calculado o custo computacional do código desenvolvido pelos desenvolvedores, o calculo sera apresentado na documentação Readme.md, mas é importante ressaltar que o arquivo json.hpp não será levado em consideração para o resultado desse cálculo, pois ele é uma biblioteca como as demais outras utilizadas em c/c++, normalmente é utilizado em Java, porém dá para utilizar em c se o arquivo com seus parâmetros estiver junto com os arquivos de compilação.
   
-#Conclusão
+### Conclusão
 
   No final do projeto sera possivel ter um sistema simples que imita uma biblioteca de uma instituição escolar, permitindo que o usuiario faça login e realizar comandos disponibilizados atraves de algoritmos estruturados. Alem disso, em nossa documentação do Readme.mb sera disponibilizado o custo computacional do algoritmo desenvolvido. Este projeto já foi elaborado antes, dessa maneira,  nós desenvolvedores, estaremos mostrando uma nova forma de desenvolver este problema. 
