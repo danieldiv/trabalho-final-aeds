@@ -21,7 +21,7 @@
    * [Menu](#Menu)
    * [Login](#Login)
    * [Funcionamento](#Funcionamento)
-   * [CustoComputacional](#Custo computacional)
+   * [CustoComputacional](#CustoComputacional)
 <!--te-->
 
 ### Copilação 
