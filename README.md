@@ -66,8 +66,68 @@ Escolha uma das opções e de inicio a sua navegação.
 
 ### Funcionamento 
 
+A partir do menu sera possivel ter acesso a varios comandos, agora eu irei explicar o que com cada comando sera possivel fazer.
 
+##### Cadastrar livro no sistema
 
+ Atraves na função a baixo sera possivel cadastrar livros ao sistema:
+ 
+   void cadastrarLivro(Livro* L, List<categorias>* LC) {
+  string nome;
+	int categoria;
+	bool aux = false;
+
+	ItemLivro item;
+	node<categorias>* pLC;
+
+	system("cls || clear");
+	cout << "=====================" << endl;
+	cout << "    CADASTRO LIVRO" << endl;
+	cout << "=====================" << endl << endl;
+
+	cout << "Informe o nome do livro: ";
+	cin.ignore();
+	getline(cin, nome);
+	cout << "Nome: " << nome << endl << endl;
+
+	pLC = LC->HEAD;
+	for (int i = 0; i < LC->size(); i++) {
+		pLC->dado.imprime();
+		pLC = pLC->prox;
+	}
+
+	do {
+		cout << endl << "Escolha a categoria: ";
+		fflush(stdin);
+		cin >> categoria;
+
+		pLC = LC->HEAD;
+		for (int i = 0; i < LC->size();i++) {
+			aux = pLC->dado.buscarCat(categoria) ? true : aux;
+			pLC = pLC->prox;
+
+			if (aux)
+				break;
+		}
+
+		if (!aux)
+			cout << "Categoria nao encontrada!!" << endl;
+
+	} while (!aux);
+
+	item.id_categoria = categoria;
+	item.id = sizeLivro(L) + 1;
+	item.str = nome;
+
+	LInsert(L, item);
+   }
+
+Atrasvez de uma estrutura de lista sera posssivel organizar as entradas dos livros adcionados.
+  
+##### Editar um livro no sistema
+  
+  Nessa
+  
 ### CustoComputacional
 
 Custo Computacional do nosso projeto:
