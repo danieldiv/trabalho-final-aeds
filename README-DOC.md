@@ -47,12 +47,61 @@ Atualmente, é de conhecimento geral que para uma boa gestão, cuidado e pratici
 
 ### Json
 
-Introdução ao uso do Json:
+#Introdução ao uso do Json:
 
 JSON(JavaScript Object Notation - Notação de Objetos JavaScript) é uma formatação leve de trocade dados. Para nós, programadores, é fácil de ler e escrever. Para máquinas, é fácil de interpretar egerar resultados. Está baseado em um subconjunto da linguagem de programação JavaScript. JSON éem formato texto e completamente independente de linguagem, pois usa convenções que são familiaresàs linguagens C e familiares. Estas propriedades fazem com que JSON seja um formato ideal de trocade dados.
 
-Arquitetura:
+#Arquitetura:
 
 JSON está construido em duas estruturas:
 
 Uma coleção de pares nome/valor. Em várias linguagens, isto é caracterizado com um object,record, struct, dicionário, hash table, keyed list, ou arrays associativas.  Outra lista ordenada devalores. Na maioria das linguagens, isto é caracterizado como uma array, vetor, lista ou sequência.Estas são estruturas de dados universais. Virtualmente todas as linguegens de programação mo-dernas as suportam, de uma forma ou de outra. É aceitável que um formato de troca de dados queseja independente de linguagem de programação se baseie nestas estruturas.
+
+#Exemplos:
+
+Em diante colocar-ei exemplos de aplicabilidade do JSON, com explicações dos códigos utilizados.
+
+#JSON como tipo de dados de primeira classe:
+
+Aqui está um exemplo da utilização da classe que permitirá a implementação do JSON. Lembrandoque esse exemplo está presente no código fonte do software de biblioteca:
+     
+    {
+    "categoria": [
+        {
+            "id": 1,
+            "nome": "Ficcao Cientifica"
+        },
+        {
+            "id": 4,
+            "nome": "Poesia"
+        }
+    ],
+    "livro": [
+        {
+            "id": 1,
+            "categoria": 1,
+            "nome": "Harry Poter e a Pedra Filosofal",
+            "quantidade": 3
+        },
+        {
+            "id": 5,
+            "categoria": 4,
+            "nome": "Arquitetura do silencio",
+            "quantidade": 2
+        }
+    ],
+    "funcionario": [
+        {
+            "id": 1,
+            "nome": "Funcionario A",
+            "usuario": "usuA",
+            "senha": "senha123"
+        },
+        {
+            "id": 2,
+            "nome": "Funcionario B",
+            "usuario": "usuB",
+            "senha": "senha456"
+        }
+    ]
+   }
