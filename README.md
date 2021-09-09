@@ -17,13 +17,18 @@
 ## Sumário
 <!--ts-->
    * [Copilação](#Copilação)
+   * [Informações](#Informações)
    * [Menu](#Menu)
    * [Login](#Login)
    * [Funcionamento](#Funcionamento)
 <!--te-->
 
-
 ### Copilação 
+
+### Informações
+
+- Livro não terá quantidade, apenas a estante
+- Como não pode utilizar uma lista para os leitores dentro da biblioteca, foi utilizado a fila, logo, apenas o primeiro da fila pode pegar no maximo 5 livros, o proximo so pode pegar os livros apoz o primeiro sair
 
 ### Menu
 
@@ -39,11 +44,6 @@
   - usuario: usuD | senha: senhaLG
 
 ### Funcionamento 
-
-## Informacoes
-
-- Livro não terá quantidade, apenas a estante
-- Como não pode utilizar uma lista para os leitores dentro da biblioteca, foi utilizado a fila, logo, apenas o primeiro da fila pode pegar no maximo 5 livros, o proximo so pode pegar os livros apoz o primeiro sair
 
 ## Tasks
 
