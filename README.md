@@ -28,6 +28,7 @@
 
 Comandos para que o programa copile em seu terminal:
 
+      make clean
       make
       make run
 
