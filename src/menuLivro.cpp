@@ -11,17 +11,20 @@ void menuLivro(Livro* L, List<categorias> *LC, List<estante> *LE) {
     do {
 		system("clear || cls");
 		cout << "======================" << endl;
-		cout << "   MENU LIVRO" << endl;
+		cout << "      MENU LIVRO" << endl;
 		cout << "======================" << endl << endl;
 		cout << "1 - Cadastrar Livro" << endl;
 		cout << "2 - Editar    Livro" << endl;
 		cout << "3 - Excluir   Livro" << endl;
-		cout << "4 - Cadastrar Livro" << endl;
+		cout << "4 - Inserir   Livro na Estante" << endl;
 		cout << "5 - Imprimir  Livro" << endl;
 		cout << "6 - Categoria Livro" << endl;
 		cout << "0 - Voltar" << endl;
 		cout << endl << "Opcao: ";
 		cin >> option;
+
+		system("clear || cls");
+
 		switch (option) {
 		case 1:
             cadastrarLivro(L, LC);
@@ -38,6 +41,7 @@ void menuLivro(Livro* L, List<categorias> *LC, List<estante> *LE) {
         case 5:
             // funcao vem da estrutura livro
             printLivro(L);
+			break;
         case 6:
             printCategoria(LC);
 			break;

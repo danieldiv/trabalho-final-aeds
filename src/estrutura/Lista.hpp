@@ -1,3 +1,7 @@
+/*
+	Estrutura padrao de lista, utilizada com template para implementacao de varias structs com o seu tipo
+*/
+
 #ifndef __LIST__
 #define __LIST__
 #include <stdio.h>

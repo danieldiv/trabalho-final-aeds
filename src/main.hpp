@@ -21,5 +21,5 @@ void readJsonLivro(Livro* L);
 void readJsonEstante(List<estante>* LE, Livro *L);
 void readJsonUsuario();
 
-void InicializarBiblioteca(List<pessoa> *IdPessoas);
+void InicializarBiblioteca(List<pessoa> *LP);
 void printAutores();

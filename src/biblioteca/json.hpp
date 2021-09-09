@@ -1,3 +1,7 @@
+/*
+    este arquivo .hpp e utilizado como biblioteca para a leitura e utilizacao de metodos referente ao json
+*/
+
 #ifndef INCLUDE_NLOHMANN_JSON_HPP_
 #define INCLUDE_NLOHMANN_JSON_HPP_
 

@@ -43,7 +43,7 @@ int main() {
 			printAutores();
 			break;
 		case 0:
-			cout << "O sistema sera finalizado" << endl;
+			cout << "O sistema foi finalizado!" << endl;
 			exit(0);
 		default:
 			cout << "Opcao invalida!!" << endl << endl;

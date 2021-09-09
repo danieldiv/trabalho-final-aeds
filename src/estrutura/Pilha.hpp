@@ -1,3 +1,7 @@
+/*
+	Estrutura padrao de pilha, utilizada com template para implementacao de varias structs com o seu tipo
+*/
+
 #ifndef __PILHA__
 #define __PILHA__
 #include "Lista.hpp"

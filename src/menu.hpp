@@ -30,7 +30,7 @@ void printCategoria(List<categorias>* LC);
 //            ESTANTE
 // ==============================
 
-void menuEstante(Livro *L, List<estante> *LE);
+void menuEstante(List<estante> *LE);
 void pesquisarLivroEstante(List<estante>* LE);
 void inserirNaEstante(Livro *L, List<estante> *LE);
 void printEstante(List<estante>* LE, bool aux);

@@ -1,3 +1,7 @@
+/*
+	Estrutura padrao de fila, utilizada com template para implementacao de varias structs com o seu tipo
+*/
+
 #ifndef __FILA__
 #define __FILA__
 #include "Lista.hpp"

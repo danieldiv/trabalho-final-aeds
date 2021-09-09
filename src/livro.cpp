@@ -1,5 +1,9 @@
 #include "livro.hpp"
 
+/*
+	Funcao: FLVazia
+	@param: l: ponteiro de uma lista de livro para inicializar
+*/
 void FLVazia(Livro* l) {
 	l->first = (BlockLivro*)malloc(sizeof(BlockLivro));
 	l->last = l->first;
@@ -7,6 +11,11 @@ void FLVazia(Livro* l) {
 	l->first->ant = NULL;
 }
 
+/*
+	Funcao: LInsert
+	@param l: ponteiro de uma lista de livro para inserir
+	@param item: item que sera adicionado no livro
+*/
 void LInsert(Livro* l, ItemLivro item) {
 	l->last->prox = (BlockLivro*)malloc(sizeof(BlockLivro));
 	l->last->prox->ant = l->last;
@@ -27,6 +36,11 @@ void LInsert(Livro* l, ItemLivro item) {
 	l->last->prox = NULL;
 }
 
+/*
+	Funcao: LRemove
+	@param l: ponteiro de uma lista de livro para remover
+	@param item: item que sera utilizar para procurar o id para a remoca
+*/
 void LRemove(Livro* l, ItemLivro item) {
 	BlockLivro* aux, * tmp;
 
@@ -49,22 +63,15 @@ void LRemove(Livro* l, ItemLivro item) {
 	}
 }
 
-void Swap(BlockLivro* a, BlockLivro* b) {
-	ItemLivro aux;
-	aux = a->data;
-	a->data = b->data;
-	b->data = aux;
-}
-
 /*
 	Funcao: printLivro
-	@param l: lista dinamica do livros
+	@param l: lista dinamica do livro para impressao
 */
 void printLivro(Livro* l) {
 	BlockLivro* aux;
 
 	cout << endl << "LIVROS CADASTRADOS NO SISTEMA" << endl << endl;
-	cout << "ID\t" << "CAT.\t" << "NOME" << endl << endl;
+	cout << "ID\t" << "CAT.\t" << "LIVROS" << endl << endl;
 
 	aux = l->first->prox;
 	while (aux != NULL) {
@@ -73,11 +80,15 @@ void printLivro(Livro* l) {
 	}
 }
 
+/*
+	Funcao: LImprimeLivroEstante
+	@param l: lista dinamica do livro para imrpessao sem categoria
+*/
 void LImprimeLivroEstante(Livro *l) {
 	BlockLivro* aux;
 
-	cout << endl << "LIVROS" << endl << endl;
-	cout << "ID\t" << "CTRL.\t" << "NOME" << endl << endl;
+	// cout << endl << "LIVROS" << endl << endl;
+	cout << "ID\t" << "CTRL.\t" << "LIVROS" << endl << endl;
 
 	aux = l->first->prox;
 	while (aux != NULL) {
@@ -86,6 +97,11 @@ void LImprimeLivroEstante(Livro *l) {
 	}
 }
 
+/*
+	Funcao: sizeLivro
+	@param l: lista dinamica do livro para verificar o tamanho da lista
+	@result: retorna um inteiro referente a quantidade de livros dentro da lista
+*/
 int sizeLivro(Livro *l) {
 	BlockLivro* aux;
 	int quant = 0;
@@ -98,6 +114,11 @@ int sizeLivro(Livro *l) {
 	return quant;
 }
 
+/*
+	Funcao: LBusca
+	@param l: lista dinamica do livro para pesquisa do id
+	@result: retorna o livro pesquisado pelo id ou um livro com -1 caso nao encontrado
+*/
 ItemLivro LBusca(Livro *L, int idLivro) {
 	BlockLivro *temp;
 	ItemLivro result;
