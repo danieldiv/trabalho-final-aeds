@@ -21,6 +21,7 @@ void printCategoria(List<categorias>* LC);
 void printEstante(List<estante>* LE, bool aux);
 void printPessoa(List<pessoa> *IdPessoas);
 
+void pesquisarLivroEstante(List<estante>* LE);
 void cadastrarLivro(Livro *L, List<categorias>* LC);
 void editarLivro(Livro* L, List<categorias>* LC, List<estante> *LE);
 void removerLivro(Livro* L, List<categorias>* LC);

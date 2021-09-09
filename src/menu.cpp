@@ -36,6 +36,7 @@ void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<
 			break;
 		case 4:
 			// pesquisar livro
+			pesquisarLivroEstante(LE);
 			break;
 		case 5:
 			// pesquisar categoria
@@ -64,6 +65,38 @@ void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<
 			break;
 		}
 	} while (option != 0);
+}
+
+void pesquisarLivroEstante(List<estante>* LE) {
+    // List<string> LS;
+    BlockLivro* aux;
+    node<estante>* pLE;
+    char* temp = (char*)malloc(128);
+    string procurado;
+    string pesquisa;
+    int n;
+
+    cout << endl << "Qual livro deseja buscar: ";
+    cin.ignore();
+    getline(cin, pesquisa);
+
+    pLE = LE->HEAD;
+    for (int i = 0; i < LE->size();i++) {
+        aux = pLE->dado.l.first->prox;
+        while (aux != NULL) {
+            n = sprintf(temp, aux->data.nome);
+            procurado = temp;
+
+            if (procurado.find(pesquisa) != string::npos)
+                cout << "found" << endl;
+            else 
+                cout << "not found" << endl;
+
+            aux = aux->prox;
+        }
+        pLE = pLE->prox;
+    }
+	system("pause");
 }
 
 void cadastrarLivro(Livro* L, List<categorias>* LC) {
