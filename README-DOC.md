@@ -14,7 +14,7 @@ Palavras-chaves: Biblioteca, Estruturas de algoritmo, Sistema, Ciência da infor
    * [Cenário do Problema](#CenáriodoProblema)
    * [Organização da Biblioteca](#OrganizaçãodoProblema)
    * [Json](#Json)
-   * [Softwares Semelhantes])(#SoftwaresSemelhantes)
+   * [Softwares Semelhantes](#SoftwaresSemelhantes)
    * [Custo Computacional](#CustoComputacional)
    * [Conclusão](#Conclusão)
 <!--te-->
