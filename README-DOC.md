@@ -108,3 +108,8 @@ Aqui está um exemplo da utilização da classe que permitirá a implementação
     
     
 Observe que em todos esses casos, você nunca precisa "dizer" ao compilador qual tipo de valor JSON você deseja usar. Se você quiser ser explicíto ou expressar alguns casos de borda, as funções json::array() e json::object() ajudarão:    
+
+    json empty_array_explicit = json::array();
+    json empty_object_implicit = json({});
+    json empty_object_explicit = json::object();
+    json array_not_object = json::array({ {"currency", "USD"}, {"value", 42.99} });
