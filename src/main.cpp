@@ -1,47 +1,17 @@
-// #include <stdio.h>
-// #include <iostream>
-// #include <stdlib.h>
-// #include <string>
-
-// using namespace std;
-
-// int main ()
-// {
-//   char *tmp = (char *)malloc(128);
-// //   tmp = "daniel";
-//   int n=sprintf(tmp, "daniel");
-
-//   string tmp_str = tmp;
-// 	cout << tmp_str << endl;
-
-// //   cout << *tmp << " : is a char array beginning with " <<n <<" chars long\n" << endl;
-// //   cout << tmp_str << " : is a string with " <<n <<" chars long\n" << endl;
-
-//  free(tmp);
-//  return 0;
-// }
-
 #include "menu.hpp"
 
-#include <stdio.h>
-#include <iostream>
-#include <stdlib.h>
-#include <string>
-
 int main() {
-	char* tmp = (char*)malloc(128);
+	// char* tmp = (char*)malloc(128);
 	// int n = sprintf(tmp, "daniel");
 
-	string s2 = tmp;
+	// string s2 = tmp;
 
-	string teste = "iel";
+	// string teste = "iel";
 
-	if (s2.find(teste) != string::npos) {
-		cout << "found" << endl;
-	}
-	else cout << "not found" << endl;
-
-	return 0;
+	// if (s2.find(teste) != string::npos) {
+	// 	cout << "found" << endl;
+	// }
+	// else cout << "not found" << endl;
 
 	int option;
 	string* usuario, * senha;
