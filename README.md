@@ -14,6 +14,19 @@
 
 - Lucas de Souza Gontijo
 
+## Sumário
+<!--ts-->
+   * [Copilação](#Copilação)
+   * [Menu](#Menu)
+   * [Login](#Login)
+   * [Funcionamento](#Funcionamento)
+<!--te-->
+
+
+### Copilação 
+
+### Menu
+
 ### Login
 
 - Para realizar o login, utilize um dos usuarios abaixo:
@@ -24,6 +37,8 @@
   - usuario: usuC | senha: senha789
 
   - usuario: usuD | senha: senhaLG
+
+### Funcionamento 
 
 ## Informacoes
 
