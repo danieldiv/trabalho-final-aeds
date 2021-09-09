@@ -32,6 +32,7 @@ Comandos para que o programa copile em seu terminal:
 
 ### Informações
 
+- A biblioteca iniciara cheia, então para entrar na biblioteca é 
 - Livro não terá quantidade, apenas a estante
 - Como não pode utilizar uma lista para os leitores dentro da biblioteca, foi utilizado a fila, logo, apenas o primeiro da fila pode pegar no maximo 5 livros, o proximo so pode pegar os livros apoz o primeiro sair
 
