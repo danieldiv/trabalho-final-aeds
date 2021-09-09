@@ -21,6 +21,7 @@
    * [Menu](#Menu)
    * [Login](#Login)
    * [Funcionamento](#Funcionamento)
+   * [CustoComputacional](#Custo computacional)
 <!--te-->
 
 ### Copilação 
@@ -64,6 +65,8 @@ Escolha uma das opções e de inicio a sua navegação.
   - usuario: usuD | senha: senhaLG
 
 ### Funcionamento 
+
+### CustoComputacional
 
 ## Tasks
 
