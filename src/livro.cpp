@@ -11,7 +11,7 @@ void LInsert(Livro* l, ItemLivro item) {
 	l->last->prox = (BlockLivro*)malloc(sizeof(BlockLivro));
 	l->last->prox->ant = l->last;
 	l->last = l->last->prox;
-	
+
 	if (item.str.length() == 0)
 		l->last->data.nome = item.nome;
 

@@ -16,6 +16,7 @@ struct ItemLivro {
 	int id;
 	int id_categoria;
 	string str;
+	string *str2;
 	char *nome;
 	bool controle;
 };
