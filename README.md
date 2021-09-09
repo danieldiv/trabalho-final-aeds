@@ -1,10 +1,10 @@
 <h1 align="center">TRABALHO FINAL DE AED</h1>
 
-# Proposta
+### Proposta
 
 - Sistema de acesso aos livros de uma biblioteca, que permite que um usuário entre na biblioteca e retire um livro atravez do login de um funcionário.
 
-## Participantes
+### Participantes
 
 - Daniel Alves Sanches
 
@@ -14,7 +14,7 @@
 
 - Lucas de Souza Gontijo
 
-## Sumário
+### Sumário
 <!--ts-->
    * [Copilação](#Copilação)
    * [Informações](#Informações)
@@ -66,7 +66,11 @@ Escolha uma das opções e de inicio a sua navegação.
 
 ### Funcionamento 
 
+
+
 ### CustoComputacional
+
+Custo Computacional do nosso projeto:
 
 ## Tasks
 
