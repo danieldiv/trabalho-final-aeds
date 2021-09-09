@@ -47,21 +47,21 @@ Descrição das classes:
 
 ### Json
 
-#Introdução ao uso do Json:
+###### Introdução ao uso do Json:
 
   JSON(JavaScript Object Notation - Notação de Objetos JavaScript) é uma formatação leve de trocade dados. Para nós, programadores, é fácil de ler e escrever. Para máquinas, é fácil de interpretar egerar resultados. Está baseado em um subconjunto da linguagem de programação JavaScript. JSON éem formato texto e completamente independente de linguagem, pois usa convenções que são familiaresàs linguagens C e familiares. Estas propriedades fazem com que JSON seja um formato ideal de trocade dados.
 
-#Arquitetura:
+##### Arquitetura:
 
   JSON está construido em duas estruturas:
 
   Uma coleção de pares nome/valor. Em várias linguagens, isto é caracterizado com um object,record, struct, dicionário, hash table, keyed list, ou arrays associativas.  Outra lista ordenada devalores. Na maioria das linguagens, isto é caracterizado como uma array, vetor, lista ou sequência.Estas são estruturas de dados universais. Virtualmente todas as linguegens de programação mo-dernas as suportam, de uma forma ou de outra. É aceitável que um formato de troca de dados queseja independente de linguagem de programação se baseie nestas estruturas.
 
-#Exemplos:
+###### Exemplos:
 
   Em diante colocar-ei exemplos de aplicabilidade do JSON, com explicações dos códigos utilizados.
 
-#JSON como tipo de dados de primeira classe:
+###### JSON como tipo de dados de primeira classe:
 
 Aqui está um exemplo da utilização da classe que permitirá a implementação do JSON. Lembrandoque esse exemplo está presente no código fonte do software de biblioteca:
      
@@ -114,7 +114,7 @@ Aqui está um exemplo da utilização da classe que permitirá a implementação
     json empty_object_explicit = json::object();
     json array_not_object = json::array({ {"currency", "USD"}, {"value", 42.99} });
 
-#Apresentação dos dados JSON
+###### Apresentação dos dados JSON
 
 Em JSON, os dados são apresentados desta forma:
 
