@@ -11,10 +11,10 @@ Palavras-chaves: Biblioteca, Estruturas de algoritmo, Sistema, Ciência da infor
 ### Sumário
 <!--ts-->
    * [Introdução](#Introdução)
-   * [Cenário do Problema](#Cenário do Problema)
-   * [Organização da Biblioteca](#Organização do Problema)
+   * [Cenário do Problema](#CenáriodoProblema)
+   * [Organização da Biblioteca](#OrganizaçãodoProblema)
    * [Json](#Json)
-   * [Softwares Semelhantes])(#Softwares Semelhantes)
-   * [Custo Computacional](#Custo Computacional)
+   * [Softwares Semelhantes])(#SoftwaresSemelhantes)
+   * [Custo Computacional](#CustoComputacional)
    * [Conclusão](#Conclusão)
 <!--te-->
