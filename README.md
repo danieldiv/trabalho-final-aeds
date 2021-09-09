@@ -126,7 +126,7 @@ Atrasvez de uma estrutura de lista sera posssivel organizar as entradas dos livr
   
 ##### Editar um livro no sistema
   
-  Nessa opção sera possivel editar os lisvros do sistema editando as lsitas de categorias e a estante como é possivel ver a baixo:
+  Nessa opção sera possivel editar os livros do sistema editando as lsitas de categorias e a estante, como é possivel ver a baixo:
   
 	void editarLivro(Livro* L, List<categorias>* LC, List<estante>* LE) {
 	int idLivro;
@@ -269,7 +269,150 @@ Atrasvez de uma estrutura de lista sera posssivel organizar as entradas dos livr
 		} while (option != 0);
 	}
 	}
-  
+
+##### AdcionarLivroPessoa
+
+Nessa opção sera possivel que uma pessoa remova um livro para ler atravez de uma organização da lista, como é mostrado abaixo: 
+
+	void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* LP) {
+
+	int id;
+
+	printEstante(LE, true);
+	system("pause");
+
+	cout << "Escolha: " << endl;
+	cin >> id;
+
+	LE->push(id);
+	printEstante(LE, false);
+	system("pause");
+
+	cout << "Tenha uma boa leitura!" << endl;
+	system("pause");
+	}
+
+##### Pesquisar livro na estante
+
+Na quarta opção sera posssivel pesquisar um livro na estante atravez da função abaixo:
+
+	void pesquisarLivroEstante(List<estante>* LE) {
+    // List<string> LS;
+    BlockLivro* aux;
+    node<estante>* pLE;
+    char* temp = (char*)malloc(128);
+    string procurado;
+    string pesquisa;
+    int n;
+
+    cout << endl << "Qual livro deseja buscar: ";
+    cin.ignore();
+    getline(cin, pesquisa);
+
+    pLE = LE->HEAD;
+    for (int i = 0; i < LE->size();i++) {
+        aux = pLE->dado.l.first->prox;
+        while (aux != NULL) {
+            n = sprintf(temp, aux->data.nome);
+            procurado = temp;
+
+            if (procurado.find(pesquisa) != string::npos)
+                cout << "found" << endl;
+            else
+                cout << "not found" << endl;
+
+            aux = aux->prox;
+        }
+        pLE = pLE->prox;
+    }
+	system("pause");
+	}
+
+##### Pesquisar categoria
+
+	
+
+##### Inserir na estante
+
+Nessa aopção sera possivel inserir um livro a estante como é posssivel ver a baixo:
+
+	void inserirNaEstante(Livro* L, List<estante>* LE) {
+	int idLivro, numEstante;
+	bool found = false;
+	BlockLivro* temp;
+	node<estante>* pLE;
+
+	system("cls || clear");
+	cout << "=======================" << endl;
+	cout << " INSERIR LIVRO ESTANTE" << endl;
+	cout << "=======================" << endl;
+
+	printEstante(LE, false);
+
+	do {
+		cout << endl << "Selecione a estante ou '0' para sair: ";
+		cin >> numEstante;
+
+		if (numEstante == 0)
+			return;
+
+		pLE = LE->HEAD;
+		for (int i = 0; i < LE->size();i++) {
+			if (numEstante == pLE->dado.id) {
+				found = true;
+				break;
+			}
+			pLE = pLE->prox;
+		}
+		if (!found)
+			cout << "Estante nao encontrada!" << endl;
+	} while (!found);
+
+	system("cls || clear");
+	found = false;
+
+	cout << endl << "Estante " << numEstante << " selecionada!" << endl;
+	printLivro(L);
+
+	do {
+		cout << endl << "Escolha o ID do livro que deseja inserir ou '0' para sair: ";
+		fflush(stdin);
+		cin >> idLivro;
+
+		if (idLivro == 0)
+			return;
+
+		temp = L->first->prox;
+		while (temp != NULL) {
+			if (temp->data.id == idLivro) {
+				found = true;
+				temp->data.controle = true;
+				break;
+			}
+			temp = temp->prox;
+		}
+
+		if (!found)
+			cout << "Livro nao encontrado!" << endl;
+		else {
+			ItemLivro item;
+
+			item.id = temp->data.id;
+			item.nome = temp->data.nome;
+			item.id_categoria = temp->data.id_categoria;
+			item.controle = temp->data.controle;
+
+			LInsert(&pLE->dado.l, item);
+			cout << "Livro inserido!" << endl;
+		}
+	} while (!found);
+	system("pause");
+	}
+
+##### Acessar Estante
+
+
+
 ### CustoComputacional
 
 Custo Computacional do nosso projeto:
