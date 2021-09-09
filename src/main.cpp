@@ -30,7 +30,7 @@
 
 int main() {
 	char* tmp = (char*)malloc(128);
-	int n = sprintf(tmp, "daniel");
+	// int n = sprintf(tmp, "daniel");
 
 	string s2 = tmp;
 
