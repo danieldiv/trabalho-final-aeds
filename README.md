@@ -38,7 +38,19 @@ Comandos para que o programa copile em seu terminal:
 
 ### Menu
 
+Ao iniciar o programa sera possivel visualizar o seguinte menu:
 
+![image](https://user-images.githubusercontent.com/84408875/132755696-4a92e6d5-b552-415f-a6d9-fe7f4bf6e994.png)
+
+Nela sera possiveel fazer loguin, ver as informações dos colaboradores do projeto e sair do programa. Caso escolha o opção numero 1, sera necessário inserir as informações de um funcionário de seu nome de usuário e senha(ifrmações encontradas na parte de [Login](#Login)), como mostra a imagem a abaixo:
+
+![image](https://user-images.githubusercontent.com/84408875/132755822-2a23aceb-b4cf-4f8a-8200-0a81b1dc2535.png)
+
+Em seguida você podera ter acesso ao programa que disponibiliza as funçoes mostraadas a baixo:
+
+![image](https://user-images.githubusercontent.com/84408875/132756724-ba20ad77-3bf2-4c31-9cfa-02314d0ea2f8.png)
+
+Escolha uma das opções e de inicio ao seu navegamento.
 
 ### Login
 
