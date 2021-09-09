@@ -67,35 +67,35 @@ Escolha uma das opções e de inicio a sua navegação.
 
 ### Funcionamento 
 
-	A partir do menu sera possivel ter acesso a varios comandos, agora eu irei explicar o que com cada comando sera possivel fazer.
+A partir do menu sera possivel ter acesso a varios comandos, agora eu irei explicar o que com cada comando sera possivel fazer.
 
 ##### Cadastrar livro no sistema
 
- 	Atraves da função cadastrarLivro(L, LC); sera possivel cadastrar livros nos sistema a partir de uma estrutura de lista.
+ Atraves da função cadastrarLivro(L, LC); sera possivel cadastrar livros nos sistema a partir de uma estrutura de lista.
   
 ##### Editar um livro no sistema
   
- 	 Nessa opção sera possivel editar os livros do sistema editando as lsitas de categorias e a estante, a aprtir da função editarLivro(L, LC, LE);.
+ Nessa opção sera possivel editar os livros do sistema editando as lsitas de categorias e a estante, a aprtir da função editarLivro(L, LC, LE);.
   
 ##### AdcionarLivroPessoa
 
-	Nessa opção sera possivel que uma pessoa remova um livro para ler atravez de uma organização da lista.
+Nessa opção sera possivel que uma pessoa remova um livro para ler atravez de uma organização da lista.
 
 ##### Pesquisar livro na estante
 
-	Na quarta opção sera posssivel pesquisar um livro na estante.
+Na quarta opção sera posssivel pesquisar um livro na estante.
 
 ##### Pesquisar categoria
 
-	Nessa opção sera possivel pesquisar uma categoria da estante.
+Nessa opção sera possivel pesquisar uma categoria da estante.
 
 ##### Inserir na estante
 
-	Nessa opção sera possivel inserir um livro na estante.
+Nessa opção sera possivel inserir um livro na estante.
 
 ##### Acessar Estante
 
-	Sera possivel acessar a estante e fazer pesquisas nela.
+Sera possivel acessar a estante e fazer pesquisas nela.
 
 ### CustoComputacional
 
