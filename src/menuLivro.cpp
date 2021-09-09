@@ -1,105 +1,62 @@
 #include "menu.hpp"
 
-void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, List<pessoa>* LP) {
-	int option;
-	do {
-		//system("clear || cls");
+/*
+	Funcao: menuLivro
+	@param L: lista dinamica do livros
+	@param LC: lista dinamica da categarias
+	@param LE: lista dinamica da estantes
+*/
+void menuLivro(Livro* L, List<categorias> *LC, List<estante> *LE) {
+    int option;
+    do {
+		system("clear || cls");
 		cout << "======================" << endl;
-		cout << "    MENU BIBLIOTECA" << endl;
+		cout << "   MENU LIVRO" << endl;
 		cout << "======================" << endl << endl;
-		cout << "1  - Cadastrar Livro no Sistema" << endl;
-		cout << "2  - Editar    Livro Sistema/Estante" << endl;
-		cout << "3  - AdicionarLivroPessoa" << endl;
-		cout << "4  - Pesquisar Livro na Estante" << endl;
-		cout << "5  - Pesquisar Categoria" << endl;
-		cout << "6  - Inserir na Estante" << endl;
-		cout << "7  - Acessar Estante" << endl;
-		cout << "8  - Imprimir Tudo" << endl << endl;
-
-		cout << "9  - Simular entrada de pessoa" << endl;
-		cout << "10 - Simular saida de pessoa" << endl << endl;
-
-		// implementar adição a fila; adição a biblioteca e remoção da biblioteca
+		cout << "1 - Cadastrar Livro" << endl;
+		cout << "2 - Editar    Livro" << endl;
+		cout << "3 - Excluir   Livro" << endl;
+		cout << "4 - Cadastrar Livro" << endl;
+		cout << "5 - Imprimir  Livro" << endl;
+		cout << "6 - Categoria Livro" << endl;
 		cout << "0 - Voltar" << endl;
 		cout << endl << "Opcao: ";
 		cin >> option;
 		switch (option) {
 		case 1:
-			cadastrarLivro(L, LC);
+            cadastrarLivro(L, LC);
 			break;
-		case 2:
-			editarLivro(L, LC, LE);
+        case 2:
+            editarLivro(L, LC, LE);
 			break;
-		case 3:
-			// remover livro
-			adicionarLivroPessoa(LE, LP);
+        case 3:
+            // removerLivro(LC);
 			break;
-		case 4:
-			// pesquisar livro
-			pesquisarLivroEstante(LE);
+        case 4:
+            inserirNaEstante(L, LE);
 			break;
-		case 5:
-			// pesquisar categoria
-			break;
-		case 6:
-			inserirNaEstante(L, LE);
-			break;
-		case 7:
-			// acessar estante
-			break;
-		case 8:
-			printAll(L, LF, LC, LE, LP);
-			system("pause");
-			break;
-		case 9:
-			pessoasNaBiBlioteca(LP);
-			break;
-		case 10:
-			saidaDePessoas(LP);
+        case 5:
+            // funcao vem da estrutura livro
+            printLivro(L);
+        case 6:
+            printCategoria(LC);
 			break;
 		case 0:
 			return;
-		default:
-			cout << "Opcao invalida!" << endl << endl;
-			system("pause");
-			break;
-		}
-	} while (option != 0);
-}
-
-void pesquisarLivroEstante(List<estante>* LE) {
-    // List<string> LS;
-    BlockLivro* aux;
-    node<estante>* pLE;
-    char* temp = (char*)malloc(128);
-    string procurado;
-    string pesquisa;
-    int n;
-
-    cout << endl << "Qual livro deseja buscar: ";
-    cin.ignore();
-    getline(cin, pesquisa);
-
-    pLE = LE->HEAD;
-    for (int i = 0; i < LE->size();i++) {
-        aux = pLE->dado.l.first->prox;
-        while (aux != NULL) {
-            n = sprintf(temp, aux->data.nome);
-            procurado = temp;
-
-            if (procurado.find(pesquisa) != string::npos)
-                cout << "found" << endl;
-            else
-                cout << "not found" << endl;
-
-            aux = aux->prox;
+        default:
+            cout << "Opcao invalida!" << endl;
+            break;
         }
-        pLE = pLE->prox;
-    }
-	system("pause");
+        system("pause");
+    } while(option != 0);
 }
 
-void cadastrarLivro(Livro* L, List<categorias>* LC) {
+/*
+	Funcao: cadatrarLivro
+	@param L: lista dinamica do livros
+	@param LC: lista dinamica da categarias para cadatrar no livro
+*/
+void cadastrarLivro(Livro *L, List<categorias> *LC) {
 	string nome;
 	int categoria;
 	bool aux = false;
@@ -149,6 +106,12 @@ void cadastrarLivro(Livro* L, List<categorias>* LC) {
 	LInsert(L, item);
 }
 
+/*
+	Funcao: editarLivro
+	@param L: lista dinamica do livros
+	@param LC: lista dinamica da categarias para editar o livro
+	@param LE: lista dinamica da estante que tambem sera atualizada na edicao
+*/
 void editarLivro(Livro* L, List<categorias>* LC, List<estante>* LE) {
 	int idLivro;
 	int option;
@@ -291,6 +254,11 @@ void editarLivro(Livro* L, List<categorias>* LC, List<estante>* LE) {
 	}
 }
 
+/*
+	Funcao: inserirNaEstante
+	@param L: lista dinamica do livro
+	@param LE: lista dinamica da estante
+*/
 void inserirNaEstante(Livro* L, List<estante>* LE) {
 	int idLivro, numEstante;
 	bool found = false;
@@ -364,79 +332,18 @@ void inserirNaEstante(Livro* L, List<estante>* LE) {
 	system("pause");
 }
 
-bool realizarLogin(funcionario* func, List<funcionario>* LF) {
-	string usuario, senha;
-	node<funcionario>* pLF;
+/*
+	Funcao: removerLivro
+	@param L: lista dinamica do livros
+	@param id: inteiro para excluir o livro
+	
+*/
+void removerLivro(Livro* L, List<categorias>* LC);
 
-	system("cls || clear");
-	cout << "=====================" << endl;
-	cout << "        LOGIN" << endl;
-	cout << "=====================" << endl << endl;
-
-	cout << "Usuario: ";
-	cin >> usuario;
-	cout << "Senha: ";
-	cin >> senha;
-
-	pLF = LF->HEAD;
-	for (int i = 0; i < LF->size();i++) {
-		if (pLF->dado.usuario.compare(usuario) == 0) {
-			if (pLF->dado.senha.compare(senha) == 0) {
-				func->id = pLF->dado.id;
-				func->nome = pLF->dado.nome;
-
-				return true;
-			}
-		}
-		pLF = pLF->prox;
-	}
-	return false;
-}
-
-void printAll(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, List<pessoa>* LP) {
-	printLivro(L);
-	printFuncionario(LF);
-	printCategoria(LC);
-	printEstante(LE, true);
-	printPessoa(LP);
-	//removerLivro();
-}
-
-void InicializarBiblioteca(List<pessoa>* IdPessoas) {
-	for (int i = 0; i < 10; i++) {
-		IdPessoas->push(i + 1);
-	}
-}
-
-void printPessoa(List<pessoa>* IdPessoas) {
-	cout << "PESSOAS" << endl << endl;
-
-	if (IdPessoas->size() == 0) {
-		cout << "Nao possui leitores na biblioteca" << endl << endl;
-		return;
-	}
-
-	node<pessoa>* pId;
-	pId = IdPessoas->HEAD;
-
-	for (int i = 0; i < IdPessoas->size(); i++) {
-		pId->dado.imprime();
-		pId = pId->prox;
-	}
-	cout << endl << endl;
-}
-
-void printFuncionario(List<funcionario>* LF) {
-	node<funcionario>* pLF;
-	cout << endl << "FUNCIONARIOS" << endl << endl;
-
-	pLF = LF->HEAD;
-	for (int i = 0; i < LF->size();i++) {
-		pLF->dado.imprime();
-		pLF = pLF->prox;
-	}
-}
-
+/*
+	Funcao: printCategoria
+	@param LC: lista dinamica da categorias
+*/
 void printCategoria(List<categorias>* LC) {
 	cout << endl << "CATEGORIAS" << endl << endl;
 
@@ -448,53 +355,3 @@ void printCategoria(List<categorias>* LC) {
 	}
 }
 
-void printEstante(List<estante>* LE, bool aux) {
-	cout << endl << "ESTANTES" << endl << endl;
-
-	node<estante>* pLE;
-	pLE = LE->HEAD;
-
-	for (int i = 0; i < LE->size();i++) {
-		pLE->dado.imprime(sizeLivro(&pLE->dado.l), aux);
-		cout << endl << "===============================" << endl << endl;
-		pLE = pLE->prox;
-	}
-}
-
-void pessoasNaBiBlioteca(List<pessoa>* IdPessoas) {
-	if (IdPessoas->size() < 10) {
-		IdPessoas->push((IdPessoas->size() != 0) ? (IdPessoas->TAIL->dado.id + 1) : 1);
-		cout << "Uma pessoa entrou na biblioteca!!" << endl << endl;
-	}
-	else {
-		cout << endl << "BIBLIOTECA LOTADA!!" << endl;
-		cout << "Espere no lado de fora!" << endl << endl;
-	}
-}
-
-void saidaDePessoas(List<pessoa>* IdPessoas) {
-	if (IdPessoas->size() == 0)
-		cout << "Nao possui leitores na biblioteca" << endl << endl;
-	else {
-		IdPessoas->pop();
-		cout << "Uma pessoa saiu da biblioteca!!" << endl << endl;
-	}
-}
-
-void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* LP) {
-
-	int id;
-
-	printEstante(LE, true);
-	system("pause");
-
-	cout << "Escolha: " << endl;
-	cin >> id;
-
-	LE->push(id);
-	printEstante(LE, false);
-	system("pause");
-
-	cout << "Tenha uma boa leitura!" << endl;
-	system("pause");
-}

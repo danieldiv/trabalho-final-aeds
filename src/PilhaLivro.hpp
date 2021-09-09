@@ -1,3 +1,7 @@
+/*
+    este .hpp sera responsavel pela estrutura da pilha de livros que uma pessoa pegar
+*/
+
 #ifndef PILHA_LIVRO_H
 #define PILHA_LIVRO_H
 
@@ -6,7 +10,7 @@
 
 typedef struct ItemPilha ItemPilha;
 typedef struct BlockPilha BlockPilha;
-typedef struct Pilha Pilha;
+typedef struct PilhaLivro PilhaLivro;
 
 struct ItemPilha {
 	int val;

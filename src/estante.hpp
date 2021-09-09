@@ -1,3 +1,7 @@
+/*
+    este .hpp sera responsavel pela estrutura da estante que ira armazenar os livros
+*/
+
 #ifndef ESTANTE_HPP
 #define ESTANTE_HPP
 
@@ -12,7 +16,6 @@ struct estante {
 	Livro l;
 
     void imprime(int quant, bool aux);
-	// void insereLivro(Livro l);
 
     estante() = default;
     estante(int id) : id(id) {}

@@ -1,18 +1,6 @@
 #include "menu.hpp"
 
 int main() {
-	// char* tmp = (char*)malloc(128);
-	// int n = sprintf(tmp, "daniel");
-
-	// string s2 = tmp;
-
-	// string teste = "iel";
-
-	// if (s2.find(teste) != string::npos) {
-	// 	cout << "found" << endl;
-	// }
-	// else cout << "not found" << endl;
-
 	int option;
 	string* usuario, * senha;
 

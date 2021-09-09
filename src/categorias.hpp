@@ -1,9 +1,12 @@
+/*
+    este .hpp sera responsavel pela estrutura da categoria a ser salva
+*/
+
 #ifndef CATEGORIAS_HPP
 #define CATEGORIAS_HPP
 
 #include <string>
 #include <iostream>
-// #include "Lista.hpp"
 
 using namespace std;
 

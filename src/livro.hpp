@@ -1,3 +1,7 @@
+/*
+    este .hpp sera responsavel pela estrutura do livro, bem como as suas operacoes
+*/
+
 #ifndef LIVRO_HPP
 #define LIVRO_HPP
 
@@ -5,7 +9,6 @@
 #include <string.h>
 #include <string>
 
-// static int quanLivro = 0;
 using namespace std;
 
 typedef struct ItemLivro ItemLivro;
@@ -16,7 +19,6 @@ struct ItemLivro {
 	int id;
 	int id_categoria;
 	string str;
-	string *str2;
 	char *nome;
 	bool controle;
 };

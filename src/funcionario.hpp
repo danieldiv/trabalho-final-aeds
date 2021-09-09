@@ -1,3 +1,7 @@
+/*
+    este .hpp sera responsavel pela estrutura do funcionario que ira logar no sistema
+*/
+
 #ifndef FUNCIONARIO_HPP
 #define FUNCIONARIO_HPP
 

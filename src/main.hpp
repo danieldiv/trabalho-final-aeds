@@ -22,6 +22,4 @@ void readJsonEstante(List<estante>* LE, Livro *L);
 void readJsonUsuario();
 
 void InicializarBiblioteca(List<pessoa> *IdPessoas);
-void saidaDePessoas(List<pessoa>* IdPessoas);
-void pessoasNaBiBlioteca(List<pessoa>* IdPessoas);
 void printAutores();

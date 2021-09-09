@@ -56,6 +56,10 @@ void Swap(BlockLivro* a, BlockLivro* b) {
 	b->data = aux;
 }
 
+/*
+	Funcao: printLivro
+	@param l: lista dinamica do livros
+*/
 void printLivro(Livro* l) {
 	BlockLivro* aux;
 
@@ -65,7 +69,6 @@ void printLivro(Livro* l) {
 	aux = l->first->prox;
 	while (aux != NULL) {
 		cout << "[" << aux->data.id << "]:\t[" << aux->data.id_categoria << "]\t" << aux->data.nome << endl;
-		// cout << "[" << aux->data.id << "]:\t[" << aux->data.id_categoria << "]\t[" << aux->data.quantidade << "]\t" <<aux->data.nome << endl;
 		aux = aux->prox;
 	}
 }

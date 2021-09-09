@@ -1,7 +1,9 @@
+/*
+    este .hpp sera responsavel pela estrutura das pessoas na biblioteca
+*/
+
 #ifndef PESSOA_HPP
 #define PESSOA_HPP
-
-int static quantPessoa = 0;
 
 #include <string>
 #include <iostream>
@@ -14,8 +16,6 @@ struct pessoa {
 	PilhaLivro livros;
 
 	void imprime();
-	// void pegarLivro(int idLivro);
-	// void devolverLivro(int idLivro);
 
 	pessoa() = default;
 	pessoa(int id) : id(id) {}

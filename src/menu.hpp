@@ -2,38 +2,55 @@
 #define MENUS_HPP
 
 #include "main.hpp"
-#include <string>
-#include <stdlib.h>
-#include <stdio.h>
 
-// struct stackNode;
-
-// typedef struct stackNode stackNode;
-// typedef stackNode *StackNodePtr;
-
-void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, List<pessoa>* LP);
+// ==============================
+//              MAIN
+// ==============================
 
 bool realizarLogin(funcionario* func, List<funcionario>* LF);
 
-void printAll(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, List<pessoa>* LP);
-void printFuncionario(List<funcionario>* LF);
-void printCategoria(List<categorias>* LC);
-void printEstante(List<estante>* LE, bool aux);
-void printPessoa(List<pessoa> *IdPessoas);
+// ==============================
+//           BIBLIOTECA
+// ==============================
 
-void pesquisarLivroEstante(List<estante>* LE);
+void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, List<pessoa>* LP);
+void printAll(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, List<pessoa>* LP);
+
+// ==============================
+//             LIVRO
+// ==============================
+
+void menuLivro(Livro* L, List<categorias> *LC, List<estante> *LE);
 void cadastrarLivro(Livro *L, List<categorias>* LC);
 void editarLivro(Livro* L, List<categorias>* LC, List<estante> *LE);
-void removerLivro(Livro* L, List<categorias>* LC);
+void removerLivro(Livro* L, int id);
+void printCategoria(List<categorias>* LC);
 
+// ==============================
+//            ESTANTE
+// ==============================
+
+void menuEstante(Livro *L, List<estante> *LE);
+void pesquisarLivroEstante(List<estante>* LE);
 void inserirNaEstante(Livro *L, List<estante> *LE);
+void printEstante(List<estante>* LE, bool aux);
 
-void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* IdPessoas);
+// ==============================
+//          FUNCIONARIO
+// ==============================
 
-// int isEmpty(StackNodePtr topPtr);
-// void printStack(StackNodePtr currentPtr);
-// void push(StackNodePtr *topPtr, int info);
+void menuFuncionario(List<funcionario>* LF);
+void printFuncionario(List<funcionario>* LF);
 
-void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* LP);
+// ==============================
+//            PESSOA
+// ==============================
+
+void printPessoa(List<pessoa> *LP);
+void saidaDePessoas(List<pessoa>* IdPessoas);
+void entradaDePessoas(List<pessoa>* IdPessoas);
+
+// void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* IdPessoas);
+// void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* LP);
 
 #endif
