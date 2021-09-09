@@ -50,7 +50,7 @@ Em seguida você podera ter acesso ao programa que disponibiliza as funçoes mos
 
 ![image](https://user-images.githubusercontent.com/84408875/132756724-ba20ad77-3bf2-4c31-9cfa-02314d0ea2f8.png)
 
-Escolha uma das opções e de inicio ao seu navegamento.
+Escolha uma das opções e de inicio a sua navegação.
 
 ### Login
 
