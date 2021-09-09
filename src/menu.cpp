@@ -3,13 +3,13 @@
 void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, List<pessoa>* LP) {
 	int option;
 	do {
-		system("clear || cls");
+		//system("clear || cls");
 		cout << "======================" << endl;
 		cout << "    MENU BIBLIOTECA" << endl;
 		cout << "======================" << endl << endl;
 		cout << "1  - Cadastrar Livro no Sistema" << endl;
 		cout << "2  - Editar    Livro Sistema/Estante" << endl;
-		cout << "3  - " << endl;
+		cout << "3  - AdicionarLivroPessoa" << endl;
 		cout << "4  - Pesquisar Livro na Estante" << endl;
 		cout << "5  - Pesquisar Categoria" << endl;
 		cout << "6  - Inserir na Estante" << endl;
@@ -482,29 +482,19 @@ void saidaDePessoas(List<pessoa>* IdPessoas) {
 }
 
 void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* LP) {
-	// string nomelivro;
-	// int cat;
-	// ItemPilha d;
 
-	// node<pessoa>* pId;
-	// pId = LP->HEAD;
+	int id;
+
 	printEstante(LE, true);
 	system("pause");
 
-	// printEstante(LE, true);
+	cout << "Escolha: " << endl;
+	cin >> id;
 
-	// cout << "livros" << endl;
-	// FPVazia(&pId->dado.livros);
-	// for (int i = 0; i < 5; i++) {
-	// 	d.val = 3 + i;
-	// 	Push(&pId->dado.livros, d);
-	// }
-	// Pimprime(&pId->dado.livros);
+	LE->push(id);
+	printEstante(LE, false);
+	system("pause");
 
-	// cout << endl<< endl;
-	// cout << "Digite o id da categoria desejada: " << endl;
-	// cin >> cat;
-	// cout << "Digite o nome do livro que deseja: " << endl;
-	// cin >> nomelivro;
-	// adicionar livro À pessoa aqui ...
+	cout << "Tenha uma boa leitura!" << endl;
+	system("pause");
 }
