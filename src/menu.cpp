@@ -89,7 +89,7 @@ void pesquisarLivroEstante(List<estante>* LE) {
 
             if (procurado.find(pesquisa) != string::npos)
                 cout << "found" << endl;
-            else 
+            else
                 cout << "not found" << endl;
 
             aux = aux->prox;
@@ -351,7 +351,7 @@ void inserirNaEstante(Livro* L, List<estante>* LE) {
 			cout << "Livro nao encontrado!" << endl;
 		else {
 			ItemLivro item;
-			
+
 			item.id = temp->data.id;
 			item.nome = temp->data.nome;
 			item.id_categoria = temp->data.id_categoria;
@@ -482,22 +482,24 @@ void saidaDePessoas(List<pessoa>* IdPessoas) {
 }
 
 void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* LP) {
-	string nomelivro;
-	int cat;
-	ItemPilha d;
+	// string nomelivro;
+	// int cat;
+	// ItemPilha d;
 
-	node<pessoa>* pId;
-	pId = LP->HEAD;
+	// node<pessoa>* pId;
+	// pId = LP->HEAD;
+	printEstante(LE, true);
+	system("pause");
 
 	// printEstante(LE, true);
 
-	cout << "livros" << endl;
-	FPVazia(&pId->dado.livros);
-	for (int i = 0; i < 5; i++) {
-		d.val = 3 + i;
-		Push(&pId->dado.livros, d);
-	}
-	Pimprime(&pId->dado.livros);
+	// cout << "livros" << endl;
+	// FPVazia(&pId->dado.livros);
+	// for (int i = 0; i < 5; i++) {
+	// 	d.val = 3 + i;
+	// 	Push(&pId->dado.livros, d);
+	// }
+	// Pimprime(&pId->dado.livros);
 
 	// cout << endl<< endl;
 	// cout << "Digite o id da categoria desejada: " << endl;
