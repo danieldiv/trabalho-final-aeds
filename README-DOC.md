@@ -104,4 +104,7 @@ Aqui está um exemplo da utilização da classe que permitirá a implementação
             "senha": "senha456"
         }
     ]
-   }
+    }
+    
+    
+Observe que em todos esses casos, você nunca precisa "dizer" ao compilador qual tipo de valor JSON você deseja usar. Se você quiser ser explicíto ou expressar alguns casos de borda, as funções json::array() e json::object() ajudarão:    
