@@ -28,11 +28,17 @@ O nosso projeto tem como objetivo desenvolver um sistema que irá abranger a ár
 Assim que inicializa o sistema, será carregado arquivos .json, contendo informaçõees iniciais referentesaos funcionários, com usuario e senha. Também sera carregado um arquivo sobre as categorias doslivros, (Ficcão Cientifica, Folclore, Humor, Poesia, Contos ...)  estas categorias serão utilizadas noarquivo referente aos livros e estes livros serão armazenados em uma estante com um limite de quanti-dade.Os funcionarios, estantes e livros serao armazendas em listas dinamicas. O sistema terá uma telade login para acesso, que será realizado apenas por funcionários com usuário e senha. Um menu iráredirecionar para as suas funcionalidades, sendo elas: realizar o cadastro, edição, remoção e pesquisados funcionários, categorias, livros e estantes contendo os livros.  O acesso a biblioteca é limitado,logo será necessário a utilização de uma fila. Dentro da biblioteca será possivel escolher um ou varioslivros para ler, que sera armazenado em uma pilha de livros, o maximo de livros a ser selecionado poruma pessoa é 5. Os livros nao podem sair de dentro da biblioteca. Para pegar um livro é necessáriobuscar em uma lista "ordenada"no sistema, que irá mostrar a quantidade e em qual estante o livro seencontra. A pesquisa pode ser realizado pelo nome do livro ou categoria.
 
 Descrição das classes:
+
 •Funcionario:id, nome, usuario, senha;
+
 •PessoasFora:nome;
+
 •Categoria:id, nome;
+
 •Livro: id, nome, categoria, quantidade;
+
 •Estante:id, descricao, listaLivros, quantidade;
+
 •PessoasDentro:nome, listaLivros, quantidade
 
 ### Organização da Biblioteca
@@ -41,6 +47,12 @@ Atualmente, é de conhecimento geral que para uma boa gestão, cuidado e pratici
 
 ### Json
 
-## Introdução ao uso do Json
+Introdução ao uso do Json:
 
 JSON(JavaScript Object Notation - Notação de Objetos JavaScript) é uma formatação leve de trocade dados. Para nós, programadores, é fácil de ler e escrever. Para máquinas, é fácil de interpretar egerar resultados. Está baseado em um subconjunto da linguagem de programação JavaScript. JSON éem formato texto e completamente independente de linguagem, pois usa convenções que são familiaresàs linguagens C e familiares. Estas propriedades fazem com que JSON seja um formato ideal de trocade dados.
+
+Arquitetura:
+
+JSON está construido em duas estruturas:
+
+Uma coleção de pares nome/valor. Em várias linguagens, isto é caracterizado com um object,record, struct, dicionário, hash table, keyed list, ou arrays associativas.  Outra lista ordenada devalores. Na maioria das linguagens, isto é caracterizado como uma array, vetor, lista ou sequência.Estas são estruturas de dados universais. Virtualmente todas as linguegens de programação mo-dernas as suportam, de uma forma ou de outra. É aceitável que um formato de troca de dados queseja independente de linguagem de programação se baseie nestas estruturas.
