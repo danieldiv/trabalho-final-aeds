@@ -2,7 +2,7 @@
 
 # Proposta
 
-- Sistema relacionado a biblioteca.
+- Sistema de acesso aos livros de uma biblioteca, que permite que um usuário entre na biblioteca e retire um livro atravez do login de um funcionário.
 
 ## Participantes
 
@@ -24,6 +24,11 @@
 <!--te-->
 
 ### Copilação 
+
+Comandos para que o programa copile em seu terminal:
+
+      make
+      make run
 
 ### Informações
 
