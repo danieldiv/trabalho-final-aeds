@@ -2,7 +2,7 @@
 
 ## Proposta
 
-- Sistema de acesso aos livros de uma biblioteca, que permite que um usuário entre na biblioteca e retire um livro atravez do login de um funcionário.
+- Sistema de acesso aos livros de uma biblioteca.
 
 ## Participantes
 
@@ -35,6 +35,7 @@ Comandos para que o programa copile em seu terminal:
 ## Informações
 
 - A biblioteca iniciara cheia, então para entrar na biblioteca é necessário que você retire uma pessoa primeiro.
+- Para adção ou exclusão de categorias ou livros é necessário editar o arquivo json.
 - Livro não terá quantidade, apenas a estante.
 - Como não pode utilizar uma lista para os leitores dentro da biblioteca, foi utilizado a fila, logo, apenas o primeiro da fila pode pegar no maximo 5 livros, o proximo so pode pegar os livros apoz o primeiro sair.
 
@@ -50,7 +51,7 @@ Nela sera possiveel fazer login, ver as informações dos colaboradores do proje
 
 Em seguida você podera ter acesso ao programa que disponibiliza as funçoes mostraadas a baixo:
 
-![image](https://user-images.githubusercontent.com/84408875/132896047-c0998d73-d7e5-464b-ab1d-12c5bb592f8e.png)
+![image](https://user-images.githubusercontent.com/84408875/132898769-fe00cf7f-ea4d-4b76-903b-8075a7cae591.png)
 
 Escolha uma das opções e de inicio a sua navegação.
 
