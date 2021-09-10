@@ -42,15 +42,15 @@ Comandos para que o programa copile em seu terminal:
 
 Ao iniciar o programa sera possivel visualizar o seguinte menu:
 
-![image](https://user-images.githubusercontent.com/84408875/132755696-4a92e6d5-b552-415f-a6d9-fe7f4bf6e994.png)
+![image](https://user-images.githubusercontent.com/84408875/132895759-29fd6269-61ab-440a-a7c7-25c5b59b46fd.png)
 
-Nela sera possiveel fazer loguin, ver as informações dos colaboradores do projeto e sair do programa. Caso escolha o opção numero 1, sera necessário inserir as informações de um funcionário de seu nome de usuário e senha(ifrmações encontradas na parte de [Login](#Login)), como mostra a imagem a abaixo:
+Nela sera possiveel fazer login, ver as informações dos colaboradores do projeto e sair do programa. Caso escolha o opção numero 1, sera necessário inserir as informações de um funcionário de seu nome de usuário e senha(ifrmações encontradas na parte de [Login](#Login)), como mostra a imagem a abaixo:
 
-![image](https://user-images.githubusercontent.com/84408875/132755822-2a23aceb-b4cf-4f8a-8200-0a81b1dc2535.png)
+![image](https://user-images.githubusercontent.com/84408875/132895987-dd042683-8b27-4c5b-ac2a-4297b12b7451.png)
 
 Em seguida você podera ter acesso ao programa que disponibiliza as funçoes mostraadas a baixo:
 
-![image](https://user-images.githubusercontent.com/84408875/132756724-ba20ad77-3bf2-4c31-9cfa-02314d0ea2f8.png)
+![image](https://user-images.githubusercontent.com/84408875/132896047-c0998d73-d7e5-464b-ab1d-12c5bb592f8e.png)
 
 Escolha uma das opções e de inicio a sua navegação.
 
@@ -67,37 +67,55 @@ Escolha uma das opções e de inicio a sua navegação.
 
 ## Funcionamento 
 
-A
+A partir do menu sera possivel fazer 6 movimentações, alem de poder voltar ao menu, a baixo irei explicar cada uma das possibilidades:
 
-##### Cadastrar livro no sistema
+### Opções de livro
 
- Atraves da função cadastrarLivro(L, LC); sera possivel cadastrar livros nos sistema a partir de uma estrutura de lista.
-  
-##### Editar um livro no sistema
-  
- Nessa opção sera possivel editar os livros do sistema editando as lsitas de categorias e a estante, a aprtir da função editarLivro(L, LC, LE);.
-  
-##### AdcionarLivroPessoa
+Ao escolher a opção 1 será possivekl ver um novo Menu Livro, como é ilustrado abaixo:
 
-Nessa opção sera possivel que uma pessoa remova um livro para ler atravez de uma organização da lista.
+![image](https://user-images.githubusercontent.com/84408875/132896623-0fccc7be-7f3c-44e9-83ee-56cc7a6eddcd.png)
 
-##### Pesquisar livro na estante
+Nele sera possivel cadastrar, editar, imprimir um livro, categoria do livro e voltar ao menu anterior.
 
-Na quarta opção sera posssivel pesquisar um livro na estante.
+### Opções de estante
 
-##### Pesquisar categoria
+Ao escolher a opção 2 aparece o seguinte menu estante:
 
-Nessa opção sera possivel pesquisar uma categoria da estante.
+![image](https://user-images.githubusercontent.com/84408875/132896926-d66d632e-e84e-4902-9b43-f9307a45454d.png)
 
-##### Inserir na estante
+Nele sera possivel pegar ou devolver um livro, adcionar um livro a estante, e mostar todos o livros nela, como tambem voltar ao menu anterir.
 
-Nessa opção sera possivel inserir um livro na estante.
+### Opções de funcionário
 
-##### Acessar Estante
+Ao escolher a opção numero 3 aparece o menu de funcionários,como é ilustrado abaixo:
 
-Sera possivel acessar a estante e fazer pesquisas nela.
+![image](https://user-images.githubusercontent.com/84408875/132897156-253a86f9-e959-4dff-9c5b-3210bf3ddd70.png)
 
-### CustoComputacional
+Nesse menu sera possivel imprimir os funcionários da empresa assim comoseus dados, como pode ser visto na imagem a baixo:
+
+![image](https://user-images.githubusercontent.com/84408875/132897412-f5d383d5-9a84-4b60-a074-4bbeee68308b.png)
+
+### Imprimir tudo 
+
+Na quarta opção sera possivel imprimir tudo do sistema, como é possivel ver a abixo:
+
+![image](https://user-images.githubusercontent.com/84408875/132897568-bd933875-5369-4080-97ff-f01685487848.png)
+![image](https://user-images.githubusercontent.com/84408875/132897614-6d56f4ca-7fbc-441d-9ba9-5262b65d6bfc.png)
+![image](https://user-images.githubusercontent.com/84408875/132897643-9aa9428a-5fdd-4948-bbba-a00b503bb16e.png)
+
+### Simular entrada de pessoa
+
+Nessa opção sera possivel simular a entrada de uma pessoa na biblioteca, porem se ela estiver cheia uma notificação sera mostrada e para entrar primeiro tera que retirar alguem, como sera mostrado no proximo topico, depois que uma pessoa sair sera possivel fazer a simulação, e aparecera na sua tela a seguinte mensagem:
+
+![image](https://user-images.githubusercontent.com/84408875/132897966-fbf3de6d-6d9a-440f-91c2-7b4a8700aa81.png)
+
+### Simular saida de pessoa
+
+Ao escolher a opção 6 você sera capaz de retirar uma pessoa da bibliteca, logo quando escolher esse comando, a aseguinte mensagem aparecera confirmando a saida:
+
+![image](https://user-images.githubusercontent.com/84408875/132897919-4cfe2ecc-c47b-4e9d-b01b-6da16da525da.png)
+
+## CustoComputacional
 
 Custo Computacional do nosso projeto:
 
