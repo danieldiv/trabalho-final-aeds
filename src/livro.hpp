@@ -36,7 +36,7 @@ struct Livro {
 
 void FLVazia(Livro *l);
 void LInsert(Livro *l, ItemLivro item);
-void LRemove(Livro *l, ItemLivro item);
+bool LRemove(Livro* l, ItemLivro item);
 void printLivro(Livro *l);
 void LImprimeLivroEstante(Livro *l);
 ItemLivro LBusca(Livro *L, int idLivro);

@@ -13,8 +13,8 @@ bool realizarLogin(funcionario* func, List<funcionario>* LF);
 //           BIBLIOTECA
 // ==============================
 
-void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, List<pessoa>* LP);
-void printAll(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, List<pessoa>* LP);
+void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, Fila<pessoa>* FP);
+void printAll(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, Fila<pessoa>* FP);
 
 // ==============================
 //             LIVRO
@@ -23,17 +23,19 @@ void printAll(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estant
 void menuLivro(Livro* L, List<categorias> *LC, List<estante> *LE);
 void cadastrarLivro(Livro *L, List<categorias>* LC);
 void editarLivro(Livro* L, List<categorias>* LC, List<estante> *LE);
-void removerLivro(Livro* L, int id);
+void removerLivro(Livro* L);
 void printCategoria(List<categorias>* LC);
 
 // ==============================
 //            ESTANTE
 // ==============================
 
-void menuEstante(List<estante> *LE);
-void pesquisarLivroEstante(List<estante>* LE);
+void menuEstante(List<estante> *LE, Fila<pessoa> *FP, Livro *L);
+int pesquisarLivroEstante(List<estante>* LE);
 void inserirNaEstante(Livro *L, List<estante> *LE);
 void printEstante(List<estante>* LE, bool aux);
+void pegarLivro(List<estante>* LE, Fila<pessoa>* FP, Livro *L);
+void retornarEstante(List<estante> *LE, PilhaLivro *p);
 
 // ==============================
 //          FUNCIONARIO
@@ -46,11 +48,8 @@ void printFuncionario(List<funcionario>* LF);
 //            PESSOA
 // ==============================
 
-void printPessoa(List<pessoa> *LP);
-void saidaDePessoas(List<pessoa>* IdPessoas);
-void entradaDePessoas(List<pessoa>* IdPessoas);
-
-// void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* IdPessoas);
-// void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* LP);
+void printPessoa(Fila<pessoa> *FP);
+void saidaDePessoas(Fila<pessoa>* FP, List<estante>* LE);
+void entradaDePessoas(Fila<pessoa> *FP);
 
 #endif

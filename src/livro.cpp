@@ -39,14 +39,13 @@ void LInsert(Livro* l, ItemLivro item) {
 /*
 	Funcao: LRemove
 	@param l: ponteiro de uma lista de livro para remover
-	@param item: item que sera utilizar para procurar o id para a remoca
+	@param item: item que sera utilizado para procurar o id para a remover
 */
-void LRemove(Livro* l, ItemLivro item) {
+bool LRemove(Livro* l, ItemLivro item) {
 	BlockLivro* aux, * tmp;
-
 	if (l->first == l->last || l == NULL || l->first->prox == NULL) {
 		printf("LISTA DE LIVROS VAZIA!\n");
-		return;
+		return false;
 	}
 
 	aux = l->first;
@@ -59,8 +58,10 @@ void LRemove(Livro* l, ItemLivro item) {
 			tmp->prox = aux->prox;
 			aux->prox->ant = tmp;
 			free(aux);
+			return true;
 		}
 	}
+	return false;
 }
 
 /*
@@ -84,7 +85,7 @@ void printLivro(Livro* l) {
 	Funcao: LImprimeLivroEstante
 	@param l: lista dinamica do livro para imrpessao sem categoria
 */
-void LImprimeLivroEstante(Livro *l) {
+void LImprimeLivroEstante(Livro* l) {
 	BlockLivro* aux;
 
 	// cout << endl << "LIVROS" << endl << endl;
@@ -102,7 +103,7 @@ void LImprimeLivroEstante(Livro *l) {
 	@param l: lista dinamica do livro para verificar o tamanho da lista
 	@result: retorna um inteiro referente a quantidade de livros dentro da lista
 */
-int sizeLivro(Livro *l) {
+int sizeLivro(Livro* l) {
 	BlockLivro* aux;
 	int quant = 0;
 
@@ -119,8 +120,8 @@ int sizeLivro(Livro *l) {
 	@param l: lista dinamica do livro para pesquisa do id
 	@result: retorna o livro pesquisado pelo id ou um livro com -1 caso nao encontrado
 */
-ItemLivro LBusca(Livro *L, int idLivro) {
-	BlockLivro *temp;
+ItemLivro LBusca(Livro* L, int idLivro) {
+	BlockLivro* temp;
 	ItemLivro result;
 
 	temp = L->first->prox;

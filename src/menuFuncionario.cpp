@@ -7,7 +7,7 @@
 void menuFuncionario(List<funcionario> *LF) {
     int option;
     do {
-		system("clear || cls");
+		// system("clear || cls");
 		cout << "======================" << endl;
 		cout << "   MENU FUNCIONARIO" << endl;
 		cout << "======================" << endl << endl;
@@ -18,7 +18,6 @@ void menuFuncionario(List<funcionario> *LF) {
 		switch (option) {
 		case 1:
 			printFuncionario(LF);
-            
 			break;
 		case 0:
 			return;

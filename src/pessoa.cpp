@@ -5,4 +5,11 @@
 */
 void pessoa::imprime() {
 	cout << "[" << this->id << "]\t";
+
+	if (sizeLivroPilha(&livros) > 0) {
+		cout << endl;
+		PimprimeLivroPessoa(&livros);
+
+		cout << endl << endl;
+	}
 }

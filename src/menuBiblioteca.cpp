@@ -6,12 +6,12 @@
 	@param LF: lista dinamica do funcionarios
 	@param LC: lista dinamica da categarias
 	@param LE: lista dinamica da estantes
-	@param LP: lista dinamica da pessoas
+	@param FP: fila dinamica da pessoas
 */
-void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, List<pessoa>* LP) {
+void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, Fila<pessoa>* FP) {
 	int option;
 	do {
-		system("clear || cls");
+		// system("clear || cls");
 		cout << "======================" << endl;
 		cout << "    MENU BIBLIOTECA" << endl;
 		cout << "======================" << endl << endl;
@@ -31,21 +31,21 @@ void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<
 			menuLivro(L, LC, LE);
 			break;
 		case 2:
-			menuEstante(LE);
+			menuEstante(LE, FP, L);
 			break;
 		case 3:
 			menuFuncionario(LF);
 			break;
 		case 4:
-			printAll(L, LF, LC, LE, LP);
+			printAll(L, LF, LC, LE, FP);
 			system("pause");
 			break;
 		case 5:
-			entradaDePessoas(LP);
+			entradaDePessoas(FP);
 			system("pause");
 			break;
 		case 6:
-			saidaDePessoas(LP);
+			saidaDePessoas(FP, LE);
 			system("pause");
 			break;
 		case 0:
@@ -54,7 +54,7 @@ void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<
 			cout << "Opcao invalida!" << endl;
 			system("pause");
 		}
-	} while(option != 0);
+	} while (option != 0);
 }
 
 /*
@@ -67,7 +67,7 @@ bool realizarLogin(funcionario* func, List<funcionario>* LF) {
 	string usuario, senha;
 	node<funcionario>* pLF;
 
-	system("cls || clear");
+	// system("cls || clear");
 	cout << "=====================" << endl;
 	cout << "        LOGIN" << endl;
 	cout << "=====================" << endl << endl;
@@ -98,51 +98,56 @@ bool realizarLogin(funcionario* func, List<funcionario>* LF) {
 	@param LF: lista dinamica do funcionarios
 	@param LC: lista dinamica da categarias
 	@param LE: lista dinamica da estantes
-	@param LP: lista dinamica da pessoas
+	@param FP: fila dinamica da pessoas
 */
-void printAll(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, List<pessoa>* LP) {
+void printAll(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, Fila<pessoa>* FP) {
 	printLivro(L);
 	printFuncionario(LF);
 	printCategoria(LC);
 	printEstante(LE, true);
-	printPessoa(LP);
+	printPessoa(FP);
 }
 
 /*
 	Funcao: InicializarBiblioteca
-	@param LP: lista dinamica de pessoa que sera inicializada com valore de 1 a 10
+	@param FP: fila dinamica de pessoa que sera inicializada com valore de 1 a 10
 */
-void InicializarBiblioteca(List<pessoa>* LP) {
+void InicializarBiblioteca(Fila<pessoa>* FP) {
 	for (int i = 0; i < 10; i++) {
-		LP->push(i + 1);
+		FP->push(i + 1);
+		FPVazia(&FP->TAIL->dado.livros);
 	}
 }
 
 /*
 	Funcao: printPessoa
-	@param LP: lista dinamica de pessoa
+	@param FP: fila dinamica de pessoa
 */
-void printPessoa(List<pessoa>* LP) {
+void printPessoa(Fila<pessoa>* FP) {
 	cout << "PESSOAS" << endl << endl;
 
-	if (LP->size() == 0) {
+	if (FP->size() == 0) {
 		cout << "Nao possui leitores na biblioteca" << endl << endl;
 		return;
 	}
 
 	node<pessoa>* pId;
-	pId = LP->HEAD;
+	pId = FP->HEAD;
 
-	for (int i = 0; i < LP->size(); i++) {
+	for (int i = 0; i < FP->size(); i++) {
 		pId->dado.imprime();
 		pId = pId->prox;
 	}
 	cout << endl << endl;
 }
 
-void entradaDePessoas(List<pessoa>* IdPessoas) {
-	if (IdPessoas->size() < 10) {
-		IdPessoas->push((IdPessoas->size() != 0) ? (IdPessoas->TAIL->dado.id + 1) : 1);
+/*
+	Funcao: entradaDePessoas
+	@param FP: fila dinamica de pessoa
+*/
+void entradaDePessoas(Fila<pessoa>* FP) {
+	if (FP->size() < 10) {
+		FP->push((FP->size() != 0) ? (FP->TAIL->dado.id + 1) : 1);
 		cout << "Uma pessoa entrou na biblioteca!!" << endl << endl;
 	}
 	else {
@@ -151,27 +156,16 @@ void entradaDePessoas(List<pessoa>* IdPessoas) {
 	}
 }
 
-void saidaDePessoas(List<pessoa>* IdPessoas) {
-	if (IdPessoas->size() == 0)
+/*
+	Funcao: saidaDePessoas
+	@param FP: fila dinamica de pessoa
+*/
+void saidaDePessoas(Fila<pessoa>* FP, List<estante>* LE) {
+	if (FP->size() == 0)
 		cout << "Nao possui leitores na biblioteca" << endl << endl;
 	else {
-		IdPessoas->pop();
+		retornarEstante(LE, &FP->HEAD->dado.livros);
+		FP->pop();
 		cout << "Uma pessoa saiu da biblioteca!!" << endl << endl;
 	}
-}
-
-void adicionarLivroPessoa(List<estante>* LE, List<pessoa>* LP) {
-	// int id;
-
-	// printEstante(LE, true);
-
-	// cout << "Escolha: " << endl;
-	// cin >> id;
-
-	// // LE->push(id);
-	// printEstante(LE, false);
-	// system("pause");
-
-	// cout << "Tenha uma boa leitura!" << endl;
-	// system("pause");
 }

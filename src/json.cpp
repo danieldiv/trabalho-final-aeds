@@ -3,6 +3,10 @@
 #include "biblioteca/json.hpp"
 using json = nlohmann::json;
 
+/*
+	Funcao readJsonFuncionario
+	@param LF: lista dinamica de funcionario que sera utilizada para a leitura de valores estaticos no arquivo .json
+*/
 void readJsonFuncionario(List<funcionario>* LF) {
 	json js;
 	ifstream file("arquivo.json");
@@ -15,6 +19,10 @@ void readJsonFuncionario(List<funcionario>* LF) {
 	}
 }
 
+/*
+	Funcao readJsonCategoria
+	@param L: lista dinamica de categoria que sera utilizada para a leitura de valores estaticos no arquivo .json
+*/
 void readJsonCategoria(List<categorias>* L) {
 
 	json j;
@@ -27,6 +35,10 @@ void readJsonCategoria(List<categorias>* L) {
 	}
 }
 
+/*
+	Funcao readJsonLivro
+	@param L: lista dinamica de livro que sera utilizada para a leitura de valores estaticos no arquivo .json
+*/
 void readJsonLivro(Livro* L) {
 	FLVazia(L);
 	ItemLivro item;
@@ -45,12 +57,16 @@ void readJsonLivro(Livro* L) {
 		item.id = aux["id"];
 		item.id_categoria = aux["categoria"];
 		item.str = aux["nome"];
-		// item.quantidade = aux["quantidade"];
 
 		LInsert(L, item);
 	}
 }
 
+/*
+	Funcao readJsonEstante
+	@param LE: lista dinamica de estamte que sera utilizada para a leitura de valores estaticos no arquivo .json
+	@param L: lista dinamica de livro que sera utilizada para buscar o id que estiver presente no arquivo .json da estante
+*/
 void readJsonEstante(List<estante>* LE, Livro* L) {
 	json js;
 	ifstream file("arquivo.json");

@@ -10,7 +10,7 @@ int main() {
 	List<funcionario> LF;
 	List<categorias> LC;
 	List<estante> LE;
-	List<pessoa> LP;
+	Fila<pessoa> FP;
 
 	readJsonLivro(&L);
 	readJsonFuncionario(&LF);
@@ -18,7 +18,7 @@ int main() {
 	readJsonEstante(&LE, &L);
 
 	do {
-		system("cls || clear");
+		// system("cls || clear");
 		cout << "======================" << endl;
 		cout << "      BIBLIOTECA" << endl;
 		cout << "======================" << endl << endl;
@@ -31,8 +31,8 @@ int main() {
 		switch (option) {
 		case 1:
 			if (realizarLogin(&func, &LF) == true) {
-				InicializarBiblioteca(&LP);
-				menuBiblioteca(&L, &LF, &LC, &LE, &LP);
+				InicializarBiblioteca(&FP);
+				menuBiblioteca(&L, &LF, &LC, &LE, &FP);
 			}
 			else {
 				cout << "Usuario ou senha invalida!!" << endl << endl;
@@ -57,7 +57,7 @@ int main() {
 }
 
 void printAutores() {
-	system("cls || clear");
+	// system("cls || clear");
 	cout << "=====================" << endl;
 	cout << "     INTEGRANTES     " << endl;
 	cout << "=====================" << endl << endl;
