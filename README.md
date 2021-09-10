@@ -22,7 +22,7 @@
    * [Login](#Login)
    * [Funcionamento](#Funcionamento)
    * [CustoComputacional](#CustoComputacional)
-   * [EstruturasUsadas](#Estruturas Usadas)
+   * [EstruturasUsadas](#EstruturasUsadas)
 <!--te-->
 
 ## Copilação 
