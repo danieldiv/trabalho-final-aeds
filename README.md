@@ -61,7 +61,7 @@ Nela sera possiveel fazer login, ver as informações dos colaboradores do proje
 
 ![image](https://user-images.githubusercontent.com/84408875/132895987-dd042683-8b27-4c5b-ac2a-4297b12b7451.png)
 
-Em seguida você podera ter acesso ao programa que disponibiliza as funçoes mostraadas a baixo:
+Em seguida você podera ter acesso ao programa que disponibiliza as funçoes mostradas a baixo:
 
 ![image](https://user-images.githubusercontent.com/84408875/132898769-fe00cf7f-ea4d-4b76-903b-8075a7cae591.png)
 
@@ -84,9 +84,11 @@ Nele sera possivel cadastrar, editar, imprimir um livro, categoria do livro e vo
 
 Ao escolher a opção 2 aparece o seguinte menu estante:
 
-![image](https://user-images.githubusercontent.com/84408875/132896926-d66d632e-e84e-4902-9b43-f9307a45454d.png)
+![image](https://user-images.githubusercontent.com/84408875/132924177-d6d881ce-7c8b-40a9-a4b7-6e148122d858.png)
 
-Nele sera possivel pegar ou devolver um livro, adcionar um livro a estante, e mostar todos o livros nela, como tambem voltar ao menu anterir.
+Nele sera possivel pegar ou devolver um livro, adcionar um livro a estante, e mostar todos o livros nela, como tambem voltar ao menu anterir, com a ordenação a estante ficara do seguinte modo:
+
+![image](https://user-images.githubusercontent.com/84408875/132924247-dcee5493-5979-4d19-a77a-de110c2f4312.png)
 
 ### Opções de funcionário
 
@@ -96,7 +98,7 @@ Ao escolher a opção numero 3 aparece o menu de funcionários,como é ilustrado
 
 Nesse menu sera possivel imprimir os funcionários da empresa assim comoseus dados, como pode ser visto na imagem a baixo:
 
-![image](https://user-images.githubusercontent.com/84408875/132897412-f5d383d5-9a84-4b60-a074-4bbeee68308b.png)
+![image](https://user-images.githubusercontent.com/84408875/132924192-6eaca2e2-7aba-47ef-8c69-345aaa2f2678.png)
 
 ### Imprimir tudo 
 
