@@ -1,10 +1,10 @@
 <h1 align="center">TRABALHO FINAL DE AED</h1>
 
-### Proposta
+## Proposta
 
 - Sistema de acesso aos livros de uma biblioteca, que permite que um usuário entre na biblioteca e retire um livro atravez do login de um funcionário.
 
-### Participantes
+## Participantes
 
 - Daniel Alves Sanches
 
@@ -14,7 +14,7 @@
 
 - Lucas de Souza Gontijo
 
-### Sumário
+## Sumário
 <!--ts-->
    * [Copilação](#Copilação)
    * [Informações](#Informações)
@@ -24,7 +24,7 @@
    * [CustoComputacional](#CustoComputacional)
 <!--te-->
 
-### Copilação 
+## Copilação 
 
 Comandos para que o programa copile em seu terminal:
 
@@ -32,13 +32,13 @@ Comandos para que o programa copile em seu terminal:
       make
       make run
 
-### Informações
+## Informações
 
 - A biblioteca iniciara cheia, então para entrar na biblioteca é necessário que você retire uma pessoa primeiro.
 - Livro não terá quantidade, apenas a estante.
 - Como não pode utilizar uma lista para os leitores dentro da biblioteca, foi utilizado a fila, logo, apenas o primeiro da fila pode pegar no maximo 5 livros, o proximo so pode pegar os livros apoz o primeiro sair.
 
-### Menu
+## Menu
 
 Ao iniciar o programa sera possivel visualizar o seguinte menu:
 
@@ -54,7 +54,7 @@ Em seguida você podera ter acesso ao programa que disponibiliza as funçoes mos
 
 Escolha uma das opções e de inicio a sua navegação.
 
-### Login
+## Login
 
 - Para realizar o login, utilize um dos usuarios abaixo:
   - usuario: usuA | senha: senha123
@@ -65,9 +65,9 @@ Escolha uma das opções e de inicio a sua navegação.
 
   - usuario: usuD | senha: senhaLG
 
-### Funcionamento 
+## Funcionamento 
 
-A partir do menu sera possivel ter acesso a varios comandos, agora eu irei explicar o que com cada comando sera possivel fazer.
+A
 
 ##### Cadastrar livro no sistema
 
