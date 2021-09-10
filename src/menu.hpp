@@ -35,7 +35,7 @@ int pesquisarLivroEstante(List<estante>* LE);
 void inserirNaEstante(Livro *L, List<estante> *LE);
 void printEstante(List<estante>* LE, bool aux);
 void pegarLivro(List<estante>* LE, Fila<pessoa>* FP, Livro *L);
-void retornarEstante(List<estante> *LE, PilhaLivro *p);
+void retornarEstante(List<estante>* LE, PilhaLivro* p);
 
 // ==============================
 //          FUNCIONARIO

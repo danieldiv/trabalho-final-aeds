@@ -51,8 +51,8 @@ void menuLivro(Livro* L, List<categorias>* LC, List<estante>* LE) {
 			cout << "Opcao invalida!" << endl;
 			break;
 		}
-		system("pause");
-	} while (option != 0);
+		// system("pause");
+	} while (option != 0);//1
 }
 
 /*
@@ -63,7 +63,7 @@ void menuLivro(Livro* L, List<categorias>* LC, List<estante>* LE) {
 void cadastrarLivro(Livro* L, List<categorias>* LC) {
 	string nome;
 	int categoria;
-	bool aux = false;
+	bool aux = false;//1
 
 	ItemLivro item;
 	node<categorias>* pLC;
@@ -75,39 +75,39 @@ void cadastrarLivro(Livro* L, List<categorias>* LC) {
 
 	cout << "Informe o nome do livro: ";
 	cin.ignore();
-	getline(cin, nome);
+	getline(cin, nome);//1
 	cout << "Nome: " << nome << endl << endl;
 
-	pLC = LC->HEAD;
-	for (int i = 0; i < LC->size(); i++) {
-		pLC->dado.imprime();
-		pLC = pLC->prox;
+	pLC = LC->HEAD;//1
+	for (int i = 0; i < LC->size(); i++) {//2 + 2N
+		pLC->dado.imprime();//1
+		pLC = pLC->prox;//1
 	}
 
 	do {
 		cout << endl << "Escolha a categoria: ";
 		fflush(stdin);
-		cin >> categoria;
+		cin >> categoria;//1
 
-		pLC = LC->HEAD;
-		for (int i = 0; i < LC->size();i++) {
-			aux = pLC->dado.buscarCat(categoria) ? true : aux;
-			pLC = pLC->prox;
+		pLC = LC->HEAD;//1
+		for (int i = 0; i < LC->size();i++) {//2 + 2N
+			aux = pLC->dado.buscarCat(categoria) ? true : aux;//1
+			pLC = pLC->prox;//1
 
-			if (aux)
+			if (aux)//1//1
 				break;
 		}
 
 		if (!aux)
 			cout << "Categoria nao encontrada!!" << endl;
 
-	} while (!aux);
+	} while (!aux);//1
 
-	item.id_categoria = categoria;
-	item.id = sizeLivro(L) > 0 ? L->last->data.id + 1 : 1;
-	item.str = nome;
+	item.id_categoria = categoria;//1
+	item.id = sizeLivro(L) > 0 ? L->last->data.id + 1 : 1;//1
+	item.str = nome;//1
 
-	LInsert(L, item);
+	LInsert(L, item);//1
 }
 
 /*
@@ -119,8 +119,8 @@ void cadastrarLivro(Livro* L, List<categorias>* LC) {
 void editarLivro(Livro* L, List<categorias>* LC, List<estante>* LE) {
 	int idLivro;
 	int option;
-	bool found = false;
-	int counter = 0;
+	bool found = false;//1
+	int counter = 0;//1
 	BlockLivro* temp, * aux;
 
 	// dados que serao trazidos do livro procurado
@@ -141,23 +141,23 @@ void editarLivro(Livro* L, List<categorias>* LC, List<estante>* LE) {
 
 	cout << endl << endl << "Escolha o ID do livro que deseja editar ou '0' para sair: ";
 	fflush(stdin);
-	cin >> idLivro;
+	cin >> idLivro;//1
 
 	// system("cls || clear");
 
-	if (idLivro == 0)
+	if (idLivro == 0)//1
 		return;
 
-	temp = L->first->prox;
-	while (temp != NULL) {
-		if (temp->data.id == idLivro) {
-			id = temp->data.id;
-			id_categoria = temp->data.id_categoria;
-			nome = temp->data.nome;
-			found = true;
+	temp = L->first->prox;//1
+	while (temp != NULL) {//1
+		if (temp->data.id == idLivro) {//1
+			id = temp->data.id;//1
+			id_categoria = temp->data.id_categoria;//1
+			nome = temp->data.nome;//1
+			found = true;//1
 			break;
 		}
-		temp = temp->prox;
+		temp = temp->prox;//1
 	}
 
 	if (!found)
@@ -259,7 +259,7 @@ void editarLivro(Livro* L, List<categorias>* LC, List<estante>* LE) {
 
 */
 // void removerLivro(Livro* L) {
-// system("cls || clear");
+// // system("cls || clear");
 // 	cout << "=====================" << endl;
 // 	cout << "    EXCLUIR LIVRO" << endl;
 // 	cout << "=====================" << endl << endl;

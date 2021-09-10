@@ -2,7 +2,7 @@
 
 int main() {
 	int option;
-	string* usuario, * senha;
+	string *usuario, *senha;
 
 	funcionario func;
 	Livro L;
@@ -36,7 +36,7 @@ int main() {
 			}
 			else {
 				cout << "Usuario ou senha invalida!!" << endl << endl;
-				system("pause");
+				// system("pause");
 			}
 			break;
 		case 2:

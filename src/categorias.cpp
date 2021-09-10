@@ -13,7 +13,7 @@ void categorias::imprime() {
 	@result: retorna true caso tenha encontrado a categoria e false caso contrario
 */
 bool categorias::buscarCat(int idCat) {
-	if (idCat == getId())
+	if (idCat == getId())//1
 		return true;
 	return false;
 }

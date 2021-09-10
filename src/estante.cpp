@@ -9,6 +9,6 @@ void estante::imprime(int quant, bool aux) {
 	cout << "Estante [" << id << "]:" << endl;
 	cout << "Itens: " << quant << endl << endl;
 	cout << "Conteudo da Estante: " << endl;
-	if (aux)
+	if (aux)//1
 		LImprimeLivroEstante(&l);
 }

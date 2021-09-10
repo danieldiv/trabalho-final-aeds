@@ -14,10 +14,10 @@ void menuFuncionario(List<funcionario> *LF) {
 		cout << "1 - Ver Funcionarios" << endl;
 		cout << "0 - Voltar" << endl;
 		cout << endl << "Opcao: ";
-		cin >> option;
+		cin >> option;//1
 		switch (option) {
 		case 1:
-			printFuncionario(LF);
+			printFuncionario(LF);//1
 			break;
 		case 0:
 			return;
@@ -25,8 +25,8 @@ void menuFuncionario(List<funcionario> *LF) {
             cout << "Opcao invalida!" << endl;
             break;
         }
-        system("pause");
-    } while(option != 0);
+        // system("pause");
+    } while(option != 0);//1
 }
 
 /*
@@ -37,9 +37,9 @@ void printFuncionario(List<funcionario>* LF) {
 	node<funcionario>* pLF;
 	cout << endl << "FUNCIONARIOS" << endl << endl;
 
-	pLF = LF->HEAD;
-	for (int i = 0; i < LF->size();i++) {
-		pLF->dado.imprime();
-		pLF = pLF->prox;
+	pLF = LF->HEAD;//1
+	for (int i = 0; i < LF->size();i++) {//2 + 2N
+		pLF->dado.imprime();//1
+		pLF = pLF->prox;//1
 	}
 }
