@@ -1,7 +1,17 @@
 #include "menu.hpp"
 
 /*
+	==========================
+		CUSTO MENU BIBL. .CPP
+	==========================
+
+	4 + 5N : FUNCIONARIO
+	47 + 4N: PESSOA
+*/
+
+/*
 	Funcao: menuBiblioteca
+	Custo computacional: 8
 	@param L: lista dinamica do livros
 	@param LF: lista dinamica do funcionarios
 	@param LC: lista dinamica da categarias
@@ -11,7 +21,7 @@
 void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estante>* LE, Fila<pessoa>* FP) {
 	int option;
 	do {
-		// system("clear || cls");
+		system("clear || cls");
 		cout << "======================" << endl;
 		cout << "    MENU BIBLIOTECA" << endl;
 		cout << "======================" << endl << endl;
@@ -28,37 +38,38 @@ void menuBiblioteca(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<
 		cin >> option;//1
 		switch (option) {
 		case 1:
-			menuLivro(L, LC, LE);
+			menuLivro(L, LC, LE);//1
 			break;
 		case 2:
-			menuEstante(LE, FP, L);
+			menuEstante(LE, FP, L);//1
 			break;
 		case 3:
-			menuFuncionario(LF);
+			menuFuncionario(LF);//1
 			break;
 		case 4:
-			printAll(L, LF, LC, LE, FP);
-			// system("pause");
+			printAll(L, LF, LC, LE, FP);//1
+			system("pause");
 			break;
 		case 5:
-			entradaDePessoas(FP);
-			// system("pause");
+			entradaDePessoas(FP);//1
+			system("pause");
 			break;
 		case 6:
-			saidaDePessoas(FP, LE);
-			// system("pause");
+			saidaDePessoas(FP, LE);//1
+			system("pause");
 			break;
 		case 0:
 			return;
 		default:
 			cout << "Opcao invalida!" << endl;
-			// system("pause");
+			system("pause");
 		}
-	} while (option != 0);
+	} while (option != 0);//1
 }
 
 /*
 	Funcao: realizarLogin
+	Custo computacional: 2 + 2 + 2N + N + 4N/2 = (4 + 5N)
 	@param func: funcionario que sera passado para validacao
 	@param LF: lista dinamica do funcionarios
 	@result: retorna true caso o usuario e senha seja correto e falso caso contrario
@@ -67,7 +78,7 @@ bool realizarLogin(funcionario* func, List<funcionario>* LF) {
 	string usuario, senha;
 	node<funcionario>* pLF;
 
-	// system("cls || clear");
+	system("cls || clear");
 	cout << "=====================" << endl;
 	cout << "        LOGIN" << endl;
 	cout << "=====================" << endl << endl;
@@ -110,6 +121,7 @@ void printAll(Livro* L, List<funcionario>* LF, List<categorias>* LC, List<estant
 
 /*
 	Funcao: InicializarBiblioteca
+	Custo computacional: 42
 	@param FP: fila dinamica de pessoa que sera inicializada com valore de 1 a 10
 */
 void InicializarBiblioteca(Fila<pessoa>* FP) {
@@ -121,6 +133,7 @@ void InicializarBiblioteca(Fila<pessoa>* FP) {
 
 /*
 	Funcao: printPessoa
+	Custo computacional: 1 + 2 + 2N + 2N = 3 + 4N
 	@param FP: fila dinamica de pessoa
 */
 void printPessoa(Fila<pessoa>* FP) {
@@ -136,18 +149,20 @@ void printPessoa(Fila<pessoa>* FP) {
 
 	for (int i = 0; i < FP->size(); i++) {//2 + 2N
 		pId->dado.imprime();//N
-		pId = pId->prox;
+		pId = pId->prox;//N
 	}
 	cout << endl << endl;
 }
 
 /*
 	Funcao: entradaDePessoas
+	Custo computacional: 2
 	@param FP: fila dinamica de pessoa
 */
 void entradaDePessoas(Fila<pessoa>* FP) {
 	if (FP->size() < 10) {//1
 		FP->push((FP->size() != 0) ? (FP->TAIL->dado.id + 1) : 1);//1
+		FPVazia(&FP->TAIL->dado.livros);
 		cout << "Uma pessoa entrou na biblioteca!!" << endl << endl;
 	}
 	else {
@@ -158,14 +173,15 @@ void entradaDePessoas(Fila<pessoa>* FP) {
 
 /*
 	Funcao: saidaDePessoas
+	Custo computacional: 2
 	@param FP: fila dinamica de pessoa
 */
 void saidaDePessoas(Fila<pessoa>* FP, List<estante>* LE) {
 	if (FP->size() == 0)//1
 		cout << "Nao possui leitores na biblioteca" << endl << endl;
 	else {
-		// retornarEstante(LE, &FP->HEAD->dado.livros);
-		FP->pop();
+		retornarEstante(LE, &FP->HEAD->dado.livros);//1
+		FP->pop();//1
 		cout << "Uma pessoa saiu da biblioteca!!" << endl << endl;
 	}
 }

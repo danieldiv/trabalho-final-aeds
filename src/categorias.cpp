@@ -1,6 +1,14 @@
 #include "categorias.hpp"
 
 /*
+	==========================
+		CUSTO CATEGORIA.CPP
+	==========================
+
+	CONSTANTE
+*/
+
+/*
 	Funcao: imprime, imprime os dados da categoria que chama o metodo
 */
 void categorias::imprime() {
@@ -13,7 +21,7 @@ void categorias::imprime() {
 	@result: retorna true caso tenha encontrado a categoria e false caso contrario
 */
 bool categorias::buscarCat(int idCat) {
-	if (idCat == getId())//1
+	if (idCat == getId())//2
 		return true;
 	return false;
 }
@@ -23,5 +31,5 @@ bool categorias::buscarCat(int idCat) {
 	@result: retorna o id da categoria que chama o metodo
 */
 int categorias::getId() {
-	return id;
+	return id;//1
 }

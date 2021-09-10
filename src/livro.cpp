@@ -1,7 +1,16 @@
 #include "livro.hpp"
 
 /*
+	==========================
+		CUSTO LIVRO.CPP
+	==========================
+
+	4 + 9 + 6 + 3N + 2 + 2N + 3 + 3N + 2 + 3N = 26 + 11N
+*/
+
+/*
 	Funcao: FLVazia
+	Custo computacional: 4
 	@param: l: ponteiro de uma lista de livro para inicializar
 */
 void FLVazia(Livro* l) {//4
@@ -13,6 +22,7 @@ void FLVazia(Livro* l) {//4
 
 /*
 	Funcao: LInsert
+	Custo computacional: 9
 	@param l: ponteiro de uma lista de livro para inserir
 	@param item: item que sera adicionado no livro
 */
@@ -38,6 +48,7 @@ void LInsert(Livro* l, ItemLivro item) {//9
 
 /*
 	Funcao: LRemove
+	Custo computacional: 3 + 1 + 1 + 1 + 6/2 = (6 + 3N) = 6 + 3N
 	@param l: ponteiro de uma lista de livro para remover
 	@param item: item que sera utilizado para procurar o id para a remover
 */
@@ -66,6 +77,7 @@ bool LRemove(Livro* l, ItemLivro item) {
 
 /*
 	Funcao: printLivro
+	Custo computacional: 1 + 1 + 2N = 2 + 2N
 	@param l: lista dinamica do livro para impressao
 */
 void printLivro(Livro* l) {
@@ -83,6 +95,7 @@ void printLivro(Livro* l) {
 
 /*
 	Funcao: LImprimeLivroEstante
+	Custo computacional: 2 + 2N
 	@param l: lista dinamica do livro para imrpessao sem categoria
 */
 void LImprimeLivroEstante(Livro* l) {
@@ -100,6 +113,7 @@ void LImprimeLivroEstante(Livro* l) {
 
 /*
 	Funcao: sizeLivro
+	Custo computacional: 2 + 1 + 3N = 3 + 3N
 	@param l: lista dinamica do livro para verificar o tamanho da lista
 	@result: retorna um inteiro referente a quantidade de livros dentro da lista
 */
@@ -117,6 +131,7 @@ int sizeLivro(Livro* l) {
 
 /*
 	Funcao: LBusca
+	Custo computacional: 2 + N + N + 2N/2 = (2 + 3N)
 	@param l: lista dinamica do livro para pesquisa do id
 	@result: retorna o livro pesquisado pelo id ou um livro com -1 caso nao encontrado
 */

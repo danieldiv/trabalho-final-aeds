@@ -1,13 +1,23 @@
 #include "menu.hpp"
 
 /*
+	==========================
+		CUSTO MENU FUNC. .CPP
+	==========================
+
+	3 + 3 + 4N = 6 + 4N
+
+*/
+
+/*
 	Funcao: menuFuncionario
+	Custo computacional: 3
 	@param LF: lista dinamica de funcionario
 */
 void menuFuncionario(List<funcionario> *LF) {
     int option;
     do {
-		// system("clear || cls");
+		system("clear || cls");
 		cout << "======================" << endl;
 		cout << "   MENU FUNCIONARIO" << endl;
 		cout << "======================" << endl << endl;
@@ -25,12 +35,13 @@ void menuFuncionario(List<funcionario> *LF) {
             cout << "Opcao invalida!" << endl;
             break;
         }
-        // system("pause");
+        system("pause");
     } while(option != 0);//1
 }
 
 /*
 	Funcao: menuFuncionario
+	Custo computacional: 1 + 2 + 2N + 2N = 3 + 4N
 	@param LF: lista dinamica de funcionario
 */
 void printFuncionario(List<funcionario>* LF) {

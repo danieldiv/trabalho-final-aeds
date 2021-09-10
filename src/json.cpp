@@ -4,7 +4,19 @@
 using json = nlohmann::json;
 
 /*
-	Funcao readJsonFuncionario
+	==========================
+		CUSTO JSON.CPP
+	==========================
+
+	(3 + 6N): FUNCINARIO
+	(3 + 4N): CATEGORIA
+	(3 + 7N): LIVRO
+	(2 + 7N + 7N^2): ESTANTES
+*/
+
+/*
+	Funcao:: readJsonFuncionario
+	Custo computacional: 3 + 2N + 4N = (3 + 6N)
 	@param LF: lista dinamica de funcionario que sera utilizada para a leitura de valores estaticos no arquivo .json
 */
 void readJsonFuncionario(List<funcionario>* LF) {
@@ -20,7 +32,8 @@ void readJsonFuncionario(List<funcionario>* LF) {
 }
 
 /*
-	Funcao readJsonCategoria
+	Funcao: readJsonCategoria
+	Custo computacional: 1 + 2 + 4N = (3 + 4N)
 	@param L: lista dinamica de categoria que sera utilizada para a leitura de valores estaticos no arquivo .json
 */
 void readJsonCategoria(List<categorias>* L) {
@@ -36,7 +49,9 @@ void readJsonCategoria(List<categorias>* L) {
 }
 
 /*
-	Funcao readJsonLivro
+	Funcao: readJsonLivro
+	Custo computacional: 1 + 2 + 2N + 5N = (3 + 7N)
+	Custo computacional: ()
 	@param L: lista dinamica de livro que sera utilizada para a leitura de valores estaticos no arquivo .json
 */
 void readJsonLivro(Livro* L) {
@@ -63,7 +78,8 @@ void readJsonLivro(Livro* L) {
 }
 
 /*
-	Funcao readJsonEstante
+	Funcao: readJsonEstante
+	Custo computacional: 2 + 2N + 3N + (2 + 4N + 3N) * N = (2 + 7N + 7N^2)
 	@param LE: lista dinamica de estamte que sera utilizada para a leitura de valores estaticos no arquivo .json
 	@param L: lista dinamica de livro que sera utilizada para buscar o id que estiver presente no arquivo .json da estante
 */
@@ -101,7 +117,7 @@ void readJsonEstante(List<estante>* LE, Livro* L) {
 			}
 			else {
 				cout << "Estante lotada" << endl;
-				// system("pause");
+				system("pause");
 				break;
 			}
 

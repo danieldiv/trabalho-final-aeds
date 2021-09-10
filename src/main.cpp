@@ -18,7 +18,7 @@ int main() {
 	readJsonEstante(&LE, &L);//2
 
 	do {
-		// system("cls || clear");
+		system("cls || clear");
 		cout << "======================" << endl;
 		cout << "      BIBLIOTECA" << endl;
 		cout << "======================" << endl << endl;
@@ -36,7 +36,7 @@ int main() {
 			}
 			else {
 				cout << "Usuario ou senha invalida!!" << endl << endl;
-				// system("pause");
+				system("pause");
 			}
 			break;
 		case 2:
@@ -57,7 +57,7 @@ int main() {
 }
 
 void printAutores() {
-	// system("cls || clear");
+	system("cls || clear");
 	cout << "=====================" << endl;
 	cout << "     INTEGRANTES     " << endl;
 	cout << "=====================" << endl << endl;

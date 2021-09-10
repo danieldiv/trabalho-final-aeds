@@ -101,6 +101,52 @@ Sera possivel acessar a estante e fazer pesquisas nela.
 
 Custo Computacional do nosso projeto:
 
+tipos de instrucoes simples
+
+```
+  ==========================
+  CUSTO JSON.CPP
+  ==========================
+
+  (3 + 4N): CATEGORIA
+
+  ==========================
+  CUSTO MEU BIBL. .CPP
+  ==========================
+
+  47 + 4N: PESSOA
+
+  ==========================
+  CUSTO MENU EST. .CPP
+  ==========================
+
+  38 + 6N^2 + 18N + (2 + 7N + 7N^2)
+
+  ==========================
+  CUSTO MENU FUNC. .CPP
+  ==========================
+
+  6 + 4N + (3 + 6N) 4 + 5N
+
+  ==========================
+  CUSTO MENU LIVRO.CPP
+  ==========================
+
+  33 + 21 + (3N^N)/2 + (3 + 7N) + 26 + 11N
+
+  ==========================
+  CUSTO PILHA LIVRO.CPP
+  ==========================
+
+  20 + 7N
+
+  ==========================
+  CUSTO ORDENACAO .CPP
+  ==========================
+
+  13 + 11N
+```
+
 ## Tasks
 
 > Login do sistema :heavy_check_mark: 🔴

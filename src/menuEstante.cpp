@@ -1,4 +1,14 @@
 #include "menu.hpp"
+#include "ordenacao.hpp"
+/*
+	==========================
+		CUSTO MENU EST. .CPP
+	==========================
+
+	3 + 3 + N^2 + 12 + 4N + 12 + 5N + 3 + 4N + 5 + 5N + 5N^2: ESTANTE
+	6 + 6N^2 + 24 + 9N + 3 + 5 + 9N = 38 + 6N^2 + 18N
+
+*/
 
 /*
 	Funcao: menuEstante
@@ -9,7 +19,7 @@
 void menuEstante(List<estante>* LE, Fila<pessoa>* FP, Livro* L) {
 	int option;
 	do {
-		// system("clear || cls");
+		system("clear || cls");
 		cout << "======================" << endl;
 		cout << "     MENU ESTANTE" << endl;
 		cout << "======================" << endl << endl;
@@ -17,37 +27,44 @@ void menuEstante(List<estante>* LE, Fila<pessoa>* FP, Livro* L) {
 		cout << "2 - Devolver Livro" << endl;
 		cout << "3 - Novo     Livro para a Estante" << endl;
 		cout << "4 - Mostrar  Livros" << endl;
+		cout << "5 - Mostrar  Livros Ordenados" << endl;
 		cout << "0 - Voltar" << endl;
 		cout << endl << "Opcao: ";
 		cin >> option;
 
-		// system("clear || cls");
+		system("clear || cls");
 
 		switch (option) {
 		case 1:
 			pegarLivro(LE, FP, L);
 			break;
 		case 2:
-			// devolverLivro(LE, FP);
+			devolverLivros(LE, FP);
 			break;
 		case 3:
 			inserirNaEstante(L, LE);
 			break;
 		case 4:
 			printEstante(LE, true);
+			system("pause");
+			break;
+		case 5:
+			ordenarLivroEstante(LE, L);
+			system("pause");
 			break;
 		case 0:
 			return;
 		default:
 			cout << "Opcao invalida!" << endl;
+			system("pause");
 			break;
 		}
-		// system("pause");
 	} while (option != 0);
 }
 
 /*
 	Funcao: pesquisarLivroEstante
+	Custo computacional: 1 + 1 + 1 + 2 + 2N + N + N + N + 5N^2 = 5 + 5N + 5N^2
 	@param LE: lista dinamica da estante
 */
 int pesquisarLivroEstante(List<estante>* LE) {
@@ -87,6 +104,7 @@ int pesquisarLivroEstante(List<estante>* LE) {
 
 /*
 	Funcao: printEstante
+	Custo computacional: 1 + 2 + 2N + 2N = 3 + 4N
 	@param LE: lista dinamica da estante
 	@param aux: booleano para controle de exibicao
 */
@@ -98,15 +116,58 @@ void printEstante(List<estante>* LE, bool aux) {
 	node<estante>* pLE;
 	pLE = LE->HEAD;//1
 
-	for (int i = 0; i < LE->size();i++) {//2 + 2N
+	for (int i = 0; i < LE->size(); i++) {//2 + 2N
 		pLE->dado.imprime(sizeLivro(&pLE->dado.l), aux);//1
 		cout << endl << "===============================" << endl << endl;
 		pLE = pLE->prox;//1
 	}
 }
 
+void ordenarLivroEstante(List<estante> *LE, Livro *L) {
+	Livro *livroA, *livroB;
+	livroA = &LE->HEAD->dado.l;
+	livroB = &LE->HEAD->prox->dado.l;
+	int tam = sizeLivro(livroA) + sizeLivro(livroB);
+	
+	if (tam == 0) {
+		cout << "Nao ha livros para ordenar" << endl;
+		system("pause");
+		return;
+	}
+
+	BlockLivro* aux;
+	ItemLivro item;
+	Vector v;
+	int quant = 0;
+
+	Initialize(&v, tam);
+
+	aux = livroA->first->prox;
+	while (aux != NULL) {
+		InsereValor(&v, quant++, aux->data.id);
+		aux = aux->prox;
+	}
+
+	aux = livroB->first->prox;
+	while (aux != NULL) {
+		InsereValor(&v, quant++, aux->data.id);
+		aux = aux->prox;
+	}
+	Imprime(&v, tam);
+
+	cout << endl;
+	QuickSort(&v, 0, tam-1, 0, 0, tam);
+
+	cout << endl;
+	for(int i = 0; i < tam; i++) {
+		item = LBusca(L, v.itens[i]);
+		cout << "[" << item.id << "]: " << item.nome << endl;
+	}
+}
+
 /*
 	Funcao: pegarLivro
+	Custo computacional: 1 + 1 + 1 + 2 + 2N + 2N + 1 + 1 + 4 + N + 1 = 12 + 5N
 	@param LE: lista dinamica da estante
 	@param FP: fila dinamica da pessoa
 */
@@ -139,13 +200,12 @@ void pegarLivro(List<estante>* LE, Fila<pessoa>* FP, Livro* L) {
 			cout << "Estante nao encontrada!" << endl;
 	} while (!found);//1
 
-	// system("cls || clear");
-	found = false;//1
-
-	cout << endl << "Estante " << numEstante << " selecionada!" << endl;
-	LImprimeLivroEstante(&pLE->dado.l);//1
-
 	do {
+		found = false;//1
+		system("cls || clear");
+		cout << endl << "Estante " << numEstante << " selecionada!" << endl;
+
+		LImprimeLivroEstante(&pLE->dado.l);//1
 		cout << endl << "Escolha o ID do livro que deseja pegar ou '0' para sair: ";
 		fflush(stdin);
 		cin >> idLivro;//1
@@ -165,20 +225,21 @@ void pegarLivro(List<estante>* LE, Fila<pessoa>* FP, Livro* L) {
 
 		if (!found)
 			cout << endl << "Livro nao encontrado ou nao disponivel!" << endl;
-		else {
 
+		else {
 			item.val = temp->data.id;
 			item.idEstante = numEstante;
 			Push(&FP->HEAD->dado.livros, item);
 
 			cout << endl << "Livro '" << LBusca(L, idLivro).nome << "' selecionado!" << endl << endl;
 		}
-	} while (!found);
-	// system("pause");
+		system("pause");
+	} while (idLivro != 0);
 }
 
 /*
 	Funcao: inserirNaEstante
+	Custo computacional: 1 + 1 + 2 + 2N + 2N + 2 + 6 = 12 + 4N
 	@param L: lista dinamica do livro
 	@param LE: lista dinamica da estante
 */
@@ -188,7 +249,7 @@ void inserirNaEstante(Livro* L, List<estante>* LE) {
 	BlockLivro* temp;
 	node<estante>* pLE;
 
-	// system("cls || clear");
+	system("cls || clear");
 	cout << "=======================" << endl;
 	cout << " INSERIR LIVRO ESTANTE" << endl;
 	cout << "=======================" << endl;
@@ -197,9 +258,9 @@ void inserirNaEstante(Livro* L, List<estante>* LE) {
 
 	do {
 		cout << endl << "Selecione a estante ou '0' para sair: ";
-		cin >> numEstante;//1
+		cin >> numEstante; //1
 
-		if (numEstante == 0)//1
+		if (numEstante == 0) //1
 			return;
 
 		pLE = LE->HEAD;//1
@@ -214,7 +275,7 @@ void inserirNaEstante(Livro* L, List<estante>* LE) {
 			cout << "Estante nao encontrada!" << endl;
 	} while (!found);//1
 
-	// system("cls || clear");
+	system("cls || clear");
 	found = false;//1
 
 	cout << endl << "Estante " << numEstante << " selecionada!" << endl;
@@ -252,31 +313,51 @@ void inserirNaEstante(Livro* L, List<estante>* LE) {
 			cout << "Livro inserido!" << endl;
 		}
 	} while (!found);
-	// system("pause");
+	system("pause");
 }
 
+/*
+	Funcao: retornarEstante
+	Custo computacional: 1 + 2 + 2N + N + N^2 = 3 + 3 + N^2
+	@param LE: lista dinamica da estante
+	@param p: pilha dinamica de livros
+*/
 void retornarEstante(List<estante>* LE, PilhaLivro* p) {
 	node<estante>* pLE;
 	BlockLivro* aux;
 	ItemPilha item;
-	
-	pLE = LE->HEAD;
-	aux = pLE->dado.l.first->prox;
 
-	for (int i = 0; i < LE->size(); i++) {
-		if (p->top->dado.idEstante == pLE->dado.id) {
-			while (aux != NULL) {
-				cout << aux->data.nome << endl;
-				// if (sizeLivroPilha(p) == 0)
-				// 	return;
-				
-				// Pop(p, &item);
-				
-				if (aux->data.id == item.val)
-					aux->data.controle = true;
-				aux = aux->prox;
-			}
+	pLE = LE->HEAD;//1
+	for (int i = 0; i < LE->size(); i++) {//2 + 2N
+		aux = pLE->dado.l.first->prox;//1
+		while (aux != NULL) {//N
+			aux->data.controle = true;//N
+			aux = aux->prox;//N
 		}
-		pLE = pLE->prox;
+		pLE = pLE->prox;//N
 	}
+}
+
+/*
+	Funcao: devolverLivros
+	@param LE: lista dinamica da estante
+	@param FP: pilha dinamica de livros
+*/
+void devolverLivros(List<estante> *LE, Fila<pessoa> *FP) {
+	char option;
+
+	system("cls || clear");
+	cout << "=======================" << endl;
+	cout << "    DEVOLVER LIVROS" << endl;
+	cout << "=======================" << endl;
+	cout << "Deseja devolver todos os livros a estante?";
+	cout << "(y/n): ";
+	cin >> option;
+
+	if (option == 'y' || option == 'Y') {
+		retornarEstante(LE, &FP->HEAD->dado.livros);
+		cout << "Livros devolvidos!" << endl;
+	}
+	system("pause");
+	return;
 }

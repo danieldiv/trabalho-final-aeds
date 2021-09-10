@@ -1,6 +1,14 @@
 #include "pessoa.hpp"
 
 /*
+	=========================
+		CUSTO PESSOA.CPP
+	=========================
+
+	CONSTANTE
+*/
+
+/*
 	Funcao: imprime, imprime os dados da pessoa que chama o metodo
 */
 void pessoa::imprime() {
