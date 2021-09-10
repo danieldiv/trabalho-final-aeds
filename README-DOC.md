@@ -1,12 +1,12 @@
 <h1 align="center">Projeto Final AED</h1>
 
-Grupo: Daniel Alves Sanches, Júlia Mello Lopes GonçalvesLeonardo de Oliveira Campos, Lucas de Souza Gontijo
+Grupo: Daniel Alves Sanches, Júlia Mello Lopes Gonçalves, Leonardo de Oliveira Campos, Lucas de Souza Gontijo
 
 Professor: Michel Pires Silva
 
-RESUMO: O projeto se trata de um sistema que reproduz o funcionamento de uma biblioteca, o qualserá utilizado várias estruturas de algoritmos, como lista. Ele será dividido em 3 partes: documentação,programação e relatório de código.  O programa deverá ser capaz de fazer o login e várias outrasatividades de uma biblioteca e vai conter o custo computacional do plano.
+RESUMO: O projeto se trata de um sistema que reproduz o funcionamento de uma biblioteca, o qual será utilizado várias estruturas de algoritmos, como lista, pilha, fila e ordenação. Ele será dividido em 3 partes: documentação, programação e relatório de código.  O programa deverá ser capaz de fazer o login e outras funções vitais de uma biblioteca, além de conter o custo computacional do código.
 
-Palavras-chaves: Biblioteca, Estruturas de algoritmo, Sistema, Ciência da informação, Engenhariada Computação.
+Palavras-chave: Biblioteca, Estruturas de algoritmo, Sistema, Ciência da informação, Engenharia de Computação.
 
 ## Sumário
 <!--ts-->
@@ -21,29 +21,29 @@ Palavras-chaves: Biblioteca, Estruturas de algoritmo, Sistema, Ciência da infor
 
 ## Introdução
 
-  O nosso projeto tem como objetivo desenvolver um sistema que irá abranger a área interdisciplinar emultidisciplinar do conhecimento que estuda as práticas, perspectivas e as aplicações de métodos derepresentação, e gestão da informação e do conhecimento, em diferentes ambientes de informação, taiscomo a biblioteca.Uma biblioteca é muito utilizada em instituições de ensino, pois armazena o conhecimento neces-sário para se desenvolver academicamente, dessa maneira, nós desenvolvedores, decidimos elaborar umprograma que simula uma biblioteca, permitindo que o usuário acesse o sistema que armazena a vari-edade de livros dentro dela e os disponibilize para o aluno que deseja lê-lo. Análogo a isso, para o seufuncionamento serão utilizadas estruturas dinâmicas e estáticas, Listas, Filas e Pilhas, como tambéma biblioteca json, e structs, todas serão mais detalhadas no seguimento deste documento. Ao final docódigo será calculado seu custo computacional para saber sobre o tempo de processamento, para casono futuro seja interessante um estudo de caso. Este trabalho irá exemplificar o cenário do nosso sistema, detalhando cada parte de seu objetivo esistema, como também as estruturas utilizadas.
+  O nosso projeto tem como objetivo desenvolver um sistema que irá abranger a área interdisciplinar e multidisciplinar do conhecimento que estuda as práticas, perspectivas e as aplicações de métodos de representação, e gestão da informação e do conhecimento, em diferentes ambientes de informação, tais como a biblioteca. Uma biblioteca é muito utilizada em instituições de ensino, pois armazena o conhecimento necessário para se desenvolver academicamente. Dessa maneira, nós desenvolvedores decidimos elaborar um programa que simula uma biblioteca, permitindo que o usuário acesse o sistema que armazene a variedade de livros dentro dela e os disponibilize para o aluno que deseja lê-lo. Análogo a isso, para o seu funcionamento serão utilizadas estruturas dinâmicas de Listas, Filas e Pilhas, como tambéma biblioteca json, e structs, todas serão mais detalhadas no seguimento deste documento. Ao final docódigo será calculado seu custo computacional para saber sobre o tempo de processamento, para casono futuro seja interessante um estudo de caso. Este trabalho irá exemplificar o cenário do nosso sistema, detalhando cada parte de seu objetivo esistema, como também as estruturas utilizadas.
 
 ## Cenário do Problema
 
-  Assim que inicializa o sistema, será carregado arquivos .json, contendo informaçõees iniciais referentesaos funcionários, com usuario e senha. Também sera carregado um arquivo sobre as categorias doslivros, (Ficcão Cientifica, Folclore, Humor, Poesia, Contos ...)  estas categorias serão utilizadas noarquivo referente aos livros e estes livros serão armazenados em uma estante com um limite de quanti-dade.Os funcionarios, estantes e livros serao armazendas em listas dinamicas. O sistema terá uma telade login para acesso, que será realizado apenas por funcionários com usuário e senha. Um menu iráredirecionar para as suas funcionalidades, sendo elas: realizar o cadastro, edição, remoção e pesquisados funcionários, categorias, livros e estantes contendo os livros.  O acesso a biblioteca é limitado,logo será necessário a utilização de uma fila. Dentro da biblioteca será possivel escolher um ou varioslivros para ler, que sera armazenado em uma pilha de livros, o maximo de livros a ser selecionado poruma pessoa é 5. Os livros nao podem sair de dentro da biblioteca. Para pegar um livro é necessáriobuscar em uma lista "ordenada"no sistema, que irá mostrar a quantidade e em qual estante o livro seencontra. A pesquisa pode ser realizado pelo nome do livro ou categoria.
+  Assim que inicializa o sistema, será carregado arquivos .json, contendo informaçõees iniciais referentes aos funcionários, com usuario e senha. Também será carregado um arquivo sobre as categorias dos livros, (Ficção Científica, Folclore, Humor, Poesia, Contos ...) estas categorias serão utilizadas no arquivo referente aos livros e estes livros serão armazenados em uma estante com um limite de quantidade. Os funcionários, estantes e livros serão armazendos em listas dinâmicas. O sistema terá uma tela de login para acesso, que será realizado apenas por funcionários com usuário e senha. Um menu irá redirecionar para as suas funcionalidades, sendo elas: realizar o cadastro, edição, remoção e pesquisados funcionários, categorias, livros e estantes contendo os livros.  O acesso a biblioteca é limitado,logo será necessário a utilização de uma fila. Dentro da biblioteca será possivel escolher um ou varios livros para ler, que será armazenado em uma pilha de livros, o máximo de livros a ser selecionado por uma pessoa é 5. Os livros não podem sair de dentro da biblioteca. Para pegar um livro é necessário buscar em uma lista "ordenada" no sistema, que irá mostrar a quantidade e em qual estante o livro se encontra. A pesquisa pode ser realizado pelo nome do livro ou categoria.
 
 Descrição das classes:
 
-•Funcionario:id, nome, usuario, senha;
+•Funcionario: id, nome, usuario, senha;
 
-•PessoasFora:nome;
+•PessoasFora: nome;
 
-•Categoria:id, nome;
+•Categoria: id, nome;
 
 •Livro: id, nome, categoria, quantidade;
 
-•Estante:id, descricao, listaLivros, quantidade;
+•Estante: id, descricao, listaLivros, quantidade;
 
-•PessoasDentro:nome, listaLivros, quantidade
+•PessoasDentro: nome, listaLivros, quantidade
 
 ## Organização da Biblioteca
 
-  Atualmente, é de conhecimento geral que para uma boa gestão, cuidado e praticidade de uma biblioteca,seus livros devam ser armazenados de maneira que facilite no manuseio de seus leitores e funcionários.Analogamente, em nosso desenvolvimento, utilizaremos recursos vistos em aula que possibilite orga-nizar o nosso conjunto de obras, bem como o fluxo de pessoas em nossa biblioteca. Essa organizaçãoé comumente conhecida na computação como tipo abstrato de dado e nos possibilita armazenar itensem formatos de listas, pilhas e/ou filas nos moldes tradicionais conhecidos hoje em dia.O motivo para se utilizar listas em nossa programação está atrelado a necessidade de estabelecernas “estantes” uma forma que seja fácil visualizar, inserir e remover livros em qualquer posição, sem anecessidade de grandes mudanças sobre a seção.Sem grandes detalhes, para os fins de transporte e deslocamento dos livros é necessário o empi-lhamento dos itens selecionados de forma que possam ser levados de um ponto a outro com qualquerquantidade possível desejada. Para a utilização dessa estrutura, é necessário seguir as regras básicasas quais estabelecem que só se pode adicionar ou remover itens ao topo da pilha.E por fim, a fila será usada como uma forma de controle sobre o acesso de pessoas nos interiores doestabelecimento. A partir dela será possível estabelecer o fluxo de entrada e saída da biblioteca. Assimcomo a pilha, essa estrutura segue uma diretriz em que nesse caso estipula que os itens só podem seradicionados ao final da fila e devem ser retirados partindo de seu início.É importante ressaltar que para em todas estruturas estaremos fazendo seu uso e implementaçãode forma dinâmica em relação a memória.
+  Atualmente, é de conhecimento geral que para uma boa gestão, cuidado e praticidade de uma biblioteca,seus livros devam ser armazenados de maneira que facilite no manuseio de seus leitores e funcionários. Analogamente, em nosso desenvolvimento, utilizaremos recursos vistos em aula que possibilite organizar o nosso conjunto de obras, bem como o fluxo de pessoas em nossa biblioteca. Essa organização é comumente conhecida na computação como tipo abstrato de dado e nos possibilita armazenar itens em formatos de listas, pilhas e/ou filas nos moldes tradicionais conhecidos hoje em dia. O motivo para se utilizar listas em nossa programação está atrelado a necessidade de estabelecer nas “estantes” uma forma que seja fácil visualizar, inserir e remover livros em qualquer posição, sem a necessidade de grandes mudanças sobre a seção. Sem grandes detalhes, para os fins de transporte e deslocamento dos livros é necessário o empilhamento dos itens selecionados de forma que possam ser levados de um ponto a outro com qualquer quantidade possível desejada. Para a utilização dessa estrutura, é necessário seguir as regras básicas, as quais estabelecem que só se pode adicionar ou remover itens ao topo da pilha. E por fim, a fila será usada como uma forma de controle sobre o acesso de pessoas nos interiores doestabelecimento. A partir dela será possível estabelecer o fluxo de entrada e saída da biblioteca. Assim como a pilha, essa estrutura segue uma diretriz em que nesse caso estipula que os itens só podem ser adicionados ao final da fila e devem ser retirados partindo de seu início. É importante ressaltar que em as todas estruturas estaremos fazendo seu uso e implementaçãode de forma dinâmica em relação a memória.
 
 ## Json
 
