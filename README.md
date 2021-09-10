@@ -1,4 +1,4 @@
-<h1 align="center">TRABALHO FINAL DE AED</h1>
+<h1 align="center">TRABALHO FINAL DE AEDS I</h1>
 
 ## Proposta
 
