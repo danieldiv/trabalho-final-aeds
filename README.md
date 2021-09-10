@@ -18,8 +18,8 @@
 <!--ts-->
    * [Copilação](#Copilação)
    * [Informações](#Informações)
-   * [Menu](#Menu)
    * [Login](#Login)
+   * [Menu](#Menu)
    * [Funcionamento](#Funcionamento)
    * [CustoComputacional](#CustoComputacional)
    * [EstruturasUsadas](#EstruturasUsadas)
@@ -40,6 +40,17 @@ Comandos para que o programa copile em seu terminal:
 - Livro não terá quantidade, apenas a estante.
 - Como não pode utilizar uma lista para os leitores dentro da biblioteca, foi utilizado a fila, logo, apenas o primeiro da fila pode pegar no maximo 5 livros, o proximo so pode pegar os livros apoz o primeiro sair.
 
+## Login
+
+- Para realizar o login, utilize um dos usuarios abaixo:
+  - usuario: usuA | senha: senha123
+
+  - usuario: usuB | senha: senha456
+
+  - usuario: usuC | senha: senha789
+
+  - usuario: usuD | senha: senhaLG
+
 ## Menu
 
 Ao iniciar o programa sera possivel visualizar o seguinte menu:
@@ -55,17 +66,6 @@ Em seguida você podera ter acesso ao programa que disponibiliza as funçoes mos
 ![image](https://user-images.githubusercontent.com/84408875/132898769-fe00cf7f-ea4d-4b76-903b-8075a7cae591.png)
 
 Escolha uma das opções e de inicio a sua navegação.
-
-## Login
-
-- Para realizar o login, utilize um dos usuarios abaixo:
-  - usuario: usuA | senha: senha123
-
-  - usuario: usuB | senha: senha456
-
-  - usuario: usuC | senha: senha789
-
-  - usuario: usuD | senha: senhaLG
 
 ## Funcionamento 
 
