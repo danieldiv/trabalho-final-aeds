@@ -12,10 +12,10 @@ int main() {
 	List<estante> LE;
 	Fila<pessoa> FP;
 
-	readJsonLivro(&L);
-	readJsonFuncionario(&LF);
-	readJsonCategoria(&LC);
-	readJsonEstante(&LE, &L);
+	readJsonLivro(&L);//1
+	readJsonFuncionario(&LF);//1
+	readJsonCategoria(&LC);//1
+	readJsonEstante(&LE, &L);//2
 
 	do {
 		// system("cls || clear");

@@ -82,6 +82,7 @@ int pesquisarLivroEstante(List<estante>* LE) {
 		pLE = pLE->prox;
 	}
 	system("pause");
+	return -1;
 }
 
 /*
