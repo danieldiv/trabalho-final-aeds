@@ -21,29 +21,29 @@ Palavras-chave: Biblioteca, Estruturas de algoritmo, Sistema, Ciência da inform
 
 ## Introdução
 
-  O nosso projeto tem como objetivo desenvolver um sistema que irá abranger a área interdisciplinar e multidisciplinar do conhecimento que estuda as práticas, perspectivas e as aplicações de métodos de representação, e gestão da informação e do conhecimento, em diferentes ambientes de informação, tais como a biblioteca. Uma biblioteca é muito utilizada em instituições de ensino, pois armazena o conhecimento necessário para se desenvolver academicamente. Dessa maneira, nós desenvolvedores decidimos elaborar um programa que simula uma biblioteca, permitindo que o usuário acesse o sistema que armazene a variedade de livros dentro dela e os disponibilize para o aluno que deseja lê-lo. Análogo a isso, para o seu funcionamento serão utilizadas estruturas dinâmicas de Listas, Filas e Pilhas, como tambéma biblioteca json, e structs, todas serão mais detalhadas no seguimento deste documento. Ao final docódigo será calculado seu custo computacional para saber sobre o tempo de processamento, para casono futuro seja interessante um estudo de caso. Este trabalho irá exemplificar o cenário do nosso sistema, detalhando cada parte de seu objetivo esistema, como também as estruturas utilizadas.
+  O nosso projeto tem como objetivo desenvolver um sistema que irá abranger a área interdisciplinar e multidisciplinar do conhecimento que estuda as práticas, perspectivas e as aplicações de métodos de representação, e gestão da informação e do conhecimento, em diferentes ambientes de informação, tais como a biblioteca. Uma biblioteca é muito utilizada em instituições de ensino, pois armazena o conhecimento necessário para se desenvolver academicamente. Dessa maneira, nós desenvolvedores decidimos elaborar um programa que simula uma biblioteca, permitindo que o usuário acesse o sistema que armazene a variedade de livros dentro dela e os disponibilize para o aluno que deseja lê-lo. Análogo a isso, para o seu funcionamento serão utilizadas estruturas dinâmicas de Listas, Filas e Pilhas, como também a biblioteca json, e structs, todas serão mais detalhadas no seguimento deste documento. Ao final do código será calculado seu custo computacional, para caso no futuro seja interessante um estudo de caso. Este trabalho irá exemplificar o cenário do nosso sistema, detalhando cada parte de seu objetivo e sistema, como também as estruturas utilizadas.
 
 ## Cenário do Problema
 
-  Assim que inicializa o sistema, será carregado arquivos .json, contendo informaçõees iniciais referentes aos funcionários, com usuario e senha. Também será carregado um arquivo sobre as categorias dos livros, (Ficção Científica, Folclore, Humor, Poesia, Contos ...) estas categorias serão utilizadas no arquivo referente aos livros e estes livros serão armazenados em uma estante com um limite de quantidade. Os funcionários, estantes e livros serão armazendos em listas dinâmicas. O sistema terá uma tela de login para acesso, que será realizado apenas por funcionários com usuário e senha. Um menu irá redirecionar para as suas funcionalidades, sendo elas: realizar o cadastro, edição, remoção e pesquisados funcionários, categorias, livros e estantes contendo os livros.  O acesso a biblioteca é limitado,logo será necessário a utilização de uma fila. Dentro da biblioteca será possivel escolher um ou varios livros para ler, que será armazenado em uma pilha de livros, o máximo de livros a ser selecionado por uma pessoa é 5. Os livros não podem sair de dentro da biblioteca. Para pegar um livro é necessário buscar em uma lista "ordenada" no sistema, que irá mostrar a quantidade e em qual estante o livro se encontra. A pesquisa pode ser realizado pelo nome do livro ou categoria.
+  Assim que inicializa o sistema, será carregado arquivo.json, contendo informaçõees iniciais referentes aos funcionários, com usuario e senha. Também será carregado um arquivo sobre as categorias dos livros, (Ficção Científica, Folclore, Humor, Poesia, Contos ...) estas categorias serão utilizadas no arquivo referente aos livros e estes livros serão armazenados em uma estante com um limite de quantidade. Os funcionários, estantes e livros serão armazendos em listas dinâmicas. O sistema terá uma tela de login para acesso, que será realizado apenas por funcionários com usuário e senha. Um menu irá redirecionar para as suas funcionalidades, sendo elas: Opcoes de Livro, Opcoes de Estante, Opcoes de Funcionario, Imprimir Tudo, Simular entrada de pessoa, Simular saida de pessoa, além da opção de voltar ao menu principal. O acesso a biblioteca é limitado,logo será necessário a utilização de uma fila. Dentro da biblioteca será possivel escolher um ou varios livros para ler, que será armazenado em uma pilha de livros. Os livros não podem sair de dentro da biblioteca. Para pegar um livro é necessário buscar pelo seu id.
 
 Descrição das classes:
 
-•Funcionario: id, nome, usuario, senha;
+- Funcionario: id, nome, usuario, senha;
 
-•PessoasFora: nome;
+- Categoria: id, nome;
 
-•Categoria: id, nome;
+- Livro: id, id_categoria, nome, str, controle;
 
-•Livro: id, nome, categoria, quantidade;
+- Estante: id, listaLivros;
 
-•Estante: id, descricao, listaLivros, quantidade;
+- Pessoa: id, livros;
 
-•PessoasDentro: nome, listaLivros, quantidade
+- Ordenacao: itens, tam, swap;
 
 ## Organização da Biblioteca
 
-  Atualmente, é de conhecimento geral que para uma boa gestão, cuidado e praticidade de uma biblioteca,seus livros devam ser armazenados de maneira que facilite no manuseio de seus leitores e funcionários. Analogamente, em nosso desenvolvimento, utilizaremos recursos vistos em aula que possibilite organizar o nosso conjunto de obras, bem como o fluxo de pessoas em nossa biblioteca. Essa organização é comumente conhecida na computação como tipo abstrato de dado e nos possibilita armazenar itens em formatos de listas, pilhas e/ou filas nos moldes tradicionais conhecidos hoje em dia. O motivo para se utilizar listas em nossa programação está atrelado a necessidade de estabelecer nas “estantes” uma forma que seja fácil visualizar, inserir e remover livros em qualquer posição, sem a necessidade de grandes mudanças sobre a seção. Sem grandes detalhes, para os fins de transporte e deslocamento dos livros é necessário o empilhamento dos itens selecionados de forma que possam ser levados de um ponto a outro com qualquer quantidade possível desejada. Para a utilização dessa estrutura, é necessário seguir as regras básicas, as quais estabelecem que só se pode adicionar ou remover itens ao topo da pilha. E por fim, a fila será usada como uma forma de controle sobre o acesso de pessoas nos interiores doestabelecimento. A partir dela será possível estabelecer o fluxo de entrada e saída da biblioteca. Assim como a pilha, essa estrutura segue uma diretriz em que nesse caso estipula que os itens só podem ser adicionados ao final da fila e devem ser retirados partindo de seu início. É importante ressaltar que em as todas estruturas estaremos fazendo seu uso e implementaçãode de forma dinâmica em relação a memória.
+  Atualmente, é de conhecimento geral que para uma boa gestão, cuidado e praticidade de uma biblioteca,seus livros devam ser armazenados de maneira que facilite no manuseio de seus leitores e funcionários. Analogamente, em nosso desenvolvimento, utilizaremos recursos vistos em aula que possibilite organizar o nosso conjunto de obras, bem como o fluxo de pessoas em nossa biblioteca. Essa organização é comumente conhecida na computação como tipo abstrato de dado e nos possibilita armazenar itens em formatos de listas, pilhas e/ou filas nos moldes tradicionais conhecidos hoje em dia. O motivo para se utilizar listas em nossa programação está atrelado a necessidade de estabelecer nas “estantes” uma forma que seja fácil visualizar, inserir livros em qualquer posição, sem a necessidade de grandes mudanças sobre a seção. Sem grandes detalhes, para os fins de transporte e deslocamento dos livros é necessário o empilhamento dos itens selecionados de forma que possam ser levados de um ponto a outro com qualquer quantidade possível desejada. Para a utilização dessa estrutura, é necessário seguir as regras básicas, as quais estabelecem que só se pode adicionar ou remover itens ao topo da pilha. E por fim, a fila será usada como uma forma de controle sobre o acesso de pessoas nos interiores do estabelecimento. A partir dela será possível estabelecer o fluxo de entrada e saída da biblioteca. Assim como a pilha, essa estrutura segue uma diretriz em que nesse caso estipula que os itens só podem ser adicionados ao final da fila e devem ser retirados partindo de seu início. É importante ressaltar que em as todas estruturas estaremos fazendo seu uso e implementaçãode de forma dinâmica em relação a memória.
 
 ## Json
 
@@ -144,20 +144,20 @@ Em JSON, os dados são apresentados desta forma:
 
 ### Aplicação no nosso código
 
-  No nosso código, o JSON foi aplicado com função de suprir o arquivamento de dados, visto que apresenta maior versatilidade do que o uso de arquivo.text.
+  No nosso código, o JSON foi aplicado com função de suprir o arquivamento de dados, visto que apresenta maior versatilidade do que o uso de arquivo.txt.
 
 ## Softwares semelhantes
 
-  Em seguida será apresentado alguns softwares semelhantes, sendo eles: Philos \citep{philosSophia} e Pergamum. O software Philos possui uma interface simples, que facilita a navegação dentro do sistema, também é possivel fazer a leitura para registros ISBN \citep{clubedeautoresISBN} atravéz de codigo de barras ou inserção manual, e também, realiza a busca do registro bibliográfico de uma obra.
+  Em seguida será apresentado alguns softwares semelhantes, sendo eles: Philos e Pergamum. O software Philos possui uma interface simples, que facilita a navegação dentro do sistema, também é possivel fazer a leitura para registros ISBN atravéz de codigo de barras ou inserção manual, e também, realiza a busca do registro bibliográfico de uma obra.
 
-  O Pergamum é um software para gestão de bibliotecas, com o intuito de "consultar no Brasil o acervo de várias instituições por meio de um único site" \citep{pergamum2021}, facilitando a busca para os seus usuarios. Uma das suas funcionalidades seria o controle de arquivos e museus.
+  O Pergamum é um software para gestão de bibliotecas, com o intuito de "consultar no Brasil o acervo de várias instituições por meio de um único site", facilitando a busca para os seus usuarios. Uma das suas funcionalidades seria o controle de arquivos e museus.
   
 ## Custo Computacional
 
   A análise de um algoritmo é necessária para saber seu tempo de execução e o espaço de memória utilizado para desenvolvê-lo, como também saber qual algoritmo é mais adequado para resolver um problema.
 
-  Em nosso trabalho irá ser calculado o custo computacional do código desenvolvido pelos desenvolvedores, o calculo sera apresentado na documentação Readme.md, mas é importante ressaltar que o arquivo json.hpp não será levado em consideração para o resultado desse cálculo, pois ele é uma biblioteca como as demais outras utilizadas em c/c++, normalmente é utilizado em Java, porém dá para utilizar em c se o arquivo com seus parâmetros estiver junto com os arquivos de compilação.
+  Em nosso trabalho irá ser calculado o custo computacional do código desenvolvido pelos desenvolvedores, o calculo sera apresentado na documentação Readme.md, mas é importante ressaltar que o arquivo json.hpp não será levado em consideração para o resultado desse cálculo, pois ele é uma biblioteca como as demais outras utilizadas em c/c++, normalmente é utilizado em Java, porém dá para utilizar em c++ se o arquivo com seus parâmetros estiver junto com os arquivos de compilação.
   
 ## Conclusão
 
-  No final do projeto sera possivel ter um sistema simples que imita uma biblioteca de uma instituição escolar, permitindo que o usuiario faça login e realizar comandos disponibilizados atraves de algoritmos estruturados. Alem disso, em nossa documentação do Readme.mb sera disponibilizado o custo computacional do algoritmo desenvolvido. Este projeto já foi elaborado antes, dessa maneira,  nós desenvolvedores, estaremos mostrando uma nova forma de desenvolver este problema. 
+  No final do projeto sera possivel ter um sistema simples que imita uma biblioteca de uma instituição escolar, permitindo que o usuiario faça login e realize comandos disponibilizados atraves de algoritmos estruturados. Alem disso, em nossa documentação do Readme.mb sera disponibilizado o custo computacional do algoritmo desenvolvido. Este projeto já foi elaborado antes, dessa maneira,  nós desenvolvedores, estaremos mostrando uma nova forma de desenvolver este problema. 
